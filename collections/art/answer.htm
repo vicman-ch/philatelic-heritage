@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Feedback Results</title>
+<base target="_blank">
+</head>
+
+<body bgcolor="#FFFF00">
+
+<img src="vg_port0.jpg" name="animation" WIDTH="155" HEIGHT="201">
+<script>
+var name_img = document.animation;
+var num_images = 19;
+function count_images() {
+	if(++num_loaded_images == num_images) animate();
+}
+var num_loaded_images = 0;
+
+images = new Array(num_images);
+for (var i = 0; i < num_images; i++){
+	images[i] = new Image();
+	images[i].onload = count_images;
+	images[i].src = "vg_port" + i + ".jpg";
+}
+
+function animate()
+{
+	name_img.src = images[frame].src;	//30
+	frame = (frame + 1) % num_images;
+	timeout_id = setTimeout("animate()", 3000);
+}
+var frame = 1;
+var timeout_id = null;
+</script>
+
+
+<form>
+  <p><input TYPE="button" VALUE="Restart" onClick="if (timeout_id==null &amp;&amp; num_loaded_images==num_images) animate()">
+ <input TYPE="button" VALUE="Stop" onClick="if (timeout_id) clearTimeout(timeout_id); timeout_id=null;"> </p>
+</form>
+</body>
+</html>
