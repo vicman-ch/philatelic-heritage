@@ -1,0 +1,62 @@
+.css-RO_on_stamps_menu_ro-icon {
+	width: px;
+	height: px;
+}
+.css-RO_on_stamps_menu_ro-container {
+	margin: 0px;
+	padding: 0px;
+	font: icon;
+	white-space: nowrap;
+}
+.css-RO_on_stamps_menu_ro-item {
+	padding: 0px;
+	margin: 0px;
+	font: icon;
+	color: black;
+	white-space: nowrap;
+}
+.css-RO_on_stamps_menu_ro-item a, .css-RO_on_stamps_menu_ro-item a:active, .css-RO_on_stamps_menu_ro-item a:hover {
+	margin-left: 3px;
+	padding: 1px 2px 1px 2px;
+}
+.css-RO_on_stamps_menu_ro-item a {
+	color: #0000A0;
+	text-decoration: none;
+	font-family :Arial, Helvetica, sans-seri;
+	font-size : 12px;
+        font-weight : normal;
+        font-style : normal;
+}
+.css-RO_on_stamps_menu_ro-item a:hover {
+        color: #8080FF;
+	text-decoration: none;
+        font-family :;
+	font-size : px;
+        font-weight : normal;
+        font-style : normal;
+}
+.css-RO_on_stamps_menu_ro-item a:active {
+	background:;
+	color: #8080FF;
+	text-decoration: ;
+        font-family :;
+	font-size : px;
+        font-weight : bold;
+        font-style : ;
+}
+.css-RO_on_stamps_menu_ro-item a.selected-inactive {
+	background: ;
+	color: #8080FF;
+	text-decoration: ;
+        font-family :;
+	font-size : px;
+        font-weight : bold;
+        font-style : ;
+}
+.css-RO_on_stamps_menu_ro-item a.selected {
+	background: ;
+}
+.css-RO_on_stamps_menu_ro-item img {
+	vertical-align: middle;
+	border: 0px;
+}

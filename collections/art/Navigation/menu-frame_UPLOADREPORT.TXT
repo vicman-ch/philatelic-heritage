@@ -1,0 +1,37 @@
+This upload report may be found at: 
+  C:\My Webs\Art-on-Stamps\Navigation\menu-frame_UPLOADREPORT.TXT
+To print it, simply open it in Wordpad or Notepad and select "Print".
+  
+All the files listed below may be found at:
+  C:\My Webs\Art-on-Stamps\Navigation
+  or in the sub directories as specified below.
+  
+===============================================================================
+The following files need to be uploaded to the website:
+ 
+[Main file(s)]
+menu-frame.htm
+ 
+[Java class amd archive files]: These should go into sub directory: ./
+  JAVATabTreeR.jar (Archive file for newer Browsers [MS IE 4+ and Netscape 4+], JAVATabTreeR.class
+  Beans.class, Timer.class, TreeView.class, TreeNode.class, TabPanel.class, InvalidTreeNodeException.class
+  ButtonBase.class, BaseTabbedPanel.class, DirectionButton.class, 
+  eNaviNews.class, eNaviNewsTL.class, eNaviCal.class, eNaviCalLyr.class
+  eNaviIM.class, eNaviIM0.class, eNaviIM1.class, eNaviIM2.class
+  
+  
+[News File]: These should go into the same directory as the class files
+  menu-frame_news.txt
+  
+[Sound file(s)]: These should go into the same directory as the class files
+  
+  
+  Splash.au
+  
+[Image file(s)]: These should go into the sub directory: ./
+  _skin1.jpg
+  _button1.jpg
+  EnvelopC.gif
+  EnvelopO.gif
+  Leaf.gif
+  

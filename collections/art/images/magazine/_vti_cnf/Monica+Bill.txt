@@ -1,0 +1,7 @@
+vti_encoding:SR|utf8-nl
+vti_author:SR|manvic
+vti_timecreated:TR|06 Mar 1999 18:03:02 +0100
+vti_modifiedby:SR|manvic
+vti_backlinkinfo:VX|
+vti_extenderversion:SR|3.0.2.926
+vti_timelastmodified:TR|06 Mar 1999 18:03:02 +0100

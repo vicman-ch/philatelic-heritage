@@ -1,0 +1,9 @@
+Art on Stamps — lot extins de recuperare
+
+Instalare: upload ZIP in directorul principal artonstamps.org, apoi Extract cu suprascriere.
+
+Contine 21 pagini de continut istoric recuperat si un singur meniu central actualizat.
+
+IMPORTANT: paginile istorice au fost curatate de navigatia veche; legaturile interne istorice nemapate au fost transformate in text pentru a evita 404 si taburi vechi. Imaginile utilizeaza cai originale si necesita fisierele istorice pe server.
+
+Formularele istorice de inscriere NU au fost repuse in functiune. Membership Information este numai pagina de arhiva.

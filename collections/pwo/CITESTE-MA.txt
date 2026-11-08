@@ -1,0 +1,14 @@
+PWO — Modernizare lot 1
+
+Paginile modernizate (URL-uri neschimbate):
+ - /pwo-goals.htm
+ - /statutes.htm
+ - /Members-Table/PWO-Members-Page.htm
+ - /Members-Table/Form-Email-Get-New-Member.htm
+ - /Illegals/intro.htm
+
+Arhiva include celelalte fișiere originale pentru testarea locală a linkurilor.
+Textele și codul existent al formularelor/iframe-urilor au fost păstrate.
+Verificați formularul și lista membrilor pe un server de test HTTPS înainte de publicare.
+Traducerea automată este un link extern Google Translate, fără garanția funcționării pentru toate paginile.
+Nu publicați acest lot pe site-ul live înainte de verificare.

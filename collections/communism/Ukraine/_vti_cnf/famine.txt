@@ -1,0 +1,8 @@
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|24 Aug 2004 12:02:22 -0000
+vti_extenderversion:SR|5.0.2.3409
+vti_lineageid:SR|{8F7C017E-85B7-44C5-B009-D4A2BBF920A2}
+vti_cacheddtm:TX|24 Aug 2004 07:09:15 -0000
+vti_filesize:IR|6607
+vti_backlinkinfo:VX|
+vti_modifiedby:SR|VICTOR\\Victor Manta

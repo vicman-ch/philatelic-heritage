@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description"
+content="Feedback Form, to contact the author of the page Paintings and Arts on Stamps">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>New PASIC Member</title>
+<script LANGUAGE="JAVASCRIPT">
+<!--
+
+
+function ValidateInput(theForm)
+{
+
+	// validate user name
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. -";
+	var checkStr = theForm.Name.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Full Name field is empty. Please fill it in!");
+		theForm.Name.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Full Name. Please re-enter a valid one!");
+		theForm.Name.focus();
+		return (false);
+	}
+
+	// validate e-mail address
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890@.-_";
+	var checkStr = theForm.Email.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	var IndexOfAt; var IndexOfPeriod;
+	if (checkStr == ""){
+		alert("The E-mail field is empty. Please fill it in with a valid one!");
+		theForm.Email.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		if (ch == "@"){
+			At_found = true	// @ found
+			IndexOfAt = checkStr.indexOf("@")
+		}
+		if (ch == "."){
+			Period_found = true	// . found
+			IndexOfPeriod = checkStr.lastIndexOf(".")
+		}
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK || !At_found || !Period_found){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.Email.focus();
+		return (false);
+	}
+	if (((IndexOfPeriod - IndexOfAt) < 2) || ((checkStr.length - IndexOfPeriod) < 3)){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.Email.focus();
+		return (false);
+	}
+
+	// validate Languages
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ,;/+";
+	var checkStr = theForm.Languages.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Languages field is empty. Please fill it in!");
+		theForm.Languages.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not valid Languages. Please re-enter valid ones!");
+		theForm.Languages.focus();
+		return (false);
+	}
+
+	// validate Country
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz -";
+	var checkStr = theForm.Country.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Country field is empty. Please fill it in!");
+		theForm.Country.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Country. Please re-enter a valid one!");
+		theForm.Country.focus();
+		return (false);
+	}	
+}
+
+//--> </script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#0000FF" link="#FF0000"
+alink="#008000" bgproperties="fixed">
+
+<div align="center">
+  <center>
+ 
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="1" width="100%">
+            <tr>
+              <td align="center" width="385"><strong><font size="4" color="#FF0000">JOIN PASIC!</font></strong></td>
+              <td align="center" width="405"><strong><font face="Arial" size="4" color="#FF0000">REJOIGNEZ
+                PASIC</font></strong></td>
+            </tr>
+          </table>
+        </div>
+        <div align="center">
+          <table border="1" cellpadding="0" cellspacing="1" width="100%" bordercolor="#000000">
+            <tr>
+              <td width="358">
+
+<p><font face="Arial" color="#800000" size="2">Please use this form to join the
+&quot;Paintings and Arts Stamps Internet Club - PASIC&quot;. Please read the <a href="../PASIC/statutes-en.htm"><i>Statutes</i></a>
+before to apply for membership. <i>Don't fear to be flooded by unsolicited mail
+after having published your e-mail information, because the e-mail addresses
+cannot be automatically taken over from the members' list.</i></font></p>
+
+<p><font color="#800000" face="Arial" size="2">Some Tips</font></p>
+
+<ul>
+  <li><font color="#800000" face="Arial" size="2"><i>Full Name</i>: please fill in your first name and then your last
+    name, using the right capitalization, like &quot;Victor Manta&quot;, </font><font color="#FF0000" face="Arial" size="2">not</font><font color="#800000" face="Arial" size="2">
+    like
+    &quot;victor manta&quot;, </font><font color="#FF0000" face="Arial" size="2">not</font><font color="#800000" face="Arial" size="2">
+    like VICTOR MANTA and </font><font color="#FF0000" face="Arial" size="2">not</font><font color="#800000" face="Arial" size="2">
+    like &quot;Manta Victor&quot;.</font></li>
+  <li><font color="#800000" face="Arial" size="2"><i>Languages</i>:<br>
+    - If you understand only one language, then please write it fully, like:
+    German, or Deutsch<br>
+    - If you understand several languages, then skip your mother tongue, except
+    for the case where this is not self-evident from the name of the country
+    (like in Canada). Use abbreviations for the most common languages: En, Fr,
+    Ge, Sp, It.</font></li>
+  <li><font color="#800000" face="Arial" size="2">Special interests: Please try to be brief. Example:
+    It.
+    Paintings, 19th Century.</font></li>
+  <li><font color="#800000" face="Arial" size="2">If you have made a mistake, simply fill out this form again by
+    re-entering all data. I will make the necessary changes later in order to
+    eliminate duplicate records. I will always assume that the last record is
+    the right one.</font></li>
+  <li><font color="#800000" face="Arial" size="2">Please <span style="background-color: #FFFF00">click
+    only one time</span> the &quot;Join PASIC&quot; button. Thank you a lot!</font></li>
+</ul>
+  </center>
+                <p align="right">&nbsp;</td>
+  <center>
+              <td width="380"><p><font color="#800000"><font face="Arial" size="2">Veuillez
+                utiliser ce formulaire pour rejoindre le &quot;Paintings and Arts Stamps Internet Club - PASIC&quot;.
+                Lisez s.v.p. les <a href="../PASIC/statutes-fr.htm"><i>statutes</i></a>.</font></font></p>
+
+  <p><font color="#800000" face="Arial" size="2">Quelques conseils</font></p>
+                <ul>
+                  <li><font face="Arial" color="#800000" size="2">Prénom et nom: svp. completez d'abord votre prénom et
+  ensuite votre nom, comme par exemple &quot;Victor Manta&quot;, </font> <font face="Arial" color="#FF0000" size="2">pas</font> <font face="Arial" color="#800000" size="2">
+                    comme
+  &quot;victor manta&quot;, </font><font face="Arial" color="#FF0000" size="2">pas
+                    </font><font face="Arial" color="#800000" size="2">comme
+                    VICTOR MANTA</font><font face="Arial" color="#800000" size="2">
+                    et aussi </font> <font face="Arial" color="#FF0000" size="2">pas
+                    </font><font face="Arial" color="#800000" size="2">comme &quot;Manta Victor&quot;.</font> </li>
+                  <li><font color="#800000" size="2" face="Arial">Langues:<br>
+                    - Si vous ne comprenez qu'une langue, écrivez celle-ci comme
+                    telle. Par
+  exemple : Français ou French<br>
+                    - Si vous comprenez plusieurs langues, ne mettez pas votre langue
+  maternelle, à l'exception du cas où votre langue maternelle ne résulte pas
+  du nom de votre pays dans le cas où celui-ci serait multilingue (par exemple
+  le Canada). Utilisez des abréviations pour les
+  langues les plus communes, comme: En, Fr, Ge, Sp, It.</font></li>
+ <font FACE="Arial">
+                    <li><font color="#800000" face="Arial" size="2">Intérêts spéciaux: Essayez d'être bref. Exemple: Peintures
+                      Fr. du 19éme.</font></li>
+                    <li><font color="#800000" face="Arial" size="2">Si vous faites une erreur, recomplétez ce formulaire en
+                      re-écrivant
+  toutes les données. Je ferai le nécessaires plus tard pour éliminer les enregistrements doubles. Je vais toujours supposer que le dernier
+  enregistrement est le bon.</font></li>
+                    <li><font color="#800000" size="2">Svp, pressez le bouton
+                      &quot;Join PASIC&quot; <span style="background-color: #FFFF00">seulement</span>
+                      une fois!</font><font color="#800000" face="Arial" size="2">
+                      Merci beaucoup!</font></li>
+                  </ul>
+  </font>
+  </center>
+  <p align="right">&nbsp;</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      <p align="left"><strong><small><font face="Arial" color="#800000">All&nbsp; fields marked with
+      </font><font face="Arial" color="#FF0000">
+      *</font><font face="Arial" color="#800000"> are mandatory.&nbsp;Tous les champs marqués par
+      </font><font face="Arial" color="#FF0000"> *</font><font face="Arial" color="#800000"> sont
+      obligatoires.</font></small></strong></p>
+
+  <center>
+
+<p><em><strong><font color="#800000"><!--webbot bot="HTMLMarkup" startspan --><form method="POST" action="cgi-bin/post.asp"
+onsubmit="return ValidateInput(this)">
+<!--webbot bot="HTMLMarkup"
+endspan -->Full name&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#FF0000">*</font><font color="#800000"><!--webbot
+bot="Validation" S-Display-Name="Full Name" I-Minimum-Length="6"
+I-Maximum-Length="30" --><input type="text"
+size="35" name="Name" tabindex="1" maxlength="30"></font><font color="#FF0000">*</font><font color="#800000">  Prénom et nom<br>
+E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </font><font color="#FF0000">*</font><font color="#800000"><input
+type="text" size="35" maxlength="256" name="Email" tabindex="2"></font><font color="#FF0000">*</font></strong></em> <font color="#800000"> <em><strong>E-mail</strong></em><br>
+<em><strong>Languages&nbsp;&nbsp; &nbsp; </font><font color="#FF0000">*</font><font color="#800000"><input type="text"
+size="35" maxlength="256" name="Languages" tabindex="3" value="English"></font><font color="#FF0000">*</font><font color="#800000"> Langues<br>
+Country&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </font><font color="#FF0000">*</font><font color="#800000"><input type="text"
+size="35" maxlength="256" name="Country" tabindex="4"></font><font color="#FF0000">*</font><font color="#800000"> Pays<br>
+URL <input type="text" size="60" maxlength="256" name="Homepage"
+tabindex="5" value="none"></font></strong></em> <font color="#800000"> <em><strong>URL</strong></em><br>
+<em><strong>Special interests <!--webbot bot="Validation"
+S-Display-Name="Full Name" I-Minimum-Length="6" I-Maximum-Length="30" --><input type="text" size="50" name="Interests" tabindex="6"
+maxlength="30" value="Arts on Stamps"> </strong></em></font></p>
+
+<p align="center"><!--webbot bot="HTMLMarkup" startspan --><p><input type="submit" value="Join PASIC"> <input
+type="reset" value="Reset Form"> </p><!--webbot bot="HTMLMarkup" endspan --></p>
+        </center>
+</div>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td width="704" valign="middle" rowspan="2"><strong><font color="#000000"><font face="Arial"><small><small>Revised:
+    <!--webbot bot="TimeStamp" s-format="%m/%d/%y" s-type="EDITED" startspan -->02/11/01<!--webbot bot="TimeStamp" endspan i-checksum="12360" -->. Copyright © 1998 -
+      2000</small></small><small><small> by Victor
+      Manta, Switzerland. All rights reserved in all countries</small></small><small><small>.</small></small></font></font></strong></td>
+    <td valign="middle" align="right" rowspan="2">
+      <p align="center"><a href="../index.html" target="_blank"><img border="0" src="../PASIC/pasic-banner.jpg" width="400" height="39"><br>
+      </a><strong><font face="Arial" color="#000000"><small><small>Click the
+      banner to visit the site</small></small></font></strong></p>
+    </td>
+    <td valign="middle" align="right"><a href="../PASIC/4beginners.htm"><img border="0" src="../buttons/btn-oneArrow.gif" width="25" height="25"></a></td>
+  </tr>
+  <tr>
+    <td valign="middle" align="right"><a href="../toc-gale.htm"><img border="0" src="../buttons/btn-dblArrow.gif" width="25" height="25"></a></td>
+  </tr>
+
+</center>
+  </table>
+<script type="text/javascript"><!--
+google_ad_client = "pub-6697287241332041";
+/* 234x60, created 11/29/08 */
+google_ad_slot = "0857213903";
+google_ad_width = 728;
+google_ad_height = 90;;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6507762-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+   

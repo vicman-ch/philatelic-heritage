@@ -1,0 +1,1 @@
+const search=document.querySelector('#search'), links=[...document.querySelectorAll('#article-grid a')],empty=document.querySelector('#no-results');search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();let n=0;links.forEach(a=>{const ok=a.dataset.search.includes(q);a.hidden=!ok;if(ok)n++});empty.hidden=n>0});

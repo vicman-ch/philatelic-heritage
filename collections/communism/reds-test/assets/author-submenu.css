@@ -1,0 +1,10 @@
+/* Author dropdown: About / Contact */
+.nav .author-submenu,.cos-nav .author-submenu{position:relative;display:inline-flex;align-items:stretch;z-index:30}
+.nav .author-submenu>summary,.cos-nav .author-submenu>summary{list-style:none;cursor:pointer;display:flex;align-items:center;padding:inherit;color:inherit;font:inherit;white-space:nowrap}
+.nav .author-submenu>summary::-webkit-details-marker,.cos-nav .author-submenu>summary::-webkit-details-marker{display:none}
+.nav .author-submenu>summary::after,.cos-nav .author-submenu>summary::after{content:' ▾';font-size:.8em;margin-left:5px}
+.nav .author-submenu-links,.cos-nav .author-submenu-links{position:absolute;right:0;top:100%;min-width:150px;display:flex;flex-direction:column;background:#183b34;box-shadow:0 6px 18px #0005;z-index:100}
+.nav .author-submenu:not([open]) .author-submenu-links,.cos-nav .author-submenu:not([open]) .author-submenu-links{display:none}
+.nav .author-submenu-links a,.cos-nav .author-submenu-links a{display:block;padding:11px 16px;color:white!important;text-decoration:none;white-space:nowrap}
+.nav .author-submenu-links a:hover,.cos-nav .author-submenu-links a:hover{background:#9b2626}
+@media(max-width:650px){.nav .author-submenu-links,.cos-nav .author-submenu-links{right:0}}

@@ -1,0 +1,284 @@
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Romanian Classic Stamps and later commemorative issues">
+<meta http-equiv="keywords" content="stamps, Romanian, Rumanian, Romania, Rumania, PWO, EFIRO 2008">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Philatelic Webmasters @ EFIRO 2008</title>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<style>
+/* Change body background-color to change fade out color. */
+body.siteshow { margin:0; padding:0; background-color:#000000; }
+#menu
+{
+    font-family:Arial;
+    font-size:9pt;
+    display:none;
+    opacity:0.00;
+    -mozopacity:0.00;
+    filter:alpha(opacity=0);
+    position:absolute;
+    top:1px;
+    left:1px;
+    padding:2px;
+    background-color:#000000;
+    color:#FFFFFF;
+    border:1px dotted #999999;
+}
+#menu a { color:#ffffff; }
+#menu a:hover { text-decoration:none; }
+#title { font-size:11pt; font-weight:bold; letter-spacing:2; }
+#slides { font-size:9pt; line-height:16pt; }
+.button { width:60px; font-size:9pt; letter-spacing:1; }
+</style>
+
+<script type="text/javascript">
+var current_idx = 0;
+var slides = new Array();
+var menuwin;
+var show_timer;
+var menu_timer;
+var menu;
+var content;
+var loaded = true;
+
+// Define your "slides". 3 values for each are:
+//      1. Duration in seconds.
+//      2. Title to be used in menu.
+//      3. Source URL. Can be full URI or a relative URL.
+
+slides[1] = new Array(25, "Introduction - PWO", "./intro-pwo.htm");
+slides[2] = new Array(20, "Participants", "./participants-1.htm");
+
+slides[3] = new Array(25, "Older RO - Robu", "./Valentin-Robu/ro-stamps-expo.htm");
+
+slides[4] = new Array(25, "ROstamps-Blückert", "./Mats-Blueckert/romaniastamps-expo-1.htm");
+slides[5] = new Array(25, "ROstamps-Blückert", "./Mats-Blueckert/romaniastamps-expo-2.htm");
+slides[6] = new Array(25, "ROstamps-Blückert ", "./Mats-Blueckert/romaniastamps-expo-3.htm");
+slides[7] = new Array(25, "ROstamps-Blückert", "./Mats-Blueckert/romaniastamps-expo-4.htm");
+
+slides[8] = new Array(30, "ROstamps-Manta", "./Victor-Manta/ROstamps-site.htm");
+slides[9] = new Array(20, "ROstamps-Manta", "./Victor-Manta/romanian-currency.htm");
+slides[10] = new Array(30, "ROstamps-Manta", "./Victor-Manta/monetary-reform-52.htm");
+slides[11] = new Array(30, "ROstamps-Manta", "./Victor-Manta/inflation.htm");
+slides[12] = new Array(30, "ROstamps-Manta", "./Victor-Manta/farming.htm");
+slides[13] = new Array(25, "ROstamps-Manta", "./Victor-Manta/bucharest.htm");
+slides[14] = new Array(30, "ROstamps-Manta", "./Victor-Manta/the-canal.htm");
+slides[15] = new Array(25, "ROstamps-Manta", "./Victor-Manta/village-museum.htm");
+
+slides[16] = new Array(30, "Philatelica - Dobrescu", "./Dan-Dobrescu/page-1.htm");
+slides[17] = new Array(30, "Philatelica - Dobrescu", "./Dan-Dobrescu/page-2.htm");
+slides[18] = new Array(25, "Philatelica - Dobrescu", "./Dan-Dobrescu/page-3.htm");
+slides[19] = new Array(25, "Philatelica - Dobrescu", "./Dan-Dobrescu/page-4.htm");
+
+slides[20] = new Array(30, "Locals - Carrigan","./Jay-Carrigan/transylvania.htm");
+slides[21] = new Array(20, "Locals - Carrigan","./Jay-Carrigan/bistrita.htm");
+slides[22] = new Array(15, "Locals - Carrigan","./Jay-Carrigan/revenue-nasaud.htm");
+slides[23] = new Array(30, "Locals - Carrigan","./Jay-Carrigan/sighet.htm");
+slides[24] = new Array(20, "Locals - Carrigan","./Jay-Carrigan/targu-mures.htm");
+slides[25] = new Array(15, "Locals - Carrigan","./Jay-Carrigan/satu-mare.htm");
+
+slides[26] = new Array(20, "Postal History - Grecu","./Dan-Grecu/page-1.htm");
+slides[27] = new Array(30, "Postal History - Grecu","./Dan-Grecu/page-2.htm");
+slides[28] = new Array(30, "Postal History - Grecu","./Dan-Grecu/page-3.htm");
+slides[29] = new Array(25, "Postal History - Grecu","./Dan-Grecu/page-4.htm");
+
+slides[30] = new Array(25, "Roumania - Hirsch", "./Paul-Hirsch/page_1.htm");
+slides[31] = new Array(25, "Roumania - Hirsch", "./Paul-Hirsch/page_2.htm");
+slides[32] = new Array(25, "Roumania - Hirsch", "./Paul-Hirsch/page_3.htm");
+slides[33] = new Array(25, "Roumania - Hirsch", "./Paul-Hirsch/page_4.htm");
+slides[34] = new Array(25, "Roumania - Hirsch", "./Paul-Hirsch/page_5.htm");
+
+slides[35] = new Array(30, "Bienfaisance - Wainstain", "./Claude-Wainstain/bienfaisance_roumaine.htm");
+
+slides[36] = new Array(30, "Jurnal on line - Kallai", "./Laszlo-Kallai/pocutia.htm");
+slides[37] = new Array(30, "Jurnal on line - Kallai", "./Laszlo-Kallai/popper.htm");
+
+slides[38] = new Array(25, "RO Art - Manta", "./Victor-Manta/shot_paintings.htm");
+slides[39] = new Array(25, "RO Art - Manta", "./Victor-Manta/by_the_sea.htm");
+slides[40] = new Array(25, "RO Art - Manta", "./Victor-Manta/cumintenia.htm");
+
+slides[41] = new Array(20, "Lagare - Scherrer", "./Horst-Scherrer/Scherrer_2/scherrer_2.html");
+slides[42] = new Array(20, "Lagare - Scherrer", "./Horst-Scherrer/Scherrer_3/scherrer_3.html");
+slides[43] = new Array(20, "Lagare - Scherrer", "./Horst-Scherrer/Scherrer_4/scherrer_4.html");
+slides[44] = new Array(20, "Lagare - Scherrer", "./Horst-Scherrer/Scherrer_5/scherrer_5.html");
+
+slides[45] = new Array(15, "Fiscal Stamps - Ambrus", "./Fery-Ambrus/slide1.htm");
+slides[46] = new Array(15, "Fiscal Stamps - Ambrus", "./Fery-Ambrus/slide2.htm");
+
+function MenuInit()
+{
+    var html = "";
+    for(idx=1; idx<slides.length; idx++) {
+        html += '<a href="javascript:Navigate('+idx+')">' +
+            slides[idx][1] + "</a><br />\n";
+    }
+    document.getElementById("slides").innerHTML = html;
+    menu.style.display = "block";
+}
+
+function MenuShow()
+{
+    clearTimeout(menu_timer);
+    opacity('menu', 0, 90, 500);
+    menu_timer = setTimeout("MenuHide()", 3500);
+}
+
+function MenuHide()
+{
+    opacity('menu', 90, 0, 500);
+}
+
+function Pause()
+{
+    clearTimeout(show_timer);
+    document.getElementById('play').style.display = "block";
+    document.getElementById('pause').style.display = "none";
+}
+
+function Navigate(slide_idx)
+{
+    clearTimeout(show_timer);
+    if (current_idx == 0) {
+        if (!slide_idx) { slide_idx = 1; }
+        current_idx = slide_idx;
+        content.src = slides[current_idx][2];
+        document.getElementById('play').style.display = "none";
+        document.getElementById('pause').style.display = "block";
+        show_timer = setTimeout("Navigate()", slides[current_idx][0]*1000);
+        return;
+    }
+
+    if (slide_idx) {
+        current_idx = slide_idx;
+        content.src = slides[current_idx][2];
+        document.getElementById('play').style.display = "block";
+        document.getElementById('pause').style.display = "none";
+        return;
+    }
+
+    loaded = false;
+    current_idx++;
+    if ( current_idx == slides.length) { current_idx = 1; }
+    opacity('content', 100, 0, 500);
+    document.getElementById('play').style.display = "none";
+    document.getElementById('pause').style.display = "block";
+    show_timer = setTimeout("Navigate()", slides[current_idx][0]*1000);
+    return;   
+}
+
+function opacity(id, opacStart, opacEnd, millisec)
+{
+    //speed for each frame
+    var speed = Math.round(millisec / 100);
+    var timer = 0;
+
+    //determine the direction for the blending, if start and end are the same nothing happens
+    if(opacStart > opacEnd) {
+        for(i = opacStart; i >= opacEnd; i--) {
+            setTimeout("changeOpac(" + i + ",'" + id + "')",(timer * speed));
+            timer++;
+        }
+        if (opacEnd == 0) { setTimeout("FadeOutTrigger('"+id+"')",((timer-1) * speed));; }
+        //if (opacEnd == 0) { FadeOutTrigger(id); }
+    } else if(opacStart < opacEnd) {
+        if (opacStart == 0) { FadeInTrigger(id); }
+        for(i = opacStart; i <= opacEnd; i++)
+            {
+            setTimeout("changeOpac(" + i + ",'" + id + "')",(timer * speed));
+            timer++;
+        }
+    }
+}
+
+//change the opacity for different browsers
+function changeOpac(opacity, id)
+{
+    var object = document.getElementById(id).style;
+    object.opacity = (opacity / 100);
+    object.MozOpacity = (opacity / 100);
+    object.KhtmlOpacity = (opacity / 100);
+    object.filter = "alpha(opacity=" + opacity + ")";
+}
+
+function FadeOutTrigger(id)
+{
+    //alert('FadeOut: '+id);
+    switch(id) {
+    case "menu":
+        document.getElementById(id).style.display = "none";
+        break;
+    case "content":
+        content.src = slides[current_idx][2];
+        //setTimeout("opacity('content', 0, 100, 500)", 1000);
+        break;
+    default:
+        break;
+    }
+}
+
+function FadeInTrigger(id)
+{
+    //alert('FadeIn: '+id);
+    switch(id) {
+   case "menu":
+        document.getElementById(id).style.display = "block";
+        break;
+    case "content":
+        //opacity('content', 0, 100, 500);
+        break;
+    default:
+        break;
+    }
+}
+
+function FadeInContent()
+{
+    if (!loaded) {
+        opacity('content', 0, 100, 500);
+        loaded = true;
+    }
+}
+
+function LoadTrigger()
+{
+    //self.resizeTo(1366,768);
+    menu = document.getElementById('menu');
+    content = document.getElementById('content');
+    Navigate();
+    MenuInit();
+    MenuShow();
+}
+
+window.onload = LoadTrigger;
+
+</script>
+<style id="efiro-local-nav-style">.efiro-return{box-sizing:border-box;position:relative;z-index:99999;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;background:#12365a;color:#fff;padding:12px 16px;margin:0 0 16px;font:16px Arial,sans-serif!important}.efiro-return a{color:#fff!important;text-decoration:underline!important;font:inherit!important}.efiro-return a:focus{outline:2px solid #ffc65c}</style>
+<style>.rs-accessible-page-title{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}</style>
+</head>
+
+<body class="siteshow" bgproperties="fixed" topmargin="8" leftmargin="4" bgcolor="#ECE9D8" style="background-color: #ECE9D8">
+<h1 class="rs-accessible-page-title">Philatelic Webmasters @ EFIRO 2008</h1>
+<nav aria-label="EFIRO 2008 navigation" class="efiro-return"><a href="../efiro-2008.htm">&#8592; Back to EFIRO 2008</a></nav>
+
+
+<iframe id="content" name="content" style="width:100%; height:100%;" frameborder="no" scrolling="auto" src="./participants.htm" onmouseover="MenuShow();" onload="FadeInContent();" ></iframe>
+<div id="menu">
+    <div id="title">SiteShow Menu</div>
+    <div id="slides">
+    </div>
+    <p>
+        <input id="pause" class="button" style="display:block;" type="button" value="pause" onclick="Pause()" />
+        <input id="play" class="button" style="display:none;" type="button" value="play" onclick="Navigate()" />
+    </p>
+</div>
+
+
+</body>
+</html>

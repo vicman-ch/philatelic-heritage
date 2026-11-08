@@ -1,0 +1,38 @@
+<SCRIPT LANGUAGE=JAVASCRIPT>
+<!-- This script is offered by APWP: http://www.values.ch/apwp.htm -->
+<!-- It will free your page from the frames of another site that display it-->
+<!-- Begin
+if (top.frames.length!=0)
+   top.location=self.document.location;
+  // End -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- This script is offered by APWP: http://www.values.ch/apwp.htm -->
+<!-- It protects your images from being grabbed. -->
+<!-- Only against visitors using NN versions greater then 3 and IE using vers. GT 2 -->
+<!-- You can change this text: Sorry, this is my scan. -->
+<!-- Begin
+function test(x) {
+var msg = "Sorry, this is my scan.";
+if (navigator.appName == 'Netscape' && x.which == 3) {
+alert(msg);
+return false;
+}
+if (navigator.appName ==
+'Microsoft Internet Explorer' && event.button==2) {
+alert(msg);
+return false;
+}
+else return true;
+}
+
+function getit() {
+if(document.images)
+for(i=0;i<document.images.length;i++)
+document.images[i].onmousedown = test;
+}
+// End -->
+</SCRIPT>
+
+<body onLoad="getit()" >

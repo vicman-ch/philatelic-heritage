@@ -1,0 +1,564 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script LANGUAGE="JAVASCRIPT">
+<!--
+var TotalValidOK = true;  //doesn't work with false when back from CGI
+function FindIndexOfCheckedRadioButton(radioGroup){
+	for (var i = 0; i < radioGroup.length; i++)
+		if (radioGroup[i].checked)
+			return i
+	return 0
+}
+
+function ValidateInput(theForm)
+{
+     i = FindIndexOfCheckedRadioButton(theForm.ToBeContacted);
+     if (theForm.ToBeContacted[i].value == "Yes"){
+	// validate e-mail address
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_0123456789";
+	var checkStr = theForm.UserEmail.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	var IndexOfAt; var IndexOfPeriod;
+	if (checkStr == ""){
+		alert("The E-mail field is empty. Please fill it in with a valid one!");
+		theForm.UserEmail.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		if (ch == "@"){
+			At_found = true	// @ found
+			IndexOfAt = checkStr.indexOf("@")
+		}
+		if (ch == "."){
+			Period_found = true	// . found
+			IndexOfPeriod = checkStr.lastIndexOf(".")
+		}
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK || !At_found || !Period_found){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.UserEmail.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+	}
+	if (((IndexOfPeriod - IndexOfAt) < 2) || ((checkStr.length - IndexOfPeriod) < 3)){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.UserEmail.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+	}
+      }	//if (ToBeContacted == True)
+
+	// validate user name
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. -";
+	var checkStr = theForm.UserName.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Name field is empty. Please fill it in!");
+		theForm.UserName.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Name. Please re-enter a valid one!");
+		theForm.UserName.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+			return (false);
+	}
+
+	// validate Country
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. ";
+	var checkStr = theForm.Country.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Country field is empty. Please fill it in!");
+		theForm.Country.focus();
+	     	TotalValidOK = false;		// don't accept downloading
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Country. Please re-enter a valid one!");
+		theForm.Country.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+	}
+
+	// Validate Comments field (not empty)
+	var checkStr = theForm.Comments.value;
+	if (checkStr == ""){
+		alert("The Comments field is empty. Please fill it in!");
+		theForm.Comments.focus();
+	     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+	}	
+
+     // Test if it is a Stamps Collector who is collecting Arts
+     i = FindIndexOfCheckedRadioButton(theForm.StampsCollector);
+     j = FindIndexOfCheckedRadioButton(theForm.CollectArts);
+     if ( (theForm.StampsCollector[i].value == "Yes") && (theForm.CollectArts[j].value == "Yes") ){
+     	TotalValidOK = true;		//accept downloading
+		window.open("http://www.values.ch/loaddown.htm", "Download");	
+		return (true);
+     }
+     else{
+		alert("Seemingly you are neither a stamp collector who collects, nor a dealer who sells Arts on Stamps. Please reconsider the downloading and save some bandwidth on the Internet. Thanks for your understanding!");
+     	TotalValidOK = false;		//don't accept downloading
+		return (false);
+     }
+}
+
+
+//--> </script>
+
+<meta http-equiv="Description" content="Information about the free downloadable database &quot;Arts on Stamps&quot;">
+<meta http-equiv="Keywords" content="stamps, arts, paintings, database, free, Datenbank, kostenlos, Briefmarken, base de  donnees, timbres, gratuit">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Paintings and Arts on Stamps Database Download</title>
+</head>
+
+<body link="#FF00FF" alink="#800000" leftmargin="4" topmargin="30" 
+bgcolor="#FFFFFF">
+
+<div align="center">
+  <center>
+  
+    <table width="100%">
+  
+    <tr>
+      <td>
+
+<p align="center"><img src="Database/ttt-db.gif" alt="Stamps Database" width="400" height="45"></p>
+
+<p><font face="Arial" color="#000000"><strong>Introduction</strong></font></p>
+
+<p><small><font face="Arial" color="#FF0000">Advice to the wise</font><font face="Arial" color="#0000FF">: </font>
+<font face="Arial" color="#000080">Please take your time and read this page 
+attentively, before to proceed further. The time that you will spend to read it 
+will be largely compensated later, when you will try to use the huge amount of 
+information stored in the present database. I recommend you to print this page, 
+in order to use it later as a reference.</font></small></p>
+
+    <p><font face="Arial" color="#000080"><small>The Paintings and Arts on Stamps 
+      is a vast theme, probably the largest of all in the topical philately. There 
+      are </small></font><em> <font face="Arial" color="#000080"><small>over 30,000 
+      unique stamps </small></font></em><font face="Arial" color="#000080"><em><small>and 
+      over </small></em></font><em> <font face="Arial" color="#000080"><font size="2">3,200</font> 
+      <small> sheets </small></font></em><font face="Arial" color="#000080"><small>that 
+      are listed in the present database. The first difficulty one has when she/he 
+      tries to put together a complete database (and a stamps collection too) 
+      of all stamps issues worldwide, is to define and then to identify which 
+      stamps belong to it. The task is not simple, because almost each stamp could 
+      be considered as a (kind of) piece of art. Somebody, normally/hopefully 
+      an artist,&nbsp;had to design it, to bring it on paper and to choose/specify 
+      the means by which his work will be &quot;converted&quot; to a stamp.</small></font></p>
+
+<p><font face="Arial" color="#000000"><strong>Selection Criteria</strong></font></p>
+
+<p><small><font face="Arial" color="#0000FF">I</font><font face="Arial" color="#000080"> 
+have included in the database the stamps that meet the following criteria: </font>
+
+</small>
+
+<ul>
+      <li><font face="Arial" color="#000080"><small>They should reproduce pre-existing 
+        works of art</small></font></li>
+  <li><font face="Arial" color="#000080"><small>They should show real works of art (as
+    for example opposed to banal portraits, reproduced millions of times, like kings' or
+    dictators' faces)</small></font></li>
+</ul>
+
+<p><font face="Arial" color="#000080"><small>The only exception I have made is for the
+works of art designed by renown artists, done with the purpose to be explicitly reproduced on
+stamps.</small></font></p>
+
+<p><font face="Arial" color="#000000"><strong>References, Completeness and
+Updates</strong></font></p>
+
+<p><font face="Arial" color="#000080"><small>It took a long time to put together
+the information stored in the present database. I used as references the Stanley Gibbons
+&quot;Stamps of the World&quot; catalogues, the Stanley Gibbons &quot;British
+Commonwealth&quot; catalogue, the Zumstein catalogue and since 1999 the Scott and
+the Michel catalogues. Starting by the year 2000 I have also uses as reference the Spezialkatalog Gemaelde of Dr. H. Meinel 
+(Germany).</small></font></p>
+
+    <p><small><font face="Arial" color="#000080">Not all Arts Stamps are listed 
+      in the database yet. The reason is the time needed to identify all stamps 
+      and to enter the information. Nevertheless, over 90% of all Paintings on 
+      Stamps issued worldwide were already listed. The database wa updated on a 
+      regular base, with new issues and with some older ones<em>, </em>the 
+      last update being done on</font></small><font face="Arial" color="#000080"><small> 
+      May 2010.&nbsp;&nbsp;&nbsp;</small></span> </font></p>
+    <p> <font face="Arial" color="#000080"> <small> At present, 
+quite all European stamps were entered in new the format of the database. </small></font><font color="#0000FF"><small>
+<font face="Arial" color="#000080">Any help in
+completing the database is more then welcomed and credits are immediately
+given on this page, as follows:</font></small></font></p>
+
+<p><small><font face="Arial" color="#FF0000"><b><font color="#000000">Credits</font></b></font><font face="Arial" color="#000000">:
+</font><font face="Arial" color="#0000FF"></font></small></p>
+
+      
+    <ul>
+      <li><small><font color="#000080" size="3" face="Arial">A special thank to 
+        our former PASIC member Ann-Mette Heindorff </font> <font size="3" face="Arial"><b><font color="#000080">†</font></b> 
+        </font></small><font size="3"><small><font face="Arial" color="#000080"> 
+        from Denmark</font></small></font></li>
+      <li><font size="3"><small><font face="Arial" color="#000080">Many thanks 
+        to Wilfried Paqué (from Germany), </font> </small><font face="Arial" color="#000080"><small>for 
+        his&nbsp; precious help in completing the present database.</small></font></font></li>
+      <li><font size="3"><small><font face="Arial" color="#000080">Many thanks 
+        to Jose Luis Nascimento (from Portugal) who&nbsp;offered the Access version 
+        of the database, with many interesting features, and who largely completed 
+        and improved the May 2004 version of the database.</font></small></font></li>
+      <li><font size="3"><font face="Arial" color="#000080">Many 
+        thanks to </font> <font face="Arial" 
+        style=color=&quot;#000080&quot;>Roy Berliner</font><font 
+        face="Arial" color="#000080"> (USA), who added in 2007 and in 2010 over 
+        2600 new records to the present database.</font></span></font><font face="Arial" size="3"><font color="#000080"> 
+        </font></font></li>
+    </ul>
+    <p><font face="Arial" color="#000000"><strong>We  offer actually for free four 
+      databases</strong></font></p>
+
+      <ul>
+        <li><font face="Arial" color="#000080"><small>One of them, in Excel format,
+      is described below. You will need Excel 97 or later in order to
+      use it. 
+      </small></font></li>
+        <li><font face="Arial" color="#000080"><small>The second one, with so many possibilities,
+      that there is not enough place here to describe it here, is in 
+        Access '97 format. You will need Access 2000 or later in 
+        order to use it. The full description of the functionality of this 
+        database program is given in a PDF document. The Excel database is relatively small, 
+        compared with the Access version. </small></font></li>
+        <li><font face="Arial" color="#000080"><small>The third possibility is 
+        to directly query on-line the database (through the menu point &quot;Query 
+        the Database Online.&quot;</small></font></li>
+        <li><font face="Arial" style="font-size: small" color="#000080">The 
+        fourth is a file in PDF format that lists and displays all stamps 
+        related to Rembrandt. It was created by and is the property of Pieter 
+        Broekema from The Netherlands.</font></li>
+</ul>
+
+<p><font face="Arial" color="#FF0080"><strong><font color="#000000">The Excel Database structure</font><br>
+&nbsp;</strong></font></p>
+
+      
+  </td>
+    </tr>
+  
+
+<div align="center">
+  <center>
+  <table border="1" cellspacing="1" width="884" style="width: 100" bordercolor="#000000">
+    <tr height="17" style="height:12.75pt">
+      <em> 
+      <td height="17" width="122" style="height: 12.75pt; width: 92pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Country</b></font></td>
+      <td width="39" style="width: 29pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Year</b></font></td>
+      <td width="188" style="width: 141pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Subject</b></font></td>
+      <td width="97" style="width: 73pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Themes</b></font></td>
+      <td width="151" style="width: 113pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Artists</b></font></td>
+      <td width="53" style="width: 40pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Number</b></font></td>
+      <td width="39" style="width: 29pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>MS</b></font></td>
+      <td width="39" style="width: 29pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>FDC</b></font></td>
+      <td width="39" style="width: 29pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>MaxCard</b></font></td>
+      <td width="78" style="width: 59pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>Catalogue</b></font></td>
+      <td width="39" style="width: 29pt; text-align: center; color: black; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#FF0000"><b>IdStatus</b></font></td>
+      </em>
+    </tr>
+    <tr height="17" style="height:12.75pt">
+      <em> 
+      <td height="17" style="height: 12.75pt; font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Aitutaki</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>1987</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Rubens</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>4</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>2</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>-</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080">O</font></td>
+      </em>
+    </tr>
+    <tr height="17" style="height:12.75pt">
+      <em> 
+      <td height="17" style="height: 12.75pt; font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Aitutaki</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>1988</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Christmas</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Rembrandt</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>5</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>1</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>-</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080">U</font></td>
+      </em>
+    </tr>
+    <tr height="17" style="height:12.75pt">
+      <em> 
+      <td height="17" style="height: 12.75pt; font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Ajman</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>1968</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings, Adam &amp; Eve</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Cranach,Goes,Durer</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>4</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>3</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>-</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080">O</font></td>
+      </em>
+    </tr>
+    <tr height="17" style="height:12.75pt">
+      <em> 
+      <td height="17" style="height: 12.75pt; font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Ajman</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>1968</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings, Adoration</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Paintings</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>Van Honthorst</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>0</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>1</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>&nbsp;</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080"><b>-</b></font></td>
+      <td style="font-size: 8.0pt; text-align: center; color: black; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border: medium none; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+      <font color="#000080">O</font></td>
+      </em>
+    </tr>
+  </table>
+  </center>
+</div>
+<p><font face="Arial" color="#000080"><small>The database has 11 fields.</small></font><font color="#000080">
+</font> 
+
+</p>
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="1" width="100%">
+    <tr>
+      <td>
+
+<ul>
+  <li><small><font face="Arial" color="#000080">The first two field, <em>Country</em>
+    and <em>Year</em>, are self-explanatory. Abbreviations (like USA, GB) are used for the
+    names of some countries.</font></small></li>
+  <li><font face="Arial" size="2">The <i>Subject</i> column describes what was 
+  commemorated, &quot;Art from Russian Museums&quot;, &quot;Anniversary of Picasso's 
+  death&quot;,etc. (modified)</font></li>
+  <li><small><font face="Arial" color="#000080">The field <em>Themes</em> gives
+    the type of the work of art (Painting, Sculpture, Stained-glass, etc),
+    followed by</font></small><font face="Arial" color="#000080"><small> a
+    short description of the set (new).</small></font></li>
+  <li><small><font face="Arial" color="#000080">The field Artist</font></small><font face="Arial" color="#000080"><small>s</small> <small>
+    presents the names of artists whose works are displayed.</small> </font></li>
+  <li><small><font face="Arial" color="#000080">The <em>Number</em> field contains
+    the number of stamps in the set.</font></small></li>
+  <li><small><font face="Arial" color="#000080">The <em>MS</em> field contains the
+    number of Miniature Sheets, also named Souvenir Sheets.</font></small></li>
+  <li><small><font face="Arial" color="#000080">The <em>FDC</em> and </font><em>
+  <font face="Arial" color="#000080">MaxCard </font> </em>
+  <font face="Arial" color="#000080">indicate the number of FDC-sets and Maximum 
+  Cards respectively. <span style="background-color: #FFFF00">This changed in 
+  July 2007</span> and these fields are for the moment empty.</font></small></li>
+  <li><small><font face="Arial" color="#000080">The <em>Catalogue</em> field starts
+    with a letter that identifies the catalogue used. G = Stanley Gibbons, M = Michel, S =
+    Scott, Y = Yvert, Z = Zumstein. Only a small </font> </small>
+  <font face="Arial" color="#000080"> <small>part of stamps have catalogue numbers attached to
+    them in the present database.</small></font></li>
+  <li><font face="Arial" style="font-size: smaller" color="#000080">ldStatus is 
+  an internal field.</font></li>
+</ul>
+
+          <p><font face="Arial" color="#000080"><small>What you see as a row, 
+            starting by <em>Aiutaki</em>, is named a database <em>record</em>. 
+            The actual database has already over 10,000 such records, listing 
+            over <span style="background-color: #FFFF00">30,000</span> stamps 
+            and <span style="background-color: #FFFF00">over 3,200</span> sheets. 
+            With more time invested by myself&nbsp; and with the kind support 
+            of the Internet community, the database will improve and will reach 
+            the degree of completeness desired by its author. A project called 
+            </small><font size="2"><b>The Paintings and Arts on Stamps Database 
+            Project (PASDP), </b>was started at the beginning of year 2000, with 
+            the goal to improve the database.&nbsp;Since then the database has 
+            considerably expanded, containing more records (i.e. more stamps) 
+            and more information (like the name of the artists, for already many 
+            of records).</font></font></p>
+
+<p><font face="Arial" color="#000000"><strong>Formats</strong></font></p>
+
+<p><small><font face="Arial" color="#000080">Please note that the database can be
+used as well as an inventory list. Because Excel is a part of the standard Microsoft
+Office package and&nbsp;for this reason is more spread then Access, the
+present&nbsp;database is published in Microsoft Excel&nbsp; format.&nbsp;The database file is
+compressed with WinZip (a program that is downloadable from the Web and that can be
+also used to decompress the present database file). For more information or
+in order </font> </small><font face="Arial" color="#000080"><small>to get some help, please feel free
+to contact the Webmaster by e-mail, by</small></font><small><font face="Arial" color="#000080"> </font><i>
+<a href="mailto:manvic_99spaam@yahoo.com"><font face="Arial" color="#000080">clicking 
+on this field</font></a><font face="Arial" color="#000080"> 
+(eliminate &quot;spaam&quot; from the address).</font></i></small></p>
+
+<p><font face="Arial" color="#000000"><b><font size="3">Copyright notice,
+property rights</font></b></font></p>
+
+<p><small><font face="Arial" color="#000000">The first three
+databases are protected by copyright laws and are the
+exclusive property of Mr.
+Victor Manta, Switzerland. The Rembrandt database is the exclusive property of 
+Pieter Broekema from The Netherlands. You have the permission to
+download them only for
+personal use.</font>  
+<font color="#000080"> <span style="background-color: #FFFF00"> <font face="Arial"> It is strictly prohibited to
+distribute it or to </font> </span></font></small><font color="#000080"><span style="background-color: #FFFF00"><font face="Arial"><small>use it for commercial
+purposes</small></font></span><font face="Arial"><small><span style="background-color: #FFFF00">.
+</span>That means that dealers can use them, in order to have a better knowledge
+of what exists in the field of Art on Stamps, but are not allowed to send
+them  or
+parts of them  to their clients.</small></font></font></p>
+
+<p style="margin-bottom: -4">&nbsp;</p>
+
+<hr>
+
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+<div align="center"><center>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td width="704" valign="middle"><strong> <font face="Arial" color="#000000" size="2">Revised: 
+      Jan, 20, 2019.&nbsp;<br>
+      Copyright © 1997 - 2019,  as well this page as the databases,<br>
+    by&nbsp; Victor Manta, Switzerland.&nbsp;<br>
+ All rights reserved
+    worldwide.</font></strong></td>
+    <td valign="middle" align="right"><p align="center"><font color="#000000" face="Arial" size="1"><a href="index.html" target="_blank">
+    <img src="vmbanner1.gif" alt="Site's Banner" align="center" vspace="3" width="400" height="40"></a><br>
+      <strong>Click the above banner to visit
+    the site</strong></font></td>
+  </tr>
+
+
+</table>
+    <hr>
+<div align="center">
+  <script type="text/javascript"><!--
+google_ad_client = "pub-6697287241332041";
+/* 728x90, created 3/20/09 */
+google_ad_slot = "0857213903";
+google_ad_width = 728;
+google_ad_height = 90;;
+//-->
+</script>
+  <script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+  <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+  <script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6507762-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</div>
+</body>

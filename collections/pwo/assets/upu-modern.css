@@ -1,0 +1,6 @@
+body.pwo-upu{margin:0!important;background:#faf7f0!important;color:#172c3e!important;font-family:Georgia,serif!important} .pwo-upu-header{background:#09233a;color:#fff;padding:14px 4%;display:flex;align-items:center;gap:15px;font:16px Arial,sans-serif}.pwo-upu-header img{width:56px;height:56px;object-fit:contain}.pwo-upu-header strong{font:38px Georgia,serif;color:#e9bd62}.pwo-upu-nav{background:#fff;border-bottom:1px solid #d8c9aa;padding:13px 4%;display:flex;gap:22px;flex-wrap:wrap;font:600 14px Arial,sans-serif}.pwo-upu-nav a,.pwo-upu-switch a{color:#123f60!important;text-decoration:none}.pwo-upu-switch{margin:20px auto;padding:14px 20px;max-width:980px;border:1px solid #e1d4b9;background:#fff;display:flex;flex-wrap:wrap;gap:15px;align-items:center;font:15px Arial,sans-serif}.pwo-upu-switch .active{font-weight:bold;color:#111}.pwo-upu main{max-width:1080px;margin:0 auto;padding:22px 18px}.pwo-upu main img{max-width:100%;height:auto}.pwo-upu table{max-width:100%} @media(max-width:700px){.pwo-upu-header strong{font-size:30px}.pwo-upu main{overflow-x:auto}}
+/* Compact navigation on portrait smartphones; desktop unchanged. */
+@media (max-width:650px) {
+ .pwo-upu-nav {gap:2px 10px; padding:7px 12px; font-size:12px; line-height:1.2;}
+ .pwo-upu-nav a {padding:4px 2px; line-height:1.25;}
+}

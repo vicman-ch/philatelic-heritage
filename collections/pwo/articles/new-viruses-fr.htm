@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="fr" http-equiv="Content-Language"/>
+<meta content="Philatelic Webmasters Organization" http-equiv="Description"/>
+<meta content="Organization, Web, philately, stamps, collecting, philately, philatelic, tips, Java, code" http-equiv="keywords"/>
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR"/>
+<meta content="FrontPage.Editor.Document" name="ProgId"/>
+<title>Des nouveaux virus et de la protection</title>
+<base target="Examples"/>
+<style>.pwo-language-picker{margin-left:auto;display:flex;gap:8px;align-items:center;color:inherit;font:14px Arial,sans-serif}
+.pwo-language-picker select{padding:8px;border-radius:5px;max-width:145px}
+@media(max-width:680px){.pwo-language-picker{margin:8px 0 0;flex-wrap:wrap}}
+#google_translate_element_pwo_test{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}</style></head>
+<body bgcolor="#FFF5D7" leftmargin="4" style="font-family: Arial; font-size: 12pt" text="#FF0000" topmargin="11">
+<font face="Arial">
+<p align="center"><img border="0" height="46" src="../ttl-pwo.gif" width="489"/></p>
+</font>
+<b><font color="#ff0000" face="Arial" size="4">
+<p align="CENTER">À propos des nouveaux virus et comment s'en protéger</p>
+</font></b><font face="Arial" size="2"></font><font color="#000080" face="Arial" size="2">
+<p>Si vous avez reçu dans votre boîte électronique un ver dénommé
+"W32/Sircam" et que vous suspectez votre ordinateur d'avoir été
+infecté par ce ver (ou par tout autre virus) vous pouvez faire analyser et
+nettoyer votre ordinateur gratuitement en ligne sur le site <a href="http://www.antivirus.com">www.antivirus.com</a></p></font><font color="#000080" face="Arial" size="2">.
+Suivez simplement les instructions qui apparaissent sur votre l'écran.
+L'analyse prend environ 30 à 45 minutes (en ligne), selon la quantité stockée
+sur votre disque dur. Le nettoyage est à faire manuellement (hors ligne) en
+suivant les instructions simples affichées à l'écran, et ne prend que
+quelques minutes. L'analyse peut être faite de façon anonyme, c'est-à-dire
+qu'il n'est pas nécessaire d'indiquer votre adresse électronique. Votre
+ordinateur sera analysé en fonction de tous les virus connus, y compris les
+tous derniers qui ne figurent pas encore dans de nombreux programmes anti-virus.
+Si un virus est détecté sur votre ordinateur au cours de l'analyse, les
+fichiers infectés seront marqués pour vous permettre de les identifier plus
+facilement et de les nettoyer. Une fois le nettoyage effectué, protégez votre
+ordinateur contre toute attaque. N'ouvrez JAMAIS un courrier avec des fichiers
+exécutables attachés, à moins d'être certain à 100% du contenu de ces
+fichiers attachés, et/ou d'être sûr à 100% du niveau de sécurité de
+l'ordinateur expéditeur. Si vous avez le moindre doute, passez le fichier joint
+à l'anti-virus, ou tout simplement supprimez-le de votre ordinateur SANS ouvrir
+le courrier.
+<p>Vous trouverez ci-dessous une description de ce ver particulier. C'est un ver
+joint à un e-mail provenant de Mexico avec des objets divers mais le texte du
+courrier est (en anglais) du genre :</p>
+<p>"Hi ! How are you ? I send you this file in order to have your advice.
+See you later. Thanks."</p>
+<p>Il existe aussi une version espagnole, du genre :</p>
+<p>"¿ Hola, como estas ? Te mando este archivo para que me das tu punto de
+vista. Nos vemos pronto. Gracias."</p>
+</font><font face="Arial" size="2"></font><font color="#000080" face="Arial" size="2">
+<p>Informations générales</p>
+<p>W32/Sircam est un ver qui se propage par e-mail, en s'envoyant de lui-même
+à toutes les adresses trouvées dans le répertoire d'adresses Outlook de
+l'utilisateur infecté. Une fois installé dans le système, le ver modifie la
+base de registre de Windows afin de s'exécuter à chaque fois qu'un fichier .exe
+est lancé. Enfin, une fois sur dix, le ver supprime certaines données du
+disque dur de l'ordinateur.</p>
+<p>Mode de propagation</p>
+<p>Après avoir infecté l'ordinateur, W32/Sircam s'expédie de lui-même à
+toutes les adresses trouvées dans le répertoire de l'utilisateur infecté
+[Remarque : le site de Norton indique qu'il peut aussi analyser les fichiers du
+cache de votre navigateur pour y trouver les adresses e-mail, et s'expédier
+également à elles. Pour de plus amples renseignements voir : Sarc.com].</p>
+<p>Le message envoyé a les caractéristiques suivantes : le fichier joint a une
+double extension, car le ver infecte le système en s'auto-copiant au début des
+fichiers cible, et ajoute une autre extension à celle d'origine.</p>
+<p>Symptômes de l'infection</p>
+<p>Le premier symptôme de l'infection est la réception d'un message
+électronique ayant les caractéristiques décrites plus haut. Quand
+l'utilisateur exécute un fichier infecté, W32/Sircam crée deux copies
+cachées de lui-même dans le dossier C:\Recycled ("poubelle"). Le nom
+de la première figure après le fichier joint au message e-mail (sans
+l'extension ajoutée par le virus), alors que la seconde s'appelle SIRC32.exe.
+Ensuite, W32/Sircam va créer une troisième copie de lui-même dans le dossier
+Système de Windows sous le nom de SCAM32.exe. De plus, le ver génère
+(éventuellement) un fichier dénommé SYRCAM.sys et y écrit du texte jusqu'à
+ce que tout l'espace disque disponible sont rempli.</p>
+</font><font face="Arial" size="2"></font><font color="#000080" face="Arial" size="2">
+<p>De NetSecurity.net : Pour les utilisateurs de serveurs NT et 2000, veuillez
+noter qu'il existe un autre ver nommé "Code Red" qui affecté les
+serveurs IIS. Un ver est semblable à un virus dans la mesure où il peut se
+reproduire lui-même. Cependant, contrairement à un virus, il n'infecte pas
+d'autres fichiers. Ce ver a été réalisé par des chinois dans la cadre d'une
+attaque du site Internet de la Maison Blanche (</p></font><a href="http://www.whitehouse.gov/"><font color="#000080" face="Arial" size="2">www.whitehouse.gov</font></a>
+<font color="#000080" face="Arial" size="2">). Plus précisément, le(s)
+programmateur(s) du ver visai(en)t l'adresse IP de la Maison Blanche, 198. 137.
+240. 91. Le ver fut découvert par le responsable en chef du hacking d'une
+compagnie privée, eEye Digital Security. Ce ver a infecté l'index de la
+version anglaise du serveur internet d'information de Microsoft. Dans les
+versions non anglaises, le ver est dormant. Il s'est transmis plus rapidement
+que n'importe quel autre. Pour plus de détails sur son fonctionnement voir sur
+Eeye.com.
+</font><font face="Arial" size="2"></font><font color="#000080" face="Arial" size="2">
+<p>© 2001 </p></font><a href="http://www.iEntry.com/"><font face="Arial" size="2">iEntry,
+Inc.</font></a><font color="#000080" face="Arial" size="2"> Tous droits
+réservés.
+</font>
+<hr color="#0000FF" size="3"/>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td width="50%">
+<b><font color="#000080" face="Arial" size="1">Créé le 03-08-01.<br/>
+Modifié le </font></b>
+<font color="#000080"><strong><small><small>
+<!--webbot bot="TimeStamp" s-format="%d-%m-%y" s-type="EDITED" startspan -->16-09-01<!--webbot bot="TimeStamp" endspan i-checksum="12417" --></small></small></strong></font><b><font color="#000080" face="Arial" size="1">.<br/>
+Copyright © 2001 PWO et<br/>
+</font></b><font face="Arial"><b><font color="#000080" face="Arial" size="1"><a href="http://www.values.ch" target="_blank"> Victor
+Manta</a></font></b></font><b><font color="#000080" face="Arial" size="1">,
+Suisse.<br/>
+Tous droits réservés dans le monde entier.</font></b>
+</td>
+</tr></table></center>
+<td width="50%">
+<p align="right"><a href="http://www.pwmo.org"><img border="0" height="80" src="../images/pwo-logo.gif" width="103"/></a></p></td>
+
+
+</div>
+<hr color="#0000FF" size="3"/>
+<div class="pwo-language-picker" translate="no"><label for="pwo-test-language">Language</label>
+<select aria-label="Language" class="notranslate" id="pwo-test-language" translate="no">
+<option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="ro">Română</option><option value="ru">Русский</option><option value="zh-CN">中文</option>
+</select></div><div aria-hidden="true" id="google_translate_element_pwo_test"></div><script src="../pwo-translation-pilot-test.js"></script></body>
+</html>

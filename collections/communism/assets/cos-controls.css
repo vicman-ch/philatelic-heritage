@@ -1,0 +1,9 @@
+/* Additive controls: original page layouts remain unchanged. */
+#cos-tools{position:relative;z-index:2147482000;font:14px Arial,Helvetica,sans-serif!important}
+#cos-language-wrap{position:fixed;right:14px;top:8px;z-index:2147482000;display:flex;gap:7px;align-items:center;background:#fff;color:#222;padding:5px 9px;border:1px solid #888;border-radius:20px;box-shadow:0 2px 9px #0003;font:13px Arial,Helvetica,sans-serif!important}
+#cos-language{max-width:156px;color:#222;background:#fff;border:1px solid #aaa;border-radius:5px;padding:4px;min-height:28px;font:13px Arial,Helvetica,sans-serif!important}
+#cos-to-top{position:fixed;right:19px;bottom:20px;z-index:2147482000;width:46px;height:46px;border-radius:50%;border:2px solid #fff;background:#9d1c24;color:#fff;box-shadow:0 3px 12px #0005;cursor:pointer;font:bold 28px Arial,Helvetica,sans-serif;line-height:36px;text-align:center;padding:0}
+#cos-to-top:hover,#cos-to-top:focus{background:#691119;outline:2px solid #ddd;outline-offset:2px}
+#cos-google-translate{position:absolute;left:-9999px;top:-9999px}
+.goog-te-banner-frame,.goog-te-balloon-frame{display:none!important}
+@media(max-width:620px){#cos-language-wrap{top:5px;right:5px;padding:3px 6px;font-size:12px!important}#cos-language-wrap span{display:none}#cos-language{max-width:126px}#cos-to-top{right:12px;bottom:12px}}

@@ -1,0 +1,1 @@
+Art on Stamps - meniu comun. Incarcati arhiva in directorul radacina al site-ului artonstamps.org si extrageti-o acolo, suprascriind fisierele. Fisierul aos-shared-navigation.js trebuie sa fie langa index.html. Testati Home, Albania si Club PASIC. Intrari fara pagina modernizata sunt afisate fara link, pentru a evita trimiterile la site-ul vechi.

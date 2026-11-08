@@ -1,0 +1,7 @@
+Art on Stamps - Preview 30
+
+Corrections requested by site editor:
+- Added memorial author credit for Mette Heindorff to socialism-and-depressions-on-danish-stamps.html. The 2001 source also names Svend Jensen; this historical attribution is retained.
+- Removed obsolete banner-click instruction from all migrated HTML pages.
+- Removed postings-on-philatelic-newsgroups.html and its category link.
+- Preserved previous migrations and the Juan de Pareja correction.

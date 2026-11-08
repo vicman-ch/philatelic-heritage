@@ -1,0 +1,22 @@
+vti_encoding:SR|utf8-nl
+vti_author:SR|manvic
+vti_modifiedby:SR|manvic
+vti_timecreated:TR|04 Feb 2001 19:48:26 -0000
+vti_timelastmodified:TR|11 Feb 2001 19:20:28 -0000
+vti_filesize:IR|3346
+vti_extenderversion:SR|4.0.2.2717
+vti_backlinkinfo:VX|apwp/cgi-bin/apwp-members-fr-withDNS.asp apwp/cgi-bin/apwp-members-withDNS.asp apwp/cgi-bin/apwp-members-outsidearea-fr.asp apwp/cgi-bin/apwp-members-fr.asp apwp/cgi-bin/apwp-members.asp apwp/backup/apwp-db-update.asp apwp/cgi-bin/apwp-members-outsidearea-withDNS.asp apwp/cgi-bin/apwp-members-outsidearea.asp
+vti_lastmodifiedbyproduct:SW|fp40
+connectionstatus:SW|apwp=2 values=2
+vti_dataconnlinks_apwp:VR|apwp/cgi-bin/apwp-members-outsidearea.asp apwp/cgi-bin/apwp-members-fr.asp apwp/cgi-bin/apwp-members-outsidearea-fr.asp apwp/Backup/apwp-db-update.asp apwp/cgi-bin/apwp-members.asp apwp/cgi-bin/apwp-members-fr-withDNS.asp apwp/cgi-bin/apwp-members-outsidearea-withDNS.asp apwp/cgi-bin/apwp-members-withDNS.asp
+vti_nexttolasttimemodified:TR|04 Feb 2001 19:48:26 -0000
+vti_dataconns:VR|apwp values
+vti_cacheddtm:TX|11 Feb 2001 19:20:28 -0000
+vti_cachedlinkinfo:VX|D|X-DATACONN:///H:/NewWebs/PaintStamps/apwp/DRIVER={Microsoft\\ Access\\ Driver\\ (*.mdb)};DBQ=URL=apwp/cgi-bin/apwp-members.mdb H|apwp/cgi-bin/apwp-members.mdb D|X-DATACONN:///H:/NewWebs/PaintStamps/values/DRIVER={Microsoft\\ Access\\ Driver\\ (*.mdb)};DBQ=URL=cgi-bin/members.mdb H|cgi-bin/members.mdb
+vti_cachedsvcrellinks:VX|NDUS|X-DATACONN:///H:/NewWebs/PaintStamps/apwp/DRIVER={Microsoft\\ Access\\ Driver\\ (*.mdb)};DBQ=URL=apwp/cgi-bin/apwp-members.mdb FHUS|apwp/cgi-bin/apwp-members.mdb NDUS|X-DATACONN:///H:/NewWebs/PaintStamps/values/DRIVER={Microsoft\\ Access\\ Driver\\ (*.mdb)};DBQ=URL=cgi-bin/members.mdb FHUS|cgi-bin/members.mdb
+vti_cachedhasbots:BR|false
+vti_cachedhastheme:BR|false
+vti_cachedhasborder:BR|false
+vti_cacheddataconns:VR|apwp values
+vti_cacheddataconnattrs_apwp:VR|_type=fp40 connectionstring=DRIVER={Microsoft\\ Access\\ Driver\\ (*.mdb)};DBQ=URL=apwp/cgi-bin/apwp-members.mdb connectiontimeout=15 commandtimeout=30 cursorlocation=3 runtimeusername= runtimepassword=
+vti_cacheddataconnattrs_values:VR|_type=fp40 connectionstring=DRIVER={Microsoft\\ Access\\ Driver\\ (*.mdb)};DBQ=URL=cgi-bin/members.mdb connectiontimeout=15 commandtimeout=30 cursorlocation=3 runtimeusername= runtimepassword=

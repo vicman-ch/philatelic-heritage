@@ -1,0 +1,9 @@
+Preview 36 — Corrections
+
+Duplicate navigation cards removed by normalized title:
+art-gallery.html: 5
+resources.html: 4
+countries.html: 10
+topicals.html: 4
+
+Banner prompts removed: 44 across 20 pages.

@@ -1,0 +1,51 @@
+/* SNA interior modernization: scoped, preserving original article layout */
+.sna-modern-top{position:relative;z-index:100;font-family:Arial,sans-serif;background:#fff9ed;color:#1d3850;border-bottom:3px solid #bd965b}
+.sna-modern-top .sna-brand{display:block;padding:12px 18px;background:#f9efda;color:#193b59;text-decoration:none;text-align:center;font:bold 20px Georgia,serif}
+.sna-modern-top .sna-brand small{display:block;font:12px Arial,sans-serif;color:#80613d;margin-top:3px}
+.sna-modern-top .sna-nav{display:flex;justify-content:center;flex-wrap:wrap;background:#123854;position:relative}
+.sna-modern-top .sna-nav>a,.sna-modern-top .sna-nav button{font:600 13px Arial,sans-serif;color:#fff;background:none;border:0;padding:13px 14px;text-decoration:none;cursor:pointer}
+.sna-modern-top .sna-nav>a:hover,.sna-modern-top .sna-nav button:hover,.sna-modern-top .sna-nav button[aria-expanded=true]{background:#356181}
+.sna-modern-top .sna-group{position:relative}
+.sna-modern-top .sna-dropdown{display:none;position:absolute;top:100%;left:0;min-width:225px;max-height:65vh;overflow:auto;background:#fffdf6;box-shadow:0 7px 20px #0004;z-index:110}
+.sna-modern-top .sna-group.open>.sna-dropdown{display:block}
+.sna-modern-top .sna-dropdown a{display:block;font:13px Arial,sans-serif;color:#153e5a;text-decoration:none;padding:9px 12px;border-bottom:1px solid #e8dbc6}
+.sna-modern-top .sna-dropdown a:hover{background:#eee2ca}
+.sna-modern-top .sna-lang{position:absolute;right:6px;top:5px;font:11px Arial,sans-serif;background:#fff;border-radius:4px;padding:2px;z-index:3}
+.sna-modern-top .sna-lang select{font:11px Arial,sans-serif;border:0;max-width:92px}
+@media(max-width:720px){.sna-modern-top .sna-brand{padding-top:32px;font-size:17px}.sna-modern-top .sna-nav>a,.sna-modern-top .sna-nav button{padding:10px 8px;font-size:12px}.sna-modern-top .sna-group{position:static}.sna-modern-top .sna-dropdown{left:3%;right:3%;min-width:0}}
+
+/* Correct the inherited homepage navigation class and constrain legacy articles */
+.sna-modern-top .nav{display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap;background:#123854;position:relative;gap:0}
+.sna-modern-top .nav>a,.sna-modern-top .nav>.sna-group>button{display:block;font:600 14px Arial,sans-serif;color:white;background:transparent;border:0;padding:14px 16px;text-decoration:none;cursor:pointer;line-height:1.25}
+.sna-modern-top .nav>a:hover,.sna-modern-top .nav>.sna-group>button:hover,.sna-modern-top .nav>.sna-group.open>button{background:#356181}
+.sna-modern-top .nav .sna-group{position:relative;display:block}
+.sna-modern-top .nav .sna-dropdown{display:none;position:absolute;top:100%;left:0;min-width:235px;background:#fffdf6;box-shadow:0 8px 24px #0004;z-index:1000;max-height:70vh;overflow-y:auto}
+.sna-modern-top .nav .sna-group.open>.sna-dropdown{display:block}
+.sna-modern-top .nav .sna-dropdown a{display:block;color:#153e5a;font:13px Arial,sans-serif;padding:10px 12px;text-decoration:none}
+.sna-modern-top .nav .sna-dropdown a:hover{background:#eee2ca}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0!important;background:#fff8e9!important;color:#243c50!important;font-family:Arial,Helvetica,sans-serif!important;font-size:16px!important;line-height:1.48!important}
+body>p,body>div:not(.sna-modern-top),body>table,body>center,body>h1,body>h2,body>h3,body>blockquote,body>ul,body>ol{max-width:1180px;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box}
+body>p,body>h1,body>h2,body>h3,body>blockquote,body>ul,body>ol{padding-left:20px;padding-right:20px}
+body p{line-height:1.5!important;margin-top:12px;margin-bottom:12px}
+body h1,body h2,body h3{font-family:Georgia,serif!important;line-height:1.2!important}
+body img{max-width:100%;height:auto}
+body table{max-width:100%!important}
+body td{vertical-align:top}
+body a{overflow-wrap:anywhere}
+.sna-modern-top a{overflow-wrap:normal}
+@media(max-width:720px){.sna-modern-top .nav>a,.sna-modern-top .nav>.sna-group>button{padding:10px 9px;font-size:12px}.sna-modern-top .nav .sna-group{position:static}.sna-modern-top .nav .sna-dropdown{left:3%;right:3%;min-width:0}body>table{display:block;overflow-x:auto}body img{object-fit:contain}}
+
+/* Explicit navigation repair */
+.sna-modern-top nav.sna-nav{display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;flex-wrap:wrap!important;visibility:visible!important;opacity:1!important;min-height:44px!important;background:#123854!important;position:relative!important;z-index:101!important}
+.sna-modern-top nav.sna-nav>a,.sna-modern-top nav.sna-nav>.sna-group>button{display:block!important;color:#fff!important;font:600 14px Arial,sans-serif!important;padding:14px 16px!important;border:0!important;background:transparent!important;text-decoration:none!important;cursor:pointer!important}
+.sna-modern-top nav.sna-nav>.sna-group{display:block!important;position:relative!important}
+.sna-modern-top nav.sna-nav .sna-dropdown{display:none!important;position:absolute!important;top:100%!important;left:0!important;z-index:999!important;min-width:230px!important;background:#fffdf6!important;box-shadow:0 8px 24px #0004!important}
+.sna-modern-top nav.sna-nav .sna-group.open>.sna-dropdown{display:block!important}
+.sna-modern-top nav.sna-nav .sna-dropdown a{display:block!important;color:#153e5a!important;padding:10px 12px!important;text-decoration:none!important}
+@media(max-width:720px){.sna-modern-top nav.sna-nav>a,.sna-modern-top nav.sna-nav>.sna-group>button{padding:10px 8px!important;font-size:12px!important}.sna-modern-top nav.sna-nav>.sna-group{position:static!important}.sna-modern-top nav.sna-nav .sna-dropdown{left:2%!important;right:2%!important}}
+
+/* Hide Google Translate's supplemental toolbar; keep the original compact selector. */
+#sna-google-translate-mount{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;left:-9999px!important}
+.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+html.translated-ltr body,html.translated-rtl body,body{top:0!important}

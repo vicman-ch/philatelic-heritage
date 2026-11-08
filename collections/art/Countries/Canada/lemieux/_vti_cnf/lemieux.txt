@@ -1,0 +1,11 @@
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|19 Dec 2004 10:36:36 -0000
+vti_extenderversion:SR|5.0.2.3409
+vti_lineageid:SR|{23E4F26B-F61E-411E-8192-4980858F538E}
+vti_backlinkinfo:VX|
+vti_author:SR|VICTOR\\Victor Manta
+vti_modifiedby:SR|VICTOR\\Victor Manta
+vti_nexttolasttimemodified:TR|18 Dec 2004 15:27:17 -0000
+vti_timecreated:TR|19 Dec 2004 10:36:36 -0000
+vti_cacheddtm:TX|19 Dec 2004 10:36:36 -0000
+vti_filesize:IR|4794

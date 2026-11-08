@@ -1,0 +1,9 @@
+vti_encoding:SR|utf8-nl
+vti_author:SR|manvic
+vti_syncwith_mbr-hobby.neotown.com\:80/staray:TR|20 Jan 1998 21:33:48 +0100
+vti_timecreated:TR|20 Jan 1998 21:33:48 +0100
+vti_modifiedby:SR|manvic
+vti_backlinkinfo:VX|
+vti_nexttolasttimemodified:TW|09 Jan 1998 21:12:02 +0100
+vti_extenderversion:SR|3.0.2.926
+vti_timelastmodified:TR|20 Jan 1998 21:33:48 +0100

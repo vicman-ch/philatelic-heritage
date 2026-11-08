@@ -1,0 +1,8 @@
+Art on Stamps — restaurare My Column, lot verificat
+
+Instalare: extrage arhiva in directorul principal artonstamps.org, cu suprascriere.
+
+Fisiere: meniul comun, My Column overview si 3 articole recuperate din arhiva istorica.
+
+IMPORTANT: imaginile din articolele recuperate folosesc caile originale /My Column/...; daca resursele istorice nu mai exista pe server, acestea trebuie restaurate separat.
+Nu sunt modificate alte pagini Overview.

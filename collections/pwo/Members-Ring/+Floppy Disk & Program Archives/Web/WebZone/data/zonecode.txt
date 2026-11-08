@@ -1,0 +1,20 @@
+<!-- Begin #zonename# code -->
+  
+  <div align="center">
+    <center>
+    <table border="0" bgcolor="#66CCFF">
+      <tr>
+        <td align="center"><font face="verdana,arial,helvetica" size="2"><img border="0" src="http://www.scs-intl.com/navimages/feynman.gif" width="50" height="66"></font></td>
+        <td align="center"><b><font face="verdana,arial,helvetica" size="3">The
+          Feynman Webring</font></b>
+          <p><font face="verdana,arial,helvetica" size="2">
+    <a href="#next#" target="_top">Next Site</a> 
+          <a href="#prev#" target="_top">Previous Site</a> 
+          <a href="#list#">List Sites</a>  
+  <a href="#home#">Join</a>  </font></td>
+      </tr>
+    </table>
+    </center>
+  </div>
+  
+  <!-- End #zonename# code -->

@@ -1,0 +1,19 @@
+ 	L’héliogravure est depuis longtemps le procédé roi pour les tirages associant qualité et quantité. 
+
+Definition:  No longer widely used, photogravure prints an image from an etched copper engraving plate that is created from a transparency of a photographic image. The photogravure printing process produces a photographic image composed of fine lines rather than dots.
+
+n 1: printing from an intaglio plate prepared by photographic methods 2: an intaglio print produced by gravure [syn: gravure, heliogravure] 3: using photography to produce a plate for printing [syn: rotogravure]
+
+\He`li*o*grav"ure\, n. [F. h['e]liogravure.] The process of photographic engraving.
+
+intaglio
+
+n 1: a printing process that uses an etched or engraved plate; the plate is smeared with ink and wiped clean, then the ink left in the recesses makes the print [syn: intaglio printing, gravure] 2: glyptic art consisting of a sunken or depressed engraving or carving on a stone or gem (as opposed to cameo)
+
+ Photogravure Process
+
+This is a generalized description of the photogravure process. Techniques and materials vary greatly.
+
+Engraving A transparent negative is taken of the original. The negative is placed on top of a photo-sensitive gelatin, and is exposed to light. The light travels through the negative and the gelatin hardens in proportion to how much light it is exposed to. The negative is removed and a cold wash washes away the soft gelatin, forming a resist. The resist is then adhered to a copperplate and goes through an acid bath. The acid dissolves the areas on the copperplate where the gelatin was unexposed. Thus the image gets etched onto the copperplate by the acid, creating a gravure plate.
+
+Printing Ink is applied to the surface of the plate. The plate the gets wiped with a thin doctor blade, removing excess ink and leaving ink only in the recesses. Dampened paper is then pressed on the plate, and the ink transfers from the recesses to the paper, creating a printed image.

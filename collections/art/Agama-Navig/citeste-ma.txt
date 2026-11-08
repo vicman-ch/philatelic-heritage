@@ -1,0 +1,38 @@
+Art on Stamps - Agama Menu
+
+Proiectul se numeste aos-menu.awmp si se gaseste in Rootul lui AOS
+
+Menu frame, cea cu meniul, se afla in /Agama-Navig, si se poate vedea in browser prin
+file:///C:/Users/Victor/Dropbox/My%20Webs/Art-on-Stamps/Agama-Navig/menu-frame-1.htm
+
+Site-ul se vede in browser aici:
+file:///C:/Users/Victor/Dropbox/My%20Webs/Art-on-Stamps/art-on-stamps-1.htm
+
+Cand se doreste modificarea meniului, se alege in Agama Web Menus -> Project Reopen -> [path] aos-menu.awmp
+
+Se fac modificarile si se salveaza cu Build Menu, 
+
+Menu name: aosmenu, Next
+
+Bifat: Create single script file
+
+Bifat Image Path Default: (/aosmenu_images apare in dreapta), Next
+
+Bifat Shring, Next
+
+Clickezi (alegi) cu mouse-ul directoarea: C:/Users/Victor/Dropbox/My Webs/Art-on-Stamps/Agama-Navig
+
+Build Now
+
+Testezi cu linkurile spre Menu frame si Site de mai sus.
+
+Salvezi cu FTP  pe site fisierele noi .js si .css din directoarea 
+C:\Users\Victor\Dropbox\My Webs\Art-on-Stamps\Agama-Navig
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+
+/* General articles: readable historical documents */
+.pwo-legacy-content{overflow-wrap:anywhere;max-width:100%;line-height:1.65}.pwo-legacy-content img{max-width:100%;height:auto}.pwo-legacy-content table{max-width:100%;width:auto!important}.pwo-legacy-content td{max-width:100%;overflow-wrap:anywhere}.pwo-legacy-content blockquote{margin:1rem 0;padding:0}.pwo-legacy-content p{line-height:1.65}@media(max-width:760px){.pwo-legacy-content table{display:block;overflow-x:auto}.pwo-paper{padding:1rem!important}}
+
+/* Center the original illustrations in the French WNS article without changing other articles */
+.pwo-wns-fr .pwo-legacy-content img{display:block;margin-left:auto!important;margin-right:auto!important;float:none!important;clear:both}.pwo-wns-fr .pwo-legacy-content td:has(img){text-align:center!important}.pwo-wns-fr .pwo-legacy-content p:has(>img){text-align:center!important}

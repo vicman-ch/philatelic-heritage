@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /pwo-test/
+Disallow: /Backup/
+Disallow: /_vti_cnf/
+Disallow: /_vti_pvt/
+
+Sitemap: https://www.pwmo.org/sitemap.xml

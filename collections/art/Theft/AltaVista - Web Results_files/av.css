@@ -1,0 +1,117 @@
+IMG {
+	BORDER-BOTTOM-COLOR: #000099; BORDER-LEFT-COLOR: #000099; BORDER-RIGHT-COLOR: #000099; BORDER-TOP-COLOR: #000099
+}
+TH {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 9pt
+}
+TD {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 9pt
+}
+B {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 9pt
+}
+.smtxt {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 8pt
+}
+.mdtxt {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 9pt
+}
+.lgtxt {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; FONT-SIZE: 12pt
+}
+.pgtitle {
+	COLOR: #003366; FONT-SIZE: 12pt
+}
+.bdbrg {
+	COLOR: #990000; FONT-WEIGHT: bold
+}
+.bdbrg2 {
+	COLOR: #990000; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+.tabon {
+	BACKGROUND: #ffcc00
+}
+.nav {
+	BACKGROUND: #003366; COLOR: white
+}
+.rb {
+	BACKGROUND: #ffcc01
+}
+A.nav {
+	COLOR: white
+}
+A.nav:visited {
+	COLOR: white
+}
+A.nav:active {
+	COLOR: red
+}
+A.nav:hover {
+	COLOR: #ffcc00
+}
+A.smwt {
+	COLOR: white; FONT-SIZE: 8pt
+}
+A.smwt:visited {
+	COLOR: white; FONT-SIZE: 8pt
+}
+A.smwt:active {
+	COLOR: red; FONT-SIZE: 8pt
+}
+A.smwt:hover {
+	COLOR: #ffff66; FONT-SIZE: 8pt
+}
+A.mdwt {
+	COLOR: white
+}
+A.mdwt:visited {
+	COLOR: white
+}
+A.mdwt:active {
+	COLOR: red
+}
+A.mdwt:hover {
+	COLOR: #ffff66
+}
+A.lgwt {
+	COLOR: white; FONT-SIZE: 12pt
+}
+A.lgwt:visited {
+	COLOR: white; FONT-SIZE: 12pt
+}
+A.lgwt:active {
+	COLOR: red; FONT-SIZE: 12pt
+}
+A.lgwt:hover {
+	COLOR: #ffff66; FONT-SIZE: 12pt
+}
+A.grn {
+	COLOR: darkgreen
+}
+A.grn:visited {
+	COLOR: seagreen
+}
+A.grn:active {
+	COLOR: red
+}
+A.grn:hover {
+	COLOR: limegreen
+}
+.bb {
+	FONT-SIZE: 9pt; FONT-WEIGHT: bold
+}
+A.nav2 {
+	COLOR: white
+}
+A.nav2:visited {
+	COLOR: white
+}
+A.nav2:active {
+	COLOR: red
+}
+A.nav2:hover {
+	COLOR: #ffcc00
+}
+TH.nav2 {
+	BACKGROUND: #003366; COLOR: white; TEXT-ALIGN: center
+}

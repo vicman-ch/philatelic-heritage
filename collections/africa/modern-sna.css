@@ -1,0 +1,133 @@
+*{box-sizing:border-box}body{margin:0;background:#f3ecdc;color:#252d33;font-family:Georgia,serif}.site{max-width:1250px;margin:auto;background:#fff9ec;box-shadow:0 4px 25px #0002}.hero{position:relative}.hero>img{display:block;width:100%;height:auto}.language{position:absolute;top:10px;right:12px;background:#fffdf2e8;border:1px solid #d8c49c;border-radius:4px;padding:2px 5px;font:12px Arial,sans-serif}.language select{border:0;background:transparent;max-width:100px;font:12px Arial,sans-serif}.nav{display:flex;flex-wrap:wrap;justify-content:center;background:#162e49;gap:0}.nav>a,.nav button{display:block;color:white;background:none;border:0;text-decoration:none;padding:15px 17px;font:600 14px Arial,sans-serif;cursor:pointer}.nav>a:hover,.nav button:hover,.nav button[aria-expanded=true]{background:#305474}.nav-group{position:relative}.dropdown{display:none;position:absolute;z-index:5;top:100%;left:0;background:#fffdf6;min-width:220px;max-height:65vh;overflow:auto;box-shadow:0 6px 20px #0004}.nav-group:hover .dropdown,.nav-group:focus-within .dropdown,.nav-group.open .dropdown{display:block}.dropdown a{display:block;padding:10px 14px;color:#213c55;text-decoration:none;font:13px Arial,sans-serif;border-bottom:1px solid #eee1c9}.dropdown a:hover{background:#f2e5c9}main{padding:32px 5% 45px;text-align:center}h1{font-size:29px;margin:0 0 8px;color:#273b4d}.intro{font:15px Arial,sans-serif;color:#655f55}.stamps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;margin-top:30px}.stamp{text-decoration:none;color:#333;font:14px Arial,sans-serif}.stamp img{width:100%;height:150px;object-fit:contain;display:block;margin-bottom:12px}.stamp span{display:block}.all{margin-top:32px}.all a{color:#1b466a}footer{text-align:center;border-top:1px solid #e2d5bc;padding:24px;font:13px Arial,sans-serif;color:#665a48}@media(max-width:720px){.nav>a,.nav button{padding:11px 10px;font-size:12px}.nav-group{position:static}.nav{position:relative}.dropdown{left:5%;right:5%;min-width:0}.stamps{grid-template-columns:repeat(3,1fr)}.stamp img{height:115px}main{padding:26px 4%}.language{top:5px;right:5px}}
+/* The navigation is drawn in the approved panorama; this overlay makes it interactive. */
+.hero .nav{position:absolute;bottom:0;left:0;width:100%;height:10.7%;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));align-items:stretch;justify-items:stretch;flex-wrap:nowrap;background:transparent;z-index:10;overflow:visible}
+.hero .nav>a,.hero .nav button{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:0;margin:0;opacity:0;color:transparent;font-size:0;cursor:pointer}
+.hero .nav .nav-group{height:100%;min-width:0}
+.hero .nav>a:hover,.hero .nav button:hover,.hero .nav button[aria-expanded=true]{background:#ffffff25}
+.hero .nav .dropdown{top:100%;left:0;min-width:220px;opacity:1}
+.hero .nav .dropdown a{opacity:1;color:#213c55;font-size:13px;height:auto;justify-content:flex-start;padding:10px 14px}
+.hero .nav>a:focus-visible,.hero .nav button:focus-visible{outline:3px solid #ffdc86;outline-offset:-3px;opacity:1}
+@media(max-width:720px){.hero .nav{height:10.7%}.hero .nav .dropdown{position:absolute;left:auto;right:auto;min-width:min(270px,85vw);max-width:85vw}.hero .nav .nav-group:nth-last-child(-n+3) .dropdown{right:0;left:auto}}
+
+/* FIX: the background no longer contains the painted navigation. Show the real menu. */
+.hero .nav{position:relative;bottom:auto;left:auto;width:100%;height:auto;display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;background:#162e49;z-index:10;overflow:visible}
+.hero .nav>a,.hero .nav button{display:block;width:auto;height:auto;padding:15px 17px;margin:0;opacity:1;color:#fff;font-size:14px;font-weight:600;background:transparent}
+.hero .nav .nav-group{height:auto;min-width:0;position:relative}
+.hero .nav .dropdown{position:absolute;top:100%;left:0;display:none;opacity:1;z-index:100}
+.hero .nav .nav-group.open .dropdown{display:block}
+.hero .nav .dropdown a{display:block;opacity:1;color:#213c55;font-size:13px;height:auto;padding:10px 14px}
+@media(max-width:720px){.hero .nav{height:auto}.hero .nav>a,.hero .nav button{padding:11px 10px;font-size:12px}.hero .nav .nav-group{position:static}.hero .nav .dropdown{left:5%;right:5%;min-width:0;max-width:none}}
+
+/* Approved original artwork — actual image, not CSS approximations. Desktop overlay. */
+@media(min-width:901px){
+ body{background:#102d53}
+ .approved-visual{position:relative;max-width:1536px;width:100%;aspect-ratio:3/2;background:#df9e52;box-shadow:none;overflow:visible}
+ .approved-art{display:block;width:100%;height:auto}
+ .approved-visual>.hero{position:absolute;inset:0 0 auto;height:45%;pointer-events:none}
+ .approved-visual>.hero>img{display:none}
+ .approved-visual .language{pointer-events:auto;top:1.55vw;right:3.1%;background:transparent;border:0;padding:0;color:transparent;z-index:80}
+ .approved-visual .language label{display:none}
+ .approved-visual .language select{max-width:none;width:11.2vw;min-width:110px;height:2.7vw;min-height:30px;background:transparent;color:transparent;cursor:pointer;appearance:none}
+ .approved-visual .language select:focus{color:#13243d;background:#fff}
+ .approved-visual .nav,.approved-visual .hero>.nav{pointer-events:auto;position:absolute !important;top:20.2% !important;left:29.1% !important;width:69% !important;height:9.2% !important;min-height:0 !important;display:grid !important;grid-template-columns: .7fr 1.12fr .94fr 1.5fr .9fr .65fr .8fr 1fr !important;align-items:stretch !important;flex-wrap:nowrap !important;background:transparent !important;z-index:60 !important;overflow:visible !important}
+ .approved-visual .nav>a,.approved-visual .nav>.nav-group>button,.approved-visual .hero>.nav>a,.approved-visual .hero>.nav>.nav-group>button{font-size:0 !important;color:transparent !important;opacity:1 !important;padding:0 !important;width:100% !important;height:100% !important;background:transparent !important;min-height:0 !important}
+ .approved-visual .nav .nav-group{height:100% !important;position:relative !important}
+ .approved-visual .nav .dropdown{top:100% !important;left:0 !important;background:#fffdf6 !important;display:none !important;z-index:100 !important}
+ .approved-visual .nav .nav-group.open .dropdown,.approved-visual .nav .nav-group:focus-within .dropdown{display:block !important}
+ .approved-visual .nav .dropdown a{font-size:13px !important;color:#213c55 !important;opacity:1 !important;height:auto !important;padding:10px 14px !important;background:#fffdf6 !important}
+ .approved-visual .nav a:focus-visible,.approved-visual .nav button:focus-visible{outline:3px solid #fff !important}
+ .approved-visual main{position:absolute;top:64%;left:0;width:100%;height:36%;padding:0 !important;background:transparent;pointer-events:none}
+ .approved-visual main h1,.approved-visual main .intro,.approved-visual main .all{display:none}
+ .approved-visual .stamps{position:absolute;top:26.5%;left:5.5%;width:90.4%;height:65%;display:grid;grid-template-columns:repeat(6,1fr);gap:1.2%;margin:0;pointer-events:auto}
+ .approved-visual .stamp{display:block;height:100%;background:transparent}
+ .approved-visual .stamp img,.approved-visual .stamp span{visibility:hidden}
+ .approved-visual .stamp:focus-visible{outline:3px solid #fff}
+ .approved-visual footer{position:absolute;top:100%;left:0;width:100%;background:#fff9ec}
+}
+@media(max-width:900px){.approved-art{display:none}.approved-visual{position:static}.approved-visual .hero{position:relative}.approved-visual main{position:relative}}
+
+/* Approved composition: reduce the entire desktop panorama by approximately 20%,
+   including all interactive overlays, without changing the artwork. */
+@media (min-width:901px) {
+  .approved-visual {
+    width:80%;
+    max-width:1229px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .approved-visual .language {top:2.3%;}
+  .approved-visual .language select {
+    width:clamp(90px,9vw,138px);
+    height:clamp(24px,2.1vw,33px);
+    min-height:24px;
+  }
+}
+
+/* The approved JPG already draws the G and English selector. Keep the real
+   native select as an invisible clickable overlay, scaled with the artwork. */
+@media (min-width:901px) {
+  .approved-visual .language { background:transparent !important; border:0 !important; box-shadow:none !important; }
+  .approved-visual .language select,
+  .approved-visual .language select:focus {
+    opacity:0 !important;
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    color:transparent !important;
+    cursor:pointer !important;
+  }
+}
+
+/* Six featured stamp labels: actual HTML text, translatable by GTranslate.
+   Keep stamp illustrations and original approved composition unchanged. */
+@media (min-width:901px) {
+ .approved-visual .stamps .stamp{position:relative;overflow:visible;text-decoration:none}
+ .approved-visual .stamps .stamp span{
+  visibility:visible !important;position:absolute;left:-8%;width:116%;
+  bottom:5.5%;display:block;text-align:center;white-space:nowrap;
+  font:italic bold clamp(12px,1.65vw,25px)/1.12 Georgia,'Times New Roman',serif;
+  color:#061b42;text-shadow:0 1px 1px #f6d2a0;
+  pointer-events:none;
+ }
+}
+
+/* 2026-11-06: Real, translatable navigation in place of the lettering painted
+   into the approved JPG. Keep the rest of the approved image untouched. */
+@media (min-width:901px) {
+ .approved-visual .hero>.nav {
+  top:19.25% !important; left:0 !important; width:100% !important;
+  height:10.8% !important; min-height:0 !important;
+  display:grid !important; grid-template-columns: .72fr 1.2fr 1fr 1.55fr 1fr .7fr 1.25fr .85fr !important;
+  background:#061e46 !important; border-top:1px solid #b3c7db !important;
+  border-bottom:1px solid #b3c7db !important;
+  box-sizing:border-box !important;
+ }
+ .approved-visual .hero>.nav>a,
+ .approved-visual .hero>.nav>.nav-group>button {
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  color:#ffd323 !important; font:700 clamp(11px,1.48vw,22px)/1.1 Georgia,'Times New Roman',serif !important;
+  white-space:nowrap !important; text-shadow:0 1px 1px #081b39 !important;
+  opacity:1 !important; background:transparent !important; padding:0 2px !important;
+ }
+ .approved-visual .hero>.nav>a:hover,
+ .approved-visual .hero>.nav>.nav-group>button:hover,
+ .approved-visual .hero>.nav>.nav-group>button[aria-expanded=true] {background:#143a6b !important;}
+ .approved-visual .hero>.nav .dropdown a {
+  color:#213c55 !important; font:13px/1.35 Arial,sans-serif !important;
+  text-shadow:none !important; white-space:normal !important;
+ }
+}
+
+/* Hide only the obsolete English dropdown painted into the approved JPG.
+   The live GTranslate selector stays above this cover; no JS changes. */
+@media (min-width:901px) {
+  .approved-visual::before {
+    content:"";position:absolute;left:85.15%;top:1.20%;
+    width:12.4%;height:5.1%;z-index:35;pointer-events:none;
+    background:linear-gradient(110deg,#063579 0%,#083c82 55%,#0a438a 100%);
+  }
+  .approved-visual .hero .language {z-index:80 !important;}
+}
+
+/* Old selector is removed from the actual background image. No overlay needed. */
+@media(min-width:901px){.approved-visual::before{content:none !important;display:none !important}}

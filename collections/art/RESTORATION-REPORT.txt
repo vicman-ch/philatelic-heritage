@@ -1,0 +1,12 @@
+ART ON STAMPS — RESTORATION PASS: 8 ORIGINAL ARTICLES
+
+japan-art-stamps-third-gallery.html: original qualifying images 11, existing 11, restored 0, alt labels refined 0
+romanian-children-paintings-second-gallery.html: original qualifying images 14, existing 14, restored 0, alt labels refined 0
+switzerland-joint-issues-second-gallery.html: original qualifying images 12, existing 12, restored 0, alt labels refined 0
+museum-vela-visitors-comments.html: original qualifying images 2, existing 2, restored 0, alt labels refined 0
+switzerland-terrorism-and-postal-stamps.html: original qualifying images 1, existing 1, restored 0, alt labels refined 0
+guilty-postal-stamps.html: original qualifying images 0, existing 0, restored 0, alt labels refined 0
+topical-stamp-reviews.html: original qualifying images 0, existing 0, restored 0, alt labels refined 0
+misuse-of-postal-stamps.html: original qualifying images 1, existing 1, restored 0, alt labels refined 0
+
+Note: this pass restores qualifying illustrations and improves alt text; original tables and full textual fidelity remain to be restored. Not a final release.

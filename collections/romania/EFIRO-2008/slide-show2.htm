@@ -1,0 +1,236 @@
+<html lang="en">
+<head>
+<meta content="en-us" http-equiv="Content-Language"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="Romanian Classic Stamps and later commemorative issues" name="description"/>
+<meta content="stamps, Romanian, Rumanian, Romania, Rumania, Cap, capete, bour, bull, bull's, head, heads" http-equiv="keywords"/>
+<meta content="Microsoft FrontPage 5.0" name="GENERATOR"/>
+<meta content="FrontPage.Editor.Document" name="ProgId"/>
+<title>Slide Show Test for EFIRO 2008</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<style>
+/* Change body background-color to change fade out color. */
+body.siteshow { margin:0; padding:0; background-color:#000000; }
+#menu
+{
+    font-family:Arial;
+    font-size:9pt;
+    display:none;
+    opacity:0.00;
+    -mozopacity:0.00;
+    filter:alpha(opacity=0);
+    position:absolute;
+    top:10px;
+    left:10px;
+    padding:5px;
+    background-color:#000000;
+    color:#FFFFFF;
+    border:3px dotted #999999;
+}
+#menu a { color:#ffffff; }
+#menu a:hover { text-decoration:none; }
+#title { font-size:11pt; font-weight:bold; letter-spacing:2; }
+#slides { font-size:9pt; line-height:16pt; }
+.button { width:60px; font-size:9pt; letter-spacing:1; }
+</style>
+<script type="text/javascript">
+var current_idx = 0;
+var slides = new Array();
+var menuwin;
+var show_timer;
+var menu_timer;
+var menu;
+var content;
+var loaded = true;
+
+// Define your "slides". 3 values for each are:
+//      1. Duration in seconds.
+//      2. Title to be used in menu.
+//      3. Source URL. Can be full URI or a relative URL.
+
+slides[1] = new Array(15, "Invitatie participare", "http://www.pwmo.org/efiro-08/invitation-efiro2008-ro-bs.htm");
+slides[2] = new Array(15, "Sfaturi si specificatie", "http://www.pwmo.org/efiro-08/invitation-efiro2008-ro-bs-1.htm");
+slides[3] = new Array(15, "Timbre clasice romanesti", "http://marci-postale.com/FirstStamps/classics-bs.htm");
+
+function MenuInit()
+{
+    var html = "";
+    for(idx=1; idx<slides.length; idx++) {
+        html += '<a href="javascript:Navigate('+idx+')">' +
+            slides[idx][1] + "</a><br />\n";
+    }
+    document.getElementById("slides").innerHTML = html;
+    menu.style.display = "block";
+}
+
+function MenuShow()
+{
+    clearTimeout(menu_timer);
+    opacity('menu', 0, 90, 500);
+    menu_timer = setTimeout("MenuHide()", 3500);
+}
+
+function MenuHide()
+{
+    opacity('menu', 90, 0, 500);
+}
+
+function Pause()
+{
+    clearTimeout(show_timer);
+    document.getElementById('play').style.display = "block";
+    document.getElementById('pause').style.display = "none";
+}
+
+function Navigate(slide_idx)
+{
+    clearTimeout(show_timer);
+    if (current_idx == 0) {
+        if (!slide_idx) { slide_idx = 1; }
+        current_idx = slide_idx;
+        content.src = slides[current_idx][2];
+        document.getElementById('play').style.display = "none";
+        document.getElementById('pause').style.display = "block";
+        show_timer = setTimeout("Navigate()", slides[current_idx][0]*1000);
+        return;
+    }
+
+    if (slide_idx) {
+        current_idx = slide_idx;
+        content.src = slides[current_idx][2];
+        document.getElementById('play').style.display = "block";
+        document.getElementById('pause').style.display = "none";
+        return;
+    }
+
+    loaded = false;
+    current_idx++;
+    if ( current_idx == slides.length) { current_idx = 1; }
+    opacity('content', 100, 0, 500);
+    document.getElementById('play').style.display = "none";
+    document.getElementById('pause').style.display = "block";
+    show_timer = setTimeout("Navigate()", slides[current_idx][0]*1000);
+    return;   
+}
+
+function opacity(id, opacStart, opacEnd, millisec)
+{
+    //speed for each frame
+    var speed = Math.round(millisec / 100);
+    var timer = 0;
+
+    //determine the direction for the blending, if start and end are the same nothing happens
+    if(opacStart > opacEnd) {
+        for(i = opacStart; i >= opacEnd; i--) {
+            setTimeout("changeOpac(" + i + ",'" + id + "')",(timer * speed));
+            timer++;
+        }
+        if (opacEnd == 0) { setTimeout("FadeOutTrigger('"+id+"')",((timer-1) * speed));; }
+        //if (opacEnd == 0) { FadeOutTrigger(id); }
+    } else if(opacStart < opacEnd) {
+        if (opacStart == 0) { FadeInTrigger(id); }
+        for(i = opacStart; i <= opacEnd; i++)
+            {
+            setTimeout("changeOpac(" + i + ",'" + id + "')",(timer * speed));
+            timer++;
+        }
+    }
+}
+
+//change the opacity for different browsers
+function changeOpac(opacity, id)
+{
+    var object = document.getElementById(id).style;
+    object.opacity = (opacity / 100);
+    object.MozOpacity = (opacity / 100);
+    object.KhtmlOpacity = (opacity / 100);
+    object.filter = "alpha(opacity=" + opacity + ")";
+}
+
+function FadeOutTrigger(id)
+{
+    //alert('FadeOut: '+id);
+    switch(id) {
+    case "menu":
+        document.getElementById(id).style.display = "none";
+        break;
+    case "content":
+        content.src = slides[current_idx][2];
+        //setTimeout("opacity('content', 0, 100, 500)", 1000);
+        break;
+    default:
+        break;
+    }
+}
+
+function FadeInTrigger(id)
+{
+    //alert('FadeIn: '+id);
+    switch(id) {
+   case "menu":
+        document.getElementById(id).style.display = "block";
+        break;
+    case "content":
+        //opacity('content', 0, 100, 500);
+        break;
+    default:
+        break;
+    }
+}
+
+function FadeInContent()
+{
+    if (!loaded) {
+        opacity('content', 0, 100, 500);
+        loaded = true;
+    }
+}
+
+function LoadTrigger()
+{
+    //self.resizeTo(1366,768);
+    menu = document.getElementById('menu');
+    content = document.getElementById('content');
+    Navigate();
+    MenuInit();
+    MenuShow();
+}
+
+window.onload = LoadTrigger;
+
+</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="../interior-modern.css?v=lot68" rel="stylesheet"/><style>.rs-accessible-page-title{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}</style>
+</head>
+<body class="siteshow" style="background-color: #FFFFFF">
+<h1 class="rs-accessible-page-title">Slide Show Test for EFIRO 2008</h1><header class="modern-article-header"><div class="modern-article-top"><a href="../index.html">Romania <span>on Stamps</span></a><label class="notranslate" translate="no">Translate <select translate="no"  aria-label="Translate page" class="article-language notranslate"><option class="notranslate" translate="no" value="en">English</option><option class="notranslate" translate="no" value="ro">Română</option><option class="notranslate" translate="no" value="fr">Français</option><option class="notranslate" translate="no" value="de">Deutsch</option><option class="notranslate" translate="no" value="es">Español</option><option class="notranslate" translate="no" value="it">Italiano</option><option class="notranslate" translate="no" value="ru">Русский</option><option class="notranslate" translate="no" value="zh-CN">简体中文</option></select></label></div><nav aria-label="Site sections"><a href="../index.html">Home</a><a href="../sections/selection.html">Selection</a><a href="../sections/the-country.html">The Country</a><a href="../sections/history.html">History</a><a href="../sections/art.html">Art</a><a href="../sections/miscellaneous.html">Miscellaneous</a></nav></header>
+<iframe frameborder="no" id="content" name="content" onload="FadeInContent();" onmouseover="MenuShow();" scrolling="auto" src="../FirstStamps/classics-bs.htm" style="width:100%; height:100%;"></iframe>
+<div id="menu">
+<div id="title">SiteShow Menu</div>
+<div id="slides">
+</div>
+<p>
+<input class="button" id="pause" onclick="Pause()" style="display:block;" type="button" value="pause"/>
+<input class="button" id="play" onclick="Navigate()" style="display:none;" type="button" value="play"/>
+</p>
+</div>
+<div align="center"><center>
+<hr/>
+<center>
+<div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td><strong><font color="#000000" face="Arial" size="1">Created
+          22/04/1999. Revised: 
+        <!--webbot bot="TimeStamp" s-format="%m/%d/%y" 
+        s-type="EDITED" startspan -->02/03/08<!--webbot bot="TimeStamp" i-checksum="13280" endspan -->. <br/>
+          Copyright
+        © 2007 by Victor Manta, Switzerland. <br/>
+ All rights reserved in all countries.</font></strong></td>
+</tr></table></center></div></center>
+<td><p align="right"><font color="#000000" face="Arial" size="1"><br/>
+<strong></strong></font></p></td>
+
+
+</center></div>
+<hr/>
+<footer class="modern-article-footer">Romania as Shown by Its Stamps · First published in 2001</footer><button aria-label="Back to top" class="modern-article-up" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button><script src="../interior-modern.js"></script></body>
+</html>

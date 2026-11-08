@@ -1,0 +1,604 @@
+<HTML> 
+<HEAD>
+
+<! DO NOT CHANGE this file as it will cause the Auscomp eNavigator Suite 2000 to malfunction> 
+<!============================================================================================>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Auscomp eNavigator Suite 2000">
+<title>Auscomp eNavigator Suite 2000 - Enhanced Site</title>
+
+<script language="JavaScript">
+var imgSpace = '<TD><IMG SRC="Space.gif" WIDTH=16 HEIGHT=16 BORDER=0></TD>';
+var imgLeaf = '<IMG SRC="./Leaf.gif" WIDTH=16 HEIGHT=16 BORDER=0 ALT="';
+var imgFolderC = '<IMG SRC="./EnvelopC.gif" WIDTH=16 HEIGHT=16 BORDER=0 ALT="';
+var imgFolderO = '<IMG SRC="./EnvelopO.gif" WIDTH=16 HEIGHT=16 BORDER=0 ALT="';
+var HTMLBaseTarget = '<BASE TARGET="main">';
+var HTMLBody = '<BODY bgcolor="#F3B176" text="#0000A0" link="#800040" vlink="#00FF00" alink="#FF0000">';
+var Title = 'Arts on Stamps';
+
+var fSelected=1; 
+var fOpend=2; 
+var targetFrame='main';
+var rootNode = null;
+var activeNode=null;
+var selectedNode=null;
+var showNode=true;
+var cSelText='#FFFFFF';
+var cSelBG='#FF0000';
+
+var FolderMOClose = 'Click to close';
+var FolderMOOpen = 'Click to open';
+var HMTLHeader = '<TABLE WIDTH="100%"><TR><TD NOWRAP ALIGN="LEFT"><B><font face="Arial" size="2" color="#000080">'+Title+'</font></B></TD></TR></TABLE>';
+
+//============================================================================
+function isNetscape() 
+{ return (navigator.appName.indexOf('Netscape') != -1); }
+
+//============================================================================
+function isFolder(node) 
+{ return node.child.length>0; }
+
+//============================================================================
+function isOpen(node) 
+{ return node.flags&fOpend; }
+
+
+//============================================================================
+function isSelected(node) 
+{ return node.flags&fSelected; }
+
+//============================================================================
+function Select(node, flg) 
+{ 
+	if (flg) 
+		node.flags |= fSelected; 
+	else 
+		node.flags &= ~fSelected; 
+}
+
+//============================================================================
+function ExpandNode(node, flg) 
+{ 
+	if (flg) 
+		node.flags |= fOpend; 
+	else 
+		node.flags &= ~fOpend; 
+}
+
+
+//============================================================================
+function toggleNode() 
+{ showNode=!showNode; }
+
+//============================================================================
+function toggleNodeRefresh() 
+{ toggleNode(); redrawTree(); }
+
+//============================================================================
+function createNode(node)
+{
+        var line='<TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR VALIGN="MIDDLE">';
+        for(var j=node.indent;j>0;j--) line += imgSpace;
+        line += '<TD>';
+
+        if (isFolder(node))
+        {
+                line+='<a href="javascript:parent.clicked(\''+node.name+'\','+!isOpen(node)+')" ';
+
+                if (isOpen(node))
+                        line+='onMouseOver="window.status=\'Click to close.\'; return true;"';
+                else
+                        line+='onMouseOver="window.status=\'Click to open.\'; return true;"'; 
+
+                line+='>';
+
+                if (isOpen(node))
+                        line+=imgFolderO+node.statusbar+'">';
+                else
+                        line+=imgFolderC+node.statusbar+'">';
+                line+='</A>';
+        }
+	  //add Leaf
+        else
+                line+=imgLeaf+node.statusbar+'">';
+
+        line+='</td>';
+
+        if (isSelected(node))
+                line+='<TD NOWRAP BGCOLOR="'+cSelBG+'"><FONT COLOR="'+cSelText+'">'+node.title+'</FONT>';
+        else
+        {
+                if (node.href.indexOf('javascript:') == 0)
+                {
+                        line+='<TD NOWRAP><A HREF="'+node.href+'" onMouseOver="window.status=\''+node.statusbar+'\'; return true"';
+                        line+='">'+node.title+'</A>';
+                }
+                else
+                {
+                        if (node.href.indexOf('://') != -1)
+                                targetFrame = '_top';
+                        
+                        if (node.href=='')
+                                line+='<TD NOWRAP>'+node.title;
+                        else
+                                line+='<TD NOWRAP><A HREF="'+node.href+'" onMouseOver="window.status=\''+node.statusbar+'\'; return true" target='+targetFrame+'>'+node.title+'</A>';
+                }
+        }
+        line+='</TD></TR></TABLE>';
+        return line;
+}
+
+//============================================================================
+function createTree(fHTML, node)
+{
+        if (!node.html[node.flags]) node.html[node.flags] = createNode(node);
+        fHTML.writeln(node.html[node.flags]);
+        if (isOpen(node))
+        {
+                for(var i=0; i<node.child.length; i++) createTree(fHTML, node.child[i]);
+        }
+}
+
+//============================================================================
+function createNodeText(fHTML, node)
+{
+	fHTML.writeln('<TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR VALIGN="MIDDLE"><TD NOWRAP>'+node.text+'</TD>'+imgSpace+'</TR></TABLE>');
+        if (isOpen(node))
+        {
+                for(var i=0; i<node.child.length; i++) createNodeText(fHTML, node.child[i]);
+        }
+}
+
+//============================================================================
+function makeTree(fHTML, node1)
+{
+        fHTML.writeln(HMTLHeader);
+        fHTML.writeln('<TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR><TD NOWRAP>');
+        createTree(fHTML, node1);
+        fHTML.writeln('</TABLE>');
+
+}
+
+//============================================================================
+function redrawTreeNow()
+{
+        if (!self.index) return;
+                
+        var fHTML = index.document;
+        if (fHTML)
+        {
+                fHTML.open();
+                fHTML.writeln(HTMLBaseTarget);
+                fHTML.writeln(HTMLBody);
+                makeTree(fHTML, rootNode);
+                fHTML.close();
+        }
+}
+
+//============================================================================
+function redrawTree()
+{
+        setTimeout('redrawTreeNow()',50);
+}
+
+//============================================================================
+function www_auscomp_com(iValue)
+{
+        this.length=iValue;
+        return this;
+}
+
+//============================================================================
+function setIndent(node,iValue)
+{
+        node.indent=iValue;
+        for(var k=0; k<node.child.length; k++)
+                setIndent(node.child[k], iValue+1);
+}
+
+//============================================================================
+function createNodeObject(sName, sHREF, sTitle, sStatusbar, sText)
+{
+        this.name=sName;
+        this.href=sHREF;
+        this.title=sTitle;
+        if (sStatusbar == '') sStatusbar=sText;
+        this.statusbar=sStatusbar;
+        this.text=sText;
+        this.flags=0;
+        this.indent=0;
+        this.child = new www_auscomp_com(createNodeObject.arguments.length-5);
+        for(var i=5; i<createNodeObject.arguments.length; i++)
+                this.child[i-5] = createNodeObject.arguments[i];
+                
+        if (isFolder(this))
+                this.html = new www_auscomp_com(4)
+        else
+                this.html = new www_auscomp_com(2)
+}
+
+//============================================================================
+function select(rootNode, name) 
+{
+        var result=false;
+        for(var i=0; !result && i<rootNode.child.length; i++)
+                result = select(rootNode.child[i], name);
+        
+        if (!result)
+        {
+                result = (rootNode.name==name);
+                if (result)
+                {
+                        Select(rootNode,true);
+                        selectedNode = rootNode;
+                }
+        }else
+                ExpandNode(rootNode,true);
+
+        return result;
+}
+
+
+//============================================================================
+function Open(name, flg, node)
+{
+        var result=false;
+        if (!node) node = rootNode;
+
+        for(var i=0; i<node.child.length; i++)
+        {
+                result = Open(name, flg, node.child[i]);
+                if (result==true) break;
+        }
+        
+        if (result==true || node.name==name)
+        {
+                if (node.name==name || flg) ExpandNode(node, flg);
+                return true;
+        }
+        return false;
+}
+
+//============================================================================
+function clicked(name, flg, node)
+{
+        Open(name, flg, node);
+        redrawTree();
+}
+
+
+//============================================================================
+//Nodes
+ID6287 = new createNodeObject('ID6287', 'champs/flight.htm', '<font face="MS Serif" size="1" color="#000000">Flying</font>', 'without engines', '');
+ID6286 = new createNodeObject('ID6286', 'Hingis/GrandSlam-99/GrandSlam-99.htm', '<font face="MS Serif" size="1" color="#000000">Grand Slam</font>', 'On stamps', '');
+ID6285 = new createNodeObject('ID6285', 'Hingis/martina-1.htm', '<font face="MS Serif" size="1" color="#000000">Some results</font>', 'In top', '');
+ID6284 = new createNodeObject('ID6284', 'Hingis/martina.htm', '<font face="MS Serif" size="1" color="#000000">Tennis</font>', 'Martina Hingis, from Switzerland', '', ID6285, ID6286);
+ID6283 = new createNodeObject('ID6283', 'love.htm', '<font face="MS Serif" size="1" color="#000000">Poetry</font>', 'J.W. von Goethe', '');
+ID6282 = new createNodeObject('ID6282', 'champs/cohen/by-fire.htm', '<font face="MS Serif" size="1" color="#000000">Hallelujah</font>', 'Who by fire?', '');
+ID6281 = new createNodeObject('ID6281', 'champs/cohen/cohen.htm', '<font face="MS Serif" size="1" color="#000000">Singing</font>', 'Leonard Cohen', '', ID6282);
+ID6280 = new createNodeObject('ID6280', 'champs/gates.htm', '<font face="MS Serif" size="1" color="#000000">Freedom</font>', 'To innovate - Bill Gates', '');
+ID6279 = new createNodeObject('ID6279', 'champs/ayn-rand.htm', '<font face="MS Serif" size="1" color="#000000">Champions</font>', 'Of Liberty - Ayn Rand and stamp collecting', '', ID6280, ID6281, ID6283, ID6284, ID6287);
+ID6278 = new createNodeObject('ID6278', 'CH - China/China-CH2.htm', '<font face="MS Serif" size="1" color="#000000">FDCs Value</font>', 'More or less', '');
+ID6277 = new createNodeObject('ID6277', 'CH - China/China-CH1.htm', '<font face="MS Serif" size="1" color="#000000">CH + FL</font>', 'The perfect joint issue', '');
+ID6276 = new createNodeObject('ID6276', 'China-CH.htm', '<font face="MS Serif" size="1" color="#000000">Joint Issues</font>', 'Switzerland + China. Who could profit by this??', '', ID6277, ID6278);
+ID6275 = new createNodeObject('ID6275', 'human_rights2.htm', '<font face="MS Serif" size="1" color="#000000">More polemic</font>', 'Who is wrong?', '');
+ID6274 = new createNodeObject('ID6274', 'human_rights1.htm', '<font face="MS Serif" size="1" color="#000000">Polemic</font>', 'Who is right?', '');
+ID6273 = new createNodeObject('ID6273', 'human_rights4.htm', '<font face="MS Serif" size="1" color="#000000">Rights & Wrongs</font>', 'Who wrote the UDHR?', '');
+ID6272 = new createNodeObject('ID6272', 'human_rights.htm', '<font face="MS Serif" size="1" color="#000000">Human Rights</font>', 'the Universal Declaration at 50', '', ID6273, ID6274, ID6275);
+ID6271 = new createNodeObject('ID6271', 'My Column/Newsgroups/news-postings7.htm', '<font face="MS Serif" size="1" color="#000000">Germany</font>', 'Modern times', '');
+ID6270 = new createNodeObject('ID6270', 'My Column/Newsgroups/news-postings6.htm', '<font face="MS Serif" size="1" color="#000000">Sets & Series</font>', '68 stamps in a set, or more', '');
+ID6269 = new createNodeObject('ID6269', 'My Column/Newsgroups/news-postings8.htm', '<font face="MS Serif" size="1" color="#000000">Rates bis</font>', 'Statistics', '');
+ID6268 = new createNodeObject('ID6268', 'My Column/Newsgroups/news-postings5.htm', '<font face="MS Serif" size="1" color="#000000">Postal rates</font>', 'How are they rising?', '');
+ID6267 = new createNodeObject('ID6267', 'My Column/Newsgroups/news-postings3.htm', '<font face="MS Serif" size="1" color="#000000">Astrology</font>', 'Not a science', '');
+ID6266 = new createNodeObject('ID6266', 'My Column/Newsgroups/news-postings2.htm', '<font face="MS Serif" size="1" color="#000000">Monopoly</font>', 'It`s not a game', '');
+ID6265 = new createNodeObject('ID6265', 'My Column/Newsgroups/news-postings1.htm', '<font face="MS Serif" size="1" color="#000000">Hitler Stamps</font>', 'Are the rare or expensive?', '');
+ID6264 = new createNodeObject('ID6264', 'My Column/Newsgroups/news-postings.htm', '<font face="MS Serif" size="1" color="#000000">Postings</font>', 'On violence', '', ID6265, ID6266, ID6267, ID6268, ID6269, ID6270, ID6271);
+ID6263 = new createNodeObject('ID6263', 'humor.htm', '<font face="MS Serif" size="1" color="#000000">Humor</font>', 'is universal', '');
+ID6262 = new createNodeObject('ID6262', 'My Column/Denmark/gray-dk.htm', '<font face="MS Serif" size="1" color="#000000">Depressions</font>', 'from Denmark', '');
+ID6261 = new createNodeObject('ID6261', 'My Column/Communism/nato.htm', '<font face="MS Serif" size="1" color="#000000">An answer</font>', 'The right one', '');
+ID6260 = new createNodeObject('ID6260', 'My Column/Communism/Tibet.htm', '<font face="MS Serif" size="1" color="#000000">Tibet</font>', 'Chinese forever?', '');
+ID6259 = new createNodeObject('ID6259', 'My Column/Communism/North-Korea.htm', '<font face="MS Serif" size="1" color="#000000">N. Korea</font>', 'The father marshal', '');
+ID6258 = new createNodeObject('ID6258', 'My Column/Communism/rom-communism.htm', '<font face="MS Serif" size="1" color="#000000">Ideas on Stamps</font>', 'Never forget - Romania', '', ID6259, ID6260, ID6261, ID6262);
+ID6257 = new createNodeObject('ID6257', 'My Column/Newsgroups/news-postings11.htm', '<font face="MS Serif" size="1" color="#000000">Validity</font>', 'Till tomorrow, maybe', '');
+ID6256 = new createNodeObject('ID6256', 'My Column/Newsgroups/news-postings10.htm', '<font face="MS Serif" size="1" color="#000000">Newsgroups</font>', 'Stamps & Series', '', ID6257);
+ID6255 = new createNodeObject('ID6255', 'Countries/Switzerland/stationary.htm', '<font face="MS Serif" size="1" color="#000000">No face</font>', 'Or of permanent validity', '');
+ID6254 = new createNodeObject('ID6254', 'colmn2_en.htm', '<font face="MS Serif" size="1" color="#000000">Big Face</font>', '$20 or more', '');
+ID6253 = new createNodeObject('ID6253', 'My Column/immoral.htm', '<font face="MS Serif" size="1" color="#000000">Immoral Stamps</font>', 'Criminals of Yesterday - Heroes of today', '');
+ID6252 = new createNodeObject('ID6252', 'My Column/not-equal.htm', '<font face="MS Serif" size="1" color="#000000">Unequal Stamps</font>', 'Stamps Not born equal', '');
+ID0251 = new createNodeObject('ID0251', '../frmain.htm', '<font face="MS Sans Serif" size="2" color="#000000">Column</font>', 'Webmaster`s column', '', ID6252, ID6253, ID6254, ID6255, ID6256, ID6258, ID6263, ID6264, ID6272, ID6276, ID6279);
+ID5250 = new createNodeObject('ID5250', 'Landscapes/December/december.htm', '<font face="MS Serif" size="1" color="#000000">December</font>', 'Look like December is snowing...', '');
+ID5249 = new createNodeObject('ID5249', 'Magazine/UPU/illeg-niger.htm', '<font face="MS Serif" size="1" color="#000000">Illegal Stamps</font>', 'from Niger', '');
+ID5248 = new createNodeObject('ID5248', 'Magazine/UPU/upu-1.htm', '<font face="MS Serif" size="1" color="#000000">Stamps & Cancels</font>', 'of the UPU postal administration', '');
+ID5247 = new createNodeObject('ID5247', 'Magazine/UPU/upu.htm', '<font face="MS Serif" size="1" color="#000000">UPU</font>', 'Union Postale Universelle', '', ID5248, ID5249);
+ID5246 = new createNodeObject('ID5246', 'Countries/Romania/Census/census.htm', '<font face="MS Serif" size="1" color="#000000">Census</font>', 'on postal stamps', '');
+ID5245 = new createNodeObject('ID5245', 'Topicals/Guests/Michaela/Diverse/Varied-Costumes.htm', '<font face="MS Serif" size="1" color="#000000">Various</font>', 'From different countries', '');
+ID5244 = new createNodeObject('ID5244', 'Topicals/Guests/Michaela/Africa/African-Costumes.htm', '<font face="MS Serif" size="1" color="#000000">African</font>', 'a big continent', '');
+ID5243 = new createNodeObject('ID5243', 'Topicals/Guests/Michaela/Japan/Japan-Costumes.htm', '<font face="MS Serif" size="1" color="#000000">Japan</font>', 'Costumes and Arts', '');
+ID5242 = new createNodeObject('ID5242', 'Topicals/Guests/Michaela/Spain/Spanish-Costumes1.htm', '<font face="MS Serif" size="1" color="#000000">More</font>', 'More Spanish costumes', '');
+ID5241 = new createNodeObject('ID5241', 'Topicals/Guests/Michaela/Spain/Spanish-Costumes.htm', '<font face="MS Serif" size="1" color="#000000">Spanish</font>', 'Different regions', '', ID5242);
+ID5240 = new createNodeObject('ID5240', 'Topicals/Guests/Michaela/Romania/Romanian-Costumes1.htm', '<font face="MS Serif" size="1" color="#000000">Romanian</font>', 'from Romania', '');
+ID5239 = new createNodeObject('ID5239', 'Topicals/Guests/Michaela/Romania/Romanian-Costumes.htm', '<font face="MS Serif" size="1" color="#000000">Guest - Costumes</font>', 'Romanian folk costumes', '', ID5240, ID5241, ID5243, ID5244, ID5245);
+ID5238 = new createNodeObject('ID5238', 'Topicals/Olympics/story.htm', '<font face="MS Serif" size="1" color="#000000">Short Story</font>', 'A nightmare', '');
+ID5237 = new createNodeObject('ID5237', 'My Column/impersonal.htm', '<font face="MS Serif" size="1" color="#000000">Impersonal Stamps</font>', 'Or impersonalized', '', ID5238);
+ID5236 = new createNodeObject('ID5236', 'Topicals/Stamps-on-Stamps/stamps-on-stamps.htm', '<font face="MS Serif" size="1" color="#000000">Stamps on Stamps</font>', 'Japanese & Swiss', '');
+ID5235 = new createNodeObject('ID5235', 'Topicals/Ducks/ducks.htm', '<font face="MS Serif" size="1" color="#000000">Ducks</font>', 'Who`s more important then Picasso?', '');
+ID5234 = new createNodeObject('ID5234', 'Topicals/Dogs/dogs1.htm', '<font face="MS Serif" size="1" color="#000000">My friend</font>', 'His name was Bobic', '');
+ID5233 = new createNodeObject('ID5233', 'Countries/Sweden/Dogs/dogs.htm', '<font face="MS Serif" size="1" color="#000000">Dogs</font>', 'I love them too', '', ID5234);
+ID0232 = new createNodeObject('ID0232', '../Topicals/thematic.htm', '<font face="MS Sans Serif" size="2" color="#000000">Topical</font>', 'Topical Stamp Collecting', '', ID5233, ID5235, ID5236, ID5237, ID5239, ID5246, ID5247, ID5250);
+ID4231 = new createNodeObject('ID4231', 'Awards.htm', '<font face="MS Serif" size="1" color="#000000">Awards Won</font>', 'by this site', '');
+ID4230 = new createNodeObject('ID4230', 'Magazine/Choco/chocolate.htm', '<font face="MS Serif" size="1" color="#000000">Chocolate</font>', 'look like, smell like, but aren`t', '');
+ID4229 = new createNodeObject('ID4229', 'Magazine/Scratch/scratch-stamps.htm', '<font face="MS Serif" size="1" color="#000000">Scratch Stamps</font>', 'Yes, to be scratched', '');
+ID4228 = new createNodeObject('ID4228', 'Magazine/magazine1.htm', '<font face="MS Serif" size="1" color="#000000">From Italy</font>', 'with love', '');
+ID4227 = new createNodeObject('ID4227', 'Magazine/Nice-Stamps/nice-stamps1.htm', '<font face="MS Serif" size="1" color="#000000">Masters</font>', 'Netherlands masters', '');
+ID4226 = new createNodeObject('ID4226', 'news_imag.htm', '<font face="MS Serif" size="1" color="#000000">Nice stamps</font>', 'From the UN', '', ID4227);
+ID4225 = new createNodeObject('ID4225', 'Magazine/awarded-stamps.htm', '<font face="MS Serif" size="1" color="#000000">Awarded</font>', 'Art stamps', '');
+ID4224 = new createNodeObject('ID4224', 'London90.htm', '<font face="MS Serif" size="1" color="#000000">Penny Black</font>', '150 years later - London 90', '');
+ID4223 = new createNodeObject('ID4223', 'Art-Gallery/Errors/errors.htm', '<font face="MS Serif" size="1" color="#000000">Errors</font>', 'On art stamps', '');
+ID4222 = new createNodeObject('ID4222', 'Magazine/famous_stamps.htm', '<font face="MS Serif" size="1" color="#000000">Magazine</font>', 'All kind of stamps, also most famous', '', ID4223, ID4224, ID4225, ID4226, ID4228, ID4229, ID4230);
+ID4221 = new createNodeObject('ID4221', 'quiz.htm', '<font face="MS Serif" size="1" color="#000000">Win Stamps</font>', 'Answer some questions and win', '');
+ID4220 = new createNodeObject('ID4220', 'PASIC/Irc/irc.htm', '<font face="MS Serif" size="1" color="#000000">IRC</font>', 'International Response Coupons', '');
+ID4219 = new createNodeObject('ID4219', 'CH - China/China-CH2.htm', '<font face="MS Serif" size="1" color="#000000">FDC value</font>', 'A point of view', '');
+ID4218 = new createNodeObject('ID4218', 'PASIC/misuse.htm', '<font face="MS Serif" size="1" color="#000000">Personalized</font>', 'On personalized and their misuse', '');
+ID4217 = new createNodeObject('ID4217', 'PASIC/imperf.htm', '<font face="MS Serif" size="1" color="#000000">Imperfs</font>', 'About imperforated stamps', '');
+ID4216 = new createNodeObject('ID4216', 'PASIC/Irc/publicity.htm', '<font face="MS Serif" size="1" color="#000000">Value</font>', 'of new issues', '');
+ID4215 = new createNodeObject('ID4215', 'PASIC/4beginners.htm', '<font face="MS Serif" size="1" color="#000000">For Novices</font>', 'For beginners', '', ID4216, ID4217, ID4218, ID4219, ID4220);
+ID4214 = new createNodeObject('ID4214', 'News-CH-FL-UNO/news-uno-en.htm', '<font face="MS Serif" size="1" color="#000000">United Nations</font>', 'Arts', '');
+ID4213 = new createNodeObject('ID4213', 'Countries/Liechtenstein/Chapel/ex-voto.htm', '<font face="MS Serif" size="1" color="#000000">Liechtenstein</font>', 'Art on stamps', '');
+ID4212 = new createNodeObject('ID4212', 'News-CH-FL-UNO/news-ch-en.htm', '<font face="MS Serif" size="1" color="#000000">Switzerland</font>', 'Arts', '');
+ID4211 = new createNodeObject('ID4211', 'newissue.htm', '<font face="MS Serif" size="1" color="#000000">New Issues</font>', 'Worldwide art on stamps', '', ID4212, ID4213, ID4214);
+ID4210 = new createNodeObject('ID4210', 'db-en.htm', '<font face="MS Serif" size="1" color="#000000">Download databases</font>', 'Free art databases', '');
+ID4209 = new createNodeObject('ID4209', 'freeads.htm', '<font face="MS Serif" size="1" color="#000000">Free Services</font>', 'This site offers a lot for free, like Free ads', '', ID4210, ID4211, ID4215);
+ID4208 = new createNodeObject('ID4208', 'PASIC/goals.htm', '<font face="MS Serif" size="1" color="#000000">Purposes</font>', 'Why this site', '');
+ID0207 = new createNodeObject('ID0207', '../toc_en.htm', '<font face="MS Sans Serif" size="2" color="#000000">Misc</font>', 'Diverses', '', ID4208, ID4209, ID4221, ID4222, ID4231);
+ID3206 = new createNodeObject('ID3206', 'reactions.htm', '<font face="MS Serif" size="1" color="#000000">Received</font>', 'That`s what have we got from you', '');
+ID3205 = new createNodeObject('ID3205', 'feedback.htm', '<font face="MS Serif" size="1" color="#000000">Feedback, please</font>', 'What do you think? Contact us.', '', ID3206);
+ID3204 = new createNodeObject('ID3204', 'Landscapes/December/more-love.htm', '<font face="MS Serif" size="1" color="#000000">Love in Arts</font>', 'Classic and modern', '');
+ID3203 = new createNodeObject('ID3203', 'Countries/USA/USArt-400.htm', '<font face="MS Serif" size="1" color="#000000">U.S.A.</font>', '400 years of art', '');
+ID3202 = new createNodeObject('ID3202', 'Countries/Unit-Nat/un-slogans.htm', '<font face="MS Serif" size="1" color="#000000">United Nations</font>', 'A friendly postal organization', '');
+ID3201 = new createNodeObject('ID3201', 'Countries/Switzerland/Joint/CH-Joint-Issues1.htm', '<font face="MS Serif" size="1" color="#000000">Further</font>', 'Joint Issues part 2', '');
+ID3200 = new createNodeObject('ID3200', 'Countries/Switzerland/Joint/CH-Joint-Issues.htm', '<font face="MS Serif" size="1" color="#000000">Joint Issues</font>', 'of Switzerland', '', ID3201);
+ID3199 = new createNodeObject('ID3199', 'Countries/Switzerland/Boecklin/boecklin.htm', '<font face="MS Serif" size="1" color="#000000">Arnold Boecklin</font>', 'Strange paintings', '');
+ID3198 = new createNodeObject('ID3198', 'Countries/Switzerland/Vela/vela-comments.htm', '<font face="MS Serif" size="1" color="#000000">Comments</font>', 'Acid', '');
+ID3197 = new createNodeObject('ID3197', 'Countries/Switzerland/Vela/museum-vela.htm', '<font face="MS Serif" size="1" color="#000000">The Vela Museum</font>', 'A bad stamp for an interesting museum', '', ID3198);
+ID3196 = new createNodeObject('ID3196', 'News-CH-FL-UNO/news-ch-en.htm', '<font face="MS Serif" size="1" color="#000000">Alber Manser</font>', 'Not so naive', '');
+ID3195 = new createNodeObject('ID3195', 'Countries/Switzerland/ch-stamps1.htm', '<font face="MS Serif" size="1" color="#000000">Topicals</font>', 'on Switzerland stamps', '');
+ID3194 = new createNodeObject('ID3194', 'Art-Gallery/Embroidery/embroidery.htm', '<font face="MS Serif" size="1" color="#000000">Embroidery</font>', 'The first embroidered stamp', '');
+ID3193 = new createNodeObject('ID3193', 'hans-erni.htm', '<font face="MS Serif" size="1" color="#000000">Hans Erni</font>', 'A contested artist', '');
+ID3192 = new createNodeObject('ID3192', 'ch-stamps.htm', '<font face="MS Serif" size="1" color="#000000">Switzerland</font>', 'Arts on Stamps', '', ID3193, ID3194, ID3195, ID3196, ID3197, ID3199, ID3200);
+ID3191 = new createNodeObject('ID3191', 'Countries/Sweden/Dogs/dogs.htm', '<font face="MS Serif" size="1" color="#000000">Dogs</font>', 'Nice dogs', '');
+ID3190 = new createNodeObject('ID3190', 'Countries/Sweden/Slania/slania.htm', '<font face="MS Serif" size="1" color="#000000">Slania</font>', 'The great engraver', '');
+ID3189 = new createNodeObject('ID3189', 'Art-Gallery/Rock-Paintings/rock-paintings5.htm', '<font face="MS Serif" size="1" color="#000000">Sweden</font>', 'Rock art', '', ID3190, ID3191);
+ID3188 = new createNodeObject('ID3188', 'goya.htm', '<font face="MS Serif" size="1" color="#000000">Two Majas</font>', 'Clothed & Naked', '');
+ID3187 = new createNodeObject('ID3187', 'Countries/Spain/Goya/goya1.htm', '<font face="MS Serif" size="1" color="#000000">Goya</font>', 'on stamps', '', ID3188);
+ID3186 = new createNodeObject('ID3186', 'Velasquez/velasquez.htm', '<font face="MS Serif" size="1" color="#000000">Spain</font>', 'Velasquez', '', ID3187);
+ID3185 = new createNodeObject('ID3185', 'Countries/Liechtenstein/Easter/faberge.htm', '<font face="MS Serif" size="1" color="#000000">Faberge</font>', 'The most famous Easter Eggs', '');
+ID3184 = new createNodeObject('ID3184', 'Countries/Liechtenstein/Easter/easter.htm', '<font face="MS Serif" size="1" color="#000000">Easter Eggs</font>', 'From the old Russia', '');
+ID3183 = new createNodeObject('ID3183', 'Art-Gallery/Museums/Hermitage/Rembrandt/rembrandt.htm', '<font face="MS Serif" size="1" color="#000000">Russia</font>', 'Hermitage Rembrandt collection', '', ID3184, ID3185);
+ID3182 = new createNodeObject('ID3182', 'http://www.marci-postale.com', '<font face="MS Serif" size="1" color="#000000">Romanian site</font>', 'By the same webmaster', '');
+ID3181 = new createNodeObject('ID3181', 'Countries/Romania/About/dracula.htm', '<font face="MS Serif" size="1" color="#000000">Dracula</font>', 'Who is affraid of', '');
+ID3180 = new createNodeObject('ID3180', 'Countries/Romania/About/romanian5.htm', '<font face="MS Serif" size="1" color="#000000">The country</font>', 'Abour Romania', '');
+ID3179 = new createNodeObject('ID3179', 'Countries/Romania/FirstStamps/classics.htm', '<font face="MS Serif" size="1" color="#000000">Classics</font>', 'Romanian classical stamps', '');
+ID3178 = new createNodeObject('ID3178', 'Countries/Romania/About/shot1.htm', '<font face="MS Serif" size="1" color="#000000">Shot Art</font>', 'Paintings shot during the uprising', '');
+ID3177 = new createNodeObject('ID3177', 'Countries/Romania/Children/rom-children1.htm', '<font face="MS Serif" size="1" color="#000000">Children`s paintings</font>', 'On stamps worldwide', '');
+ID3176 = new createNodeObject('ID3176', 'Countries/Romania/Children/rom-children.htm', '<font face="MS Serif" size="1" color="#000000">Children</font>', 'On Romanian paintings', '');
+ID3175 = new createNodeObject('ID3175', 'Countries/Romania/Brancusi/romanian3.htm', '<font face="MS Serif" size="1" color="#000000">Brancusi</font>', 'The father of modern sculpture', '');
+ID3174 = new createNodeObject('ID3174', 'Countries/Romania/Andreescu/romanian2.htm', '<font face="MS Serif" size="1" color="#000000">Andreescu</font>', 'A clasiccal painter', '');
+ID3173 = new createNodeObject('ID3173', 'Countries/Romania/Grigorescu/romanian1.htm', '<font face="MS Serif" size="1" color="#000000">Grigorescu</font>', 'The first great national painter', '');
+ID3172 = new createNodeObject('ID3172', 'Countries/Romania/Monasteries/romanian4.htm', '<font face="MS Serif" size="1" color="#000000">Romania</font>', 'Art in monasteries', '', ID3173, ID3174, ID3175, ID3176, ID3177, ID3178, ID3179, ID3180, ID3181, ID3182);
+ID3171 = new createNodeObject('ID3171', 'Countries/Poland/korczak.htm', '<font face="MS Serif" size="1" color="#000000">Poland</font>', 'An artist with a tragic end', '');
+ID3170 = new createNodeObject('ID3170', 'Countries/Monaco/monaco1.htm', '<font face="MS Serif" size="1" color="#000000">The Principality</font>', 'Art stamps showing Monaco', '');
+ID3169 = new createNodeObject('ID3169', 'Countries/Monaco/monaco.htm', '<font face="MS Serif" size="1" color="#000000">Monaco - Grace of</font>', 'Grace of Monaco, Art Stamps', '', ID3170);
+ID3168 = new createNodeObject('ID3168', 'Art-Gallery/Vermeer/vermeer.htm', '<font face="MS Serif" size="1" color="#000000">Vermeer</font>', 'The great painter', '');
+ID3167 = new createNodeObject('ID3167', 'Countries/Low-Countries/Van-Gogh/Nature/blossom.htm', '<font face="MS Serif" size="1" color="#000000">Nature</font>', 'Flowery nature', '');
+ID3166 = new createNodeObject('ID3166', 'Countries/Low-Countries/Van-Gogh/Nature/vg-flowers.htm', '<font face="MS Serif" size="1" color="#000000">Flowers</font>', 'Sunflowers', '');
+ID3165 = new createNodeObject('ID3165', 'vangogh.htm', '<font face="MS Serif" size="1" color="#000000">Van Gogh</font>', 'Self-portraits', '', ID3166, ID3167);
+ID3164 = new createNodeObject('ID3164', 'Art-Gallery/Rubens/rubens2.htm', '<font face="MS Serif" size="1" color="#000000">Clara Serena</font>', 'Rubens` defunct daughter', '');
+ID3163 = new createNodeObject('ID3163', 'Art-Gallery/Rubens/rubens1.htm', '<font face="MS Serif" size="1" color="#000000">Chapeau</font>', 'Chapeau de paille', '');
+ID3162 = new createNodeObject('ID3162', 'Art-Gallery/Rubens/rubens.htm', '<font face="MS Serif" size="1" color="#000000">Rubens</font>', 'Self-portraits', '', ID3163, ID3164);
+ID3161 = new createNodeObject('ID3161', 'Art-Gallery/Museums/Hermitage/Rembrandt/rembrandt.htm', '<font face="MS Serif" size="1" color="#000000">In Hermitage</font>', 'Sankt Petersburg', '');
+ID3160 = new createNodeObject('ID3160', 'Art-Gallery/Museums/Louvre/Foreign/louvre-rembrandt.htm', '<font face="MS Serif" size="1" color="#000000">In Louvre</font>', 'Renown paintings', '');
+ID3159 = new createNodeObject('ID3159', 'Countries/Low-Countries/Rembrandt/rembrandt-self.htm', '<font face="MS Serif" size="1" color="#000000">Rembrandt</font>', 'and Family, Portraits', '', ID3160, ID3161);
+ID3158 = new createNodeObject('ID3158', 'Magazine/Nice-Stamps/nice-stamps1.htm', '<font face="MS Serif" size="1" color="#000000">Low Countries</font>', 'Today Belgium, Netherlands', '', ID3159, ID3162, ID3165, ID3168);
+ID3157 = new createNodeObject('ID3157', 'Countries/Liechtenstein/Christmas-2001/christmas-2001.htm', '<font face="MS Serif" size="1" color="#000000">Medallions</font>', 'In wooden frames. Christmas isuues 2001', '');
+ID3156 = new createNodeObject('ID3156', 'Countries/Liechtenstein/Chapel/ex-voto.htm', '<font face="MS Serif" size="1" color="#000000">Ex Voto</font>', 'Stamps and MCs', '');
+ID3155 = new createNodeObject('ID3155', 'Countries/Liechtenstein/Art-2000/year2000.htm', '<font face="MS Serif" size="1" color="#000000">Art 2000</font>', 'Issued in 200', '');
+ID3154 = new createNodeObject('ID3154', 'Countries/Liechtenstein/Easter/easter.htm', '<font face="MS Serif" size="1" color="#000000">Easter Eggs</font>', 'from the old Russia', '');
+ID3153 = new createNodeObject('ID3153', 'Art-Gallery/Embroidery/embroid-fl.htm', '<font face="MS Serif" size="1" color="#000000">Liechtenstein</font>', 'Embroideries', '', ID3154, ID3155, ID3156, ID3157);
+ID3152 = new createNodeObject('ID3152', 'Countries/Japan/Prefectures/japan2.htm', '<font face="MS Serif" size="1" color="#000000">Prefectures</font>', 'Stamps of this territorial units', '');
+ID3151 = new createNodeObject('ID3151', 'Painters/Hiroshige/hiroshige.htm', '<font face="MS Serif" size="1" color="#000000">Hiroshige</font>', 'Great painter', '');
+ID3150 = new createNodeObject('ID3150', 'Countries/Japan/japan1.htm', '<font face="MS Serif" size="1" color="#000000">Letter Week</font>', 'Annual set', '');
+ID3149 = new createNodeObject('ID3149', 'Countries/Japan/japan.htm', '<font face="MS Serif" size="1" color="#000000">Japan</font>', 'Art Series', '', ID3150, ID3151, ID3152);
+ID3148 = new createNodeObject('ID3148', 'Venice/San Marco 4.htm', '<font face="MS Serif" size="1" color="#000000">Views</font>', 'Taken by the webmaster', '');
+ID3147 = new createNodeObject('ID3147', 'Venice/San Marco 3.htm', '<font face="MS Serif" size="1" color="#000000">San Marco</font>', 'Inside Floor', '');
+ID3146 = new createNodeObject('ID3146', 'Venice/San Marco 2.htm', '<font face="MS Serif" size="1" color="#000000">Carnival</font>', 'in Venezia', '');
+ID3145 = new createNodeObject('ID3145', 'Venice/San Marco 1.htm', '<font face="MS Serif" size="1" color="#000000">Saint Mark</font>', 'Cathedral', '');
+ID3144 = new createNodeObject('ID3144', 'veniceon.htm', '<font face="MS Serif" size="1" color="#000000">Venice</font>', 'on paintings', '', ID3145, ID3146, ID3147, ID3148);
+ID3143 = new createNodeObject('ID3143', 'Art-Gallery/Raphael/raphael1.htm', '<font face="MS Serif" size="1" color="#000000">Madonnas</font>', 'by Raphael', '');
+ID3142 = new createNodeObject('ID3142', 'raphael.htm', '<font face="MS Serif" size="1" color="#000000">Raphael</font>', 'Raphaello Sanzio', '', ID3143);
+ID3141 = new createNodeObject('ID3141', 'Art-Gallery/Michelangelo/Sixtine/michelan2.htm', '<font face="MS Serif" size="1" color="#000000">Lunnetes</font>', 'og Christ, Sixtine Chapel', '');
+ID3140 = new createNodeObject('ID3140', 'Art-Gallery/Michelangelo/Sixtine/michelan1.htm', '<font face="MS Serif" size="1" color="#000000">500 Anniv.</font>', 'Birth Anniversary', '');
+ID3139 = new createNodeObject('ID3139', 'michelan.htm', '<font face="MS Serif" size="1" color="#000000">Michelangelo</font>', 'Bunonarotti, Sixtine Chapel', '', ID3140, ID3141);
+ID3138 = new createNodeObject('ID3138', 'Art-Gallery/Leonardo/Mona-Lisa/monalisa.htm', '<font face="MS Serif" size="1" color="#000000">Da Vinci</font>', 'Mona LIsa, by Leonardo', '');
+ID3137 = new createNodeObject('ID3137', 'Countries/Italy/Titian/titian-2.htm', '<font face="MS Serif" size="1" color="#000000">Portraits</font>', 'By Titian', '');
+ID3136 = new createNodeObject('ID3136', 'Countries/Italy/Titian/titian-3.htm', '<font face="MS Serif" size="1" color="#000000">Religious</font>', 'Religious paintings', '');
+ID3135 = new createNodeObject('ID3135', 'Countries/Italy/Titian/titian-1.htm', '<font face="MS Serif" size="1" color="#000000">Women</font>', 'On Titian`s paintings', '');
+ID3134 = new createNodeObject('ID3134', 'Countries/Italy/Titian/titian.htm', '<font face="MS Serif" size="1" color="#000000">Titian</font>', 'Life and work', '', ID3135, ID3136, ID3137);
+ID3133 = new createNodeObject('ID3133', '', '<font face="MS Serif" size="1" color="#000000">Italy</font>', 'Italian Art on Stamps', '', ID3134, ID3138, ID3139, ID3142, ID3144);
+ID3132 = new createNodeObject('ID3132', 'Countries/Greece/Sculptures/greece-sculpt.htm', '<font face="MS Serif" size="1" color="#000000">Sculptures</font>', 'Greek Sculptures', '');
+ID3131 = new createNodeObject('ID3131', 'Countries/Greece/greece-vases.htm', '<font face="MS Serif" size="1" color="#000000">Greece</font>', 'Old vases', '', ID3132);
+ID3130 = new createNodeObject('ID3130', 'chagall1.htm', '<font face="MS Serif" size="1" color="#000000">Tribes</font>', 'Tribes of israel', '');
+ID3129 = new createNodeObject('ID3129', 'chagall.htm', '<font face="MS Serif" size="1" color="#000000">Chagall</font>', 'Marc Chagall, French and Russian painter', '', ID3130);
+ID3128 = new createNodeObject('ID3128', 'gauguin.htm', '<font face="MS Serif" size="1" color="#000000">Gauguin</font>', 'Paul Gauguin, French painter', '');
+ID3127 = new createNodeObject('ID3127', 'Renoir/renoir-nudes.htm', '<font face="MS Serif" size="1" color="#000000">Nudes</font>', 'Renown Nudes', '');
+ID3126 = new createNodeObject('ID3126', 'Renoir/renoir.htm', '<font face="MS Serif" size="1" color="#000000">Renoir</font>', 'Auguste Renoir, Impressionist painter', '', ID3127);
+ID3125 = new createNodeObject('ID3125', 'Countries/France/Napoleon/napoleon.htm', '<font face="MS Serif" size="1" color="#000000">Napoleon</font>', 'On French paintings', '');
+ID3124 = new createNodeObject('ID3124', 'Countries/France/Impressionists/Monet/monet.htm', '<font face="MS Serif" size="1" color="#000000">Monet</font>', 'Claude Monet, an Impressionst painter', '');
+ID3123 = new createNodeObject('ID3123', 'Art-Gallery/Renown/Liberty/liberty.htm', '<font face="MS Serif" size="1" color="#000000">Delacroix</font>', 'Eugène Delacroix - Liberty', '');
+ID3122 = new createNodeObject('ID3122', 'Countries/France/Impressionists/Degas/degas-ballet.htm', '<font face="MS Serif" size="1" color="#000000">Ballet</font>', 'Dancers', '');
+ID3121 = new createNodeObject('ID3121', 'Countries/France/Impressionists/Degas/degas.htm', '<font face="MS Serif" size="1" color="#000000">Degas</font>', 'A French impressionist painter', '', ID3122);
+ID3120 = new createNodeObject('ID3120', 'Art-Gallery/Museums/Louvre/Foreign/louvre-foreign.htm', '<font face="MS Serif" size="1" color="#000000">Foreign</font>', 'Foreign artists at Louvre', '');
+ID3119 = new createNodeObject('ID3119', 'Art-Gallery/Museums/Louvre/French/louvre-france.htm', '<font face="MS Serif" size="1" color="#000000">Louvre</font>', 'Museum in Paris, French paintings', '', ID3120);
+ID3118 = new createNodeObject('ID3118', 'frenchser.htm', '<font face="MS Serif" size="1" color="#000000">France</font>', 'Art series', '', ID3119, ID3121, ID3123, ID3124, ID3125, ID3126, ID3128, ID3129);
+ID3117 = new createNodeObject('ID3117', 'My Column/Denmark/gray-dk.htm', '<font face="MS Serif" size="1" color="#000000">Denmark</font>', 'Danish depressions on stamps', '');
+ID3116 = new createNodeObject('ID3116', 'Art-Gallery/Museums/NatGal-Praha/praha-local.htm', '<font face="MS Serif" size="1" color="#000000">Czechoslovakia</font>', 'National Gallery in Prague', '');
+ID3115 = new createNodeObject('ID3115', 'Countries/France/Napoleon/nb-museum.htm', '<font face="MS Serif" size="1" color="#000000">Cuba</font>', 'Napoleonic Museum in Havana', '');
+ID3114 = new createNodeObject('ID3114', 'Countries/Taiwan/animals/horses.htm', '<font face="MS Serif" size="1" color="#000000">Horses</font>', '8 prized horses on paintings', '');
+ID3113 = new createNodeObject('ID3113', 'Countries/Taiwan/animals/dogs.htm', '<font face="MS Serif" size="1" color="#000000">Dogs</font>', '10 prozed dogs paintings', '');
+ID3112 = new createNodeObject('ID3112', 'Countries/Taiwan/fans-1.htm', '<font face="MS Serif" size="1" color="#000000">More</font>', 'More fans', '');
+ID3111 = new createNodeObject('ID3111', 'Countries/Taiwan/fans.htm', '<font face="MS Serif" size="1" color="#000000">Fans</font>', 'Painted fans', '', ID3112);
+ID3110 = new createNodeObject('ID3110', 'Countries/Taiwan/Scrolls-72/scrolls.htm', '<font face="MS Serif" size="1" color="#000000">Emperor</font>', 'Emperor`s procession', '');
+ID3109 = new createNodeObject('ID3109', 'Countries/Taiwan/Cathay/cathay-city.htm', '<font face="MS Serif" size="1" color="#000000">Cathay</font>', 'City in Cathay', '');
+ID3108 = new createNodeObject('ID3108', 'Countries/Taiwan/Old-Paintings1/old-paintings2.htm', '<font face="MS Serif" size="1" color="#000000">Old Paintings</font>', 'Flowers and birds', '');
+ID3107 = new createNodeObject('ID3107', 'Countries/Taiwan/Old-Paintings/old-paintings.htm', '<font face="MS Serif" size="1" color="#000000">Old Masters</font>', 'Old masterwork', '');
+ID3106 = new createNodeObject('ID3106', 'formosa.htm', '<font face="MS Serif" size="1" color="#000000">China - Taiwan</font>', 'Old Chinese paintings', '', ID3107, ID3108, ID3109, ID3110, ID3111, ID3113, ID3114);
+ID3105 = new createNodeObject('ID3105', 'China-CH.htm', '<font face="MS Serif" size="1" color="#000000">Joint Isuue</font>', 'With Switzerland', '');
+ID3104 = new createNodeObject('ID3104', 'Countries/China/Horses/horses.htm', '<font face="MS Serif" size="1" color="#000000">Horses</font>', 'By Hsi Peihung', '');
+ID3103 = new createNodeObject('ID3103', 'news_imag.htm', '<font face="MS Serif" size="1" color="#000000">Warriors</font>', 'From Terracotta', '');
+ID3102 = new createNodeObject('ID3102', 'Countries/China/china-silk.htm', '<font face="MS Serif" size="1" color="#000000">Silk</font>', 'Ancient paintings on silk', '');
+ID3101 = new createNodeObject('ID3101', 'Countries/China/china.htm', '<font face="MS Serif" size="1" color="#000000">China - P.R.</font>', 'Classic paintings', '', ID3102, ID3103, ID3104, ID3105);
+ID3100 = new createNodeObject('ID3100', 'Countries/Canada/canada.htm', '<font face="MS Serif" size="1" color="#000000">Canada</font>', 'Art Series', '');
+ID399 = new createNodeObject('ID399', 'Countries/Austria/stowasser.htm', '<font face="MS Serif" size="1" color="#000000">Austria</font>', 'Hundertwasser', '');
+ID398 = new createNodeObject('ID398', 'Art-Gallery/Rock-Paintings/rock-paintings3.htm', '<font face="MS Serif" size="1" color="#000000">Algeria</font>', 'Rock paintings', '');
+ID397 = new createNodeObject('ID397', 'toc-count.htm', '<font face="MS Serif" size="1" color="#000000">Countries</font>', 'Art and customs of different countries', '', ID398, ID399, ID3100, ID3101, ID3106, ID3115, ID3116, ID3117, ID3118, ID3131, ID3133, ID3149, ID3153, ID3158, ID3169, ID3171, ID3172, ID3183, ID3186, ID3189, ID3192, ID3202, ID3203);
+ID396 = new createNodeObject('ID396', 'Countries/Switzerland/Vela/museum-vela.htm', '<font face="MS Serif" size="1" color="#000000">Vela</font>', 'The Vela Museum in Switzerland', '');
+ID395 = new createNodeObject('ID395', 'Art-Gallery/Museums/Offices/offices-7.htm', '<font face="MS Serif" size="1" color="#000000">Foreign</font>', 'Foreign Masters at Uffizi', '');
+ID394 = new createNodeObject('ID394', 'Art-Gallery/Museums/Offices/offices-6.htm', '<font face="MS Serif" size="1" color="#000000">Italian</font>', 'Italian masters at Uffizi', '');
+ID393 = new createNodeObject('ID393', 'Art-Gallery/Museums/Offices/offices-1.htm', '<font face="MS Serif" size="1" color="#000000">Sarto</font>', 'Sarto & Raphael', '');
+ID392 = new createNodeObject('ID392', 'Art-Gallery/Museums/Offices/offices-4.htm', '<font face="MS Serif" size="1" color="#000000">Michelange</font>', 'Michelangelo & Leonardo', '');
+ID391 = new createNodeObject('ID391', 'Art-Gallery/Museums/Offices/offices-3.htm', '<font face="MS Serif" size="1" color="#000000">Religious</font>', 'Religious paintings by Botticelli', '');
+ID390 = new createNodeObject('ID390', 'Art-Gallery/Museums/Offices/offices-2.htm', '<font face="MS Serif" size="1" color="#000000">Botticelli</font>', 'In Italy, Uffizi', '', ID391);
+ID389 = new createNodeObject('ID389', 'Art-Gallery/Museums/Offices/offices-5.htm', '<font face="MS Serif" size="1" color="#000000">Giotto</font>', 'Religious paintings', '');
+ID388 = new createNodeObject('ID388', 'Art-Gallery/Museums/Offices/offices.htm', '<font face="MS Serif" size="1" color="#000000">Uffizi</font>', 'In Florence, Italy', '', ID389, ID390, ID392, ID393, ID394, ID395);
+ID387 = new createNodeObject('ID387', 'http://www.marci-postale.com', '<font face="MS Serif" size="1" color="#000000">Romanian Site</font>', 'A site dedicated to Romanian stamps and art', '');
+ID386 = new createNodeObject('ID386', 'Art-Gallery/Museums/Bucharest/Aman/aman.htm', '<font face="MS Serif" size="1" color="#000000">Aman</font>', 'Theodor Aman, a Romanian painter', '');
+ID385 = new createNodeObject('ID385', 'Art-Gallery/Museums/Bucharest/Roxanda/roxanda.htm', '<font face="MS Serif" size="1" color="#000000">Roxanda</font>', 'A princess', '');
+ID384 = new createNodeObject('ID384', 'Art-Gallery/Museums/Bucharest/Monasteries/medieval-art.htm', '<font face="MS Serif" size="1" color="#000000">Medieval</font>', 'Medieval Arts in Monasteries', '');
+ID383 = new createNodeObject('ID383', 'Art-Gallery/Museums/Bucharest/Monasteries/byzantium.htm', '<font face="MS Serif" size="1" color="#000000">Byzantium</font>', 'Byzantium after Byzantium', '');
+ID382 = new createNodeObject('ID382', 'Art-Gallery/Museums/Bucharest/Palace/palace.htm', '<font face="MS Serif" size="1" color="#000000">Romanian</font>', 'National Museum of Art of Romania, in Bucharest', '', ID383, ID384, ID385, ID386, ID387);
+ID381 = new createNodeObject('ID381', 'Countries/France/Napoleon/nb-museum.htm', '<font face="MS Serif" size="1" color="#000000">Napoleonic</font>', 'Napoleonic Museum in Havana, Cuba', '');
+ID380 = new createNodeObject('ID380', 'Art-Gallery/Museums/NatGal-Praha/praha-foreign.htm', '<font face="MS Serif" size="1" color="#000000">Foreign Artists</font>', 'in National Museum, Praga, CZ', '');
+ID379 = new createNodeObject('ID379', 'Art-Gallery/Museums/NatGal-Praha/praha-local.htm', '<font face="MS Serif" size="1" color="#000000">Nat. Gallery, Prague</font>', 'in Czechia', '', ID380);
+ID378 = new createNodeObject('ID378', 'Art-Gallery/Museums/National-Gallery/nat-gallery.htm', '<font face="MS Serif" size="1" color="#000000">National Gallery</font>', 'In London, England', '');
+ID377 = new createNodeObject('ID377', 'Art-Gallery/Museums/Metropolitan/metro-portraits.htm', '<font face="MS Serif" size="1" color="#000000">Metropolitan</font>', 'Metropolitan Museum in New York, USA', '');
+ID376 = new createNodeObject('ID376', 'Art-Gallery/Museums/Art-Moderne/art-moderne.htm', '<font face="MS Serif" size="1" color="#000000">Modern Arts</font>', 'Museum of Modern Arts in Paris, France', '');
+ID375 = new createNodeObject('ID375', 'Art-Gallery/Museums/Louvre/Foreign/louvre-rembrandt.htm', '<font face="MS Serif" size="1" color="#000000">Rembrandt</font>', 'From Louvre Collections', '');
+ID374 = new createNodeObject('ID374', 'Art-Gallery/Museums/Louvre/louvre-foreign.htm', '<font face="MS Serif" size="1" color="#000000">Foreign Stamps</font>', 'Showing works from Louvre', '');
+ID373 = new createNodeObject('ID373', 'Art-Gallery/Museums/Louvre/Foreign/louvre-foreign.htm', '<font face="MS Serif" size="1" color="#000000">Foregn Artists</font>', 'From Louvre Collections', '');
+ID372 = new createNodeObject('ID372', 'Art-Gallery/Museums/Louvre/louvre-local.htm', '<font face="MS Serif" size="1" color="#000000">French Master</font>', 'From Louvre Collections', '');
+ID371 = new createNodeObject('ID371', 'Art-Gallery/Museums/Louvre/French/louvre-france.htm', '<font face="MS Serif" size="1" color="#000000">Le Louvre</font>', 'In Paris, France', '', ID372, ID373, ID374, ID375);
+ID370 = new createNodeObject('ID370', 'Art-Gallery/Museums/Hermitage/Foreign/foreign.htm', '<font face="MS Serif" size="1" color="#000000">Foreign</font>', 'Amsterpieces from Hermitage shown on foreign stamps', '');
+ID369 = new createNodeObject('ID369', 'Art-Gallery/Museums/Hermitage/Italian/italian.htm', '<font face="MS Serif" size="1" color="#000000">Italian</font>', 'The Italian Collection', '');
+ID368 = new createNodeObject('ID368', 'Art-Gallery/Museums/Hermitage/German/german.htm', '<font face="MS Serif" size="1" color="#000000">German</font>', 'The German Collection', '');
+ID367 = new createNodeObject('ID367', 'Art-Gallery/Museums/Hermitage/French/french.htm', '<font face="MS Serif" size="1" color="#000000">French</font>', 'The French Collection', '');
+ID366 = new createNodeObject('ID366', 'Art-Gallery/Museums/Hermitage/Flemish/flemish.htm', '<font face="MS Serif" size="1" color="#000000">Flemish</font>', 'The Flemish Collection', '');
+ID365 = new createNodeObject('ID365', 'Art-Gallery/Museums/Hermitage/English/english.htm', '<font face="MS Serif" size="1" color="#000000">English</font>', 'The English Collection', '');
+ID364 = new createNodeObject('ID364', 'Art-Gallery/Museums/Hermitage/Rembrandt/rembrandt.htm', '<font face="MS Serif" size="1" color="#000000">Hermitage</font>', 'In St. Petersburg, Russia', '', ID365, ID366, ID367, ID368, ID369, ID370);
+ID363 = new createNodeObject('ID363', '', '<font face="MS Serif" size="1" color="#000000">Museums</font>', 'Museums of the world', '', ID364, ID371, ID376, ID377, ID378, ID379, ID381, ID382, ID388, ID396);
+ID362 = new createNodeObject('ID362', 'love.htm', '<font face="MS Serif" size="1" color="#000000">Love</font>', 'Love in arts', '');
+ID361 = new createNodeObject('ID361', 'history1.htm', '<font face="MS Serif" size="1" color="#000000">History</font>', 'Paintings on Art stamps', '');
+ID360 = new createNodeObject('ID360', 'ships.htm', '<font face="MS Serif" size="1" color="#000000">Sailing</font>', 'Sailing in arts', '');
+ID359 = new createNodeObject('ID359', 'Art-Gallery/Coach/coaches.htm', '<font face="MS Serif" size="1" color="#000000">Coaches</font>', 'Mail coaches in arts', '');
+ID358 = new createNodeObject('ID358', 'animals.htm', '<font face="MS Serif" size="1" color="#000000">Animals</font>', 'Animals in arts', '');
+ID357 = new createNodeObject('ID357', 'music.htm', '<font face="MS Serif" size="1" color="#000000">Music</font>', 'Music in visual arts', '');
+ID356 = new createNodeObject('ID356', 'goya.htm', '<font face="MS Serif" size="1" color="#000000">The Majas</font>', 'By Goya', '');
+ID355 = new createNodeObject('ID355', 'Art-Gallery/Renown/Liberty/liberty.htm', '<font face="MS Serif" size="1" color="#000000">Liberty</font>', 'By Eugene Delacroix', '');
+ID354 = new createNodeObject('ID354', 'michelan.htm', '<font face="MS Serif" size="1" color="#000000">Sixtine Chapel</font>', 'By Michelangelo', '');
+ID353 = new createNodeObject('ID353', 'Art-Gallery/Leonardo/Mona-Lisa/monalisa.htm', '<font face="MS Serif" size="1" color="#000000">Famous Works</font>', 'Mona Lisa', '', ID354, ID355, ID356);
+ID352 = new createNodeObject('ID352', 'self.htm', '<font face="MS Serif" size="1" color="#000000">Self-portraits</font>', 'By renown artists', '');
+ID351 = new createNodeObject('ID351', 'Art-Gallery/Embroidery/embroid-fl.htm', '<font face="MS Serif" size="1" color="#000000">From Liechtenstein</font>', 'On FL stamps', '');
+ID350 = new createNodeObject('ID350', 'Art-Gallery/Embroidery/embroidery.htm', '<font face="MS Serif" size="1" color="#000000">Embroidery</font>', 'From St. Gall', '', ID351);
+ID349 = new createNodeObject('ID349', 'Countries/Romania/Children/rom-children.htm', '<font face="MS Serif" size="1" color="#000000">Romanian</font>', 'Romanian childen on paintings', '');
+ID348 = new createNodeObject('ID348', 'Art-Gallery/Children/children1.htm', '<font face="MS Serif" size="1" color="#000000">Paintings</font>', 'Children on paintings', '');
+ID347 = new createNodeObject('ID347', 'children.htm', '<font face="MS Serif" size="1" color="#000000">Children</font>', 'Painted by themselves', '', ID348, ID349);
+ID346 = new createNodeObject('ID346', 'Art-Gallery/Letter/letter.htm', '<font face="MS Serif" size="1" color="#000000">Letters</font>', 'Letters in arts', '');
+ID345 = new createNodeObject('ID345', 'Countries/Spain/Picasso/horrible.htm', '<font face="MS Serif" size="1" color="#000000">Frightful</font>', 'Women in  arts', '');
+ID344 = new createNodeObject('ID344', 'Art-Gallery/Women/Balkan/balkan-women.htm', '<font face="MS Serif" size="1" color="#000000">Balkan Women</font>', 'Balkan women in art', '');
+ID343 = new createNodeObject('ID343', 'nudes.htm', '<font face="MS Serif" size="1" color="#000000">Nudes</font>', 'Nudes in art, with some surprises', '');
+ID342 = new createNodeObject('ID342', 'beautifu.htm', '<font face="MS Serif" size="1" color="#000000">Women</font>', 'Beautiful women in art', '', ID343, ID344, ID345);
+ID341 = new createNodeObject('ID341', 'flowers.htm', '<font face="MS Serif" size="1" color="#000000">Flowers</font>', 'Flowers in arts', '');
+ID340 = new createNodeObject('ID340', 'Landscapes/landscapes.htm', '<font face="MS Serif" size="1" color="#000000">Landscapes</font>', 'Landscapes in art', '');
+ID339 = new createNodeObject('ID339', 'Countries/Italy/Titian/titian-3.htm', '<font face="MS Serif" size="1" color="#000000">Titian</font>', 'Religious Art by Titian', '');
+ID338 = new createNodeObject('ID338', 'Art-Gallery/Easter/easter.htm', '<font face="MS Serif" size="1" color="#000000">Easter</font>', 'Easter in arts', '');
+ID337 = new createNodeObject('ID337', 'christmas.htm', '<font face="MS Serif" size="1" color="#000000">Christmas</font>', 'Christmas stamps tree', '');
+ID336 = new createNodeObject('ID336', 'stained-glass.htm', '<font face="MS Serif" size="1" color="#000000">Religious Art</font>', 'Stained Glass', '', ID337, ID338, ID339);
+ID335 = new createNodeObject('ID335', 'pottery.htm', '<font face="MS Serif" size="1" color="#000000">Pottery</font>', 'Ceramics and pottery', '');
+ID334 = new createNodeObject('ID334', 'Art-Gallery/Rock-Paintings/rock-paintings5.htm', '<font face="MS Serif" size="1" color="#000000">Swedish</font>', 'Tanium World Heritage', '');
+ID333 = new createNodeObject('ID333', 'Art-Gallery/Rock-Paintings/rock-paintings3.htm', '<font face="MS Serif" size="1" color="#000000">Saharan</font>', 'Rock paintings from Sahara', '');
+ID332 = new createNodeObject('ID332', 'Art-Gallery/Rock-Paintings/rock-paintings2.htm', '<font face="MS Serif" size="1" color="#000000">European</font>', 'African and European Rock art', '');
+ID331 = new createNodeObject('ID331', 'Art-Gallery/Rock-Paintings/rock-paintings.htm', '<font face="MS Serif" size="1" color="#000000">Australian</font>', 'Rock paintings from Australia', '');
+ID330 = new createNodeObject('ID330', 'Art-Gallery/Rock-Paintings/rock-paintings4.htm', '<font face="MS Serif" size="1" color="#000000">Rock Arts</font>', 'Rock paintings of the world', '', ID331, ID332, ID333, ID334);
+ID329 = new createNodeObject('ID329', 'toc-gale.htm', '<font face="MS Serif" size="1" color="#000000">Art Gallery</font>', 'A great art gallery on postal stamps', '', ID330, ID335, ID336, ID340, ID341, ID342, ID346, ID347, ID350, ID352, ID353, ID357, ID358, ID359, ID360, ID361, ID362);
+ID028 = new createNodeObject('ID028', '', '<font face="MS Sans Serif" size="2" color="#000000">Art</font>', '', '', ID329, ID363, ID397, ID3204, ID3205);
+ID227 = new createNodeObject('ID227', 'http://www.values.ch/activeforum', '<font face="MS Serif" size="1" color="#000000">Forum</font>', 'PASIC Forum', '');
+ID226 = new createNodeObject('ID226', 'PASIC/Members/Ann+Avram/Georgia/georgia.htm', '<font face="MS Serif" size="1" color="#000000">Georgia</font>', 'Georgia O`Keeffe', '');
+ID225 = new createNodeObject('ID225', 'PASIC/Members/Ann+Avram/tintoretto.htm', '<font face="MS Serif" size="1" color="#000000">Avram & Ann - DK</font>', 'The page of Avram+ and Ann', '', ID226);
+ID224 = new createNodeObject('ID224', 'PASIC/Members/Claude/claude.htm', '<font face="MS Serif" size="1" color="#000000">Mlle d`Anvers</font>', 'By Renoir', '');
+ID223 = new createNodeObject('ID223', 'PASIC/Members/Claude/claude-1.htm', '<font face="MS Serif" size="1" color="#000000">Claude - France</font>', 'Claude`s pages', '', ID224);
+ID222 = new createNodeObject('ID222', 'PASIC/Members/Francis/francis.htm', '<font face="MS Serif" size="1" color="#000000">Francis - USA</font>', 'Francis` page', '');
+ID221 = new createNodeObject('ID221', 'shot.htm', '<font face="MS Serif" size="1" color="#000000">Members Pages</font>', 'The PASIC members pages', '', ID222, ID223, ID225);
+ID220 = new createNodeObject('ID220', 'cgi-bin/db-update.asp', '<font face="MS Serif" size="1" color="#000000">JOIN for free</font>', 'Join PASIC', '');
+ID219 = new createNodeObject('ID219', 'PASIC/Officers/officers-en.htm', '<font face="MS Serif" size="1" color="#000000">Officers</font>', 'PASIC Officers', '');
+ID218 = new createNodeObject('ID218', 'cgi-bin/members.asp', '<font face="MS Serif" size="1" color="#000000">Members</font>', 'PASIC Members', '');
+ID217 = new createNodeObject('ID217', 'PASIC/journal.htm', '<font face="MS Serif" size="1" color="#000000">Journal</font>', 'PASIC Journal', '');
+ID016 = new createNodeObject('ID016', '../PASIC/statutes-en.htm', '<font face="MS Sans Serif" size="2" color="#000000">Club</font>', 'Paintings and Arts on Stamps Internet Club', '', ID217, ID218, ID219, ID220, ID221, ID227);
+ID115 = new createNodeObject('ID115', 'ressourc.htm', '<font face="MS Serif" size="1" color="#000000">Web Resources</font>', 'Philatelic ones', '');
+ID114 = new createNodeObject('ID114', 'http://www.values.ch/sna-site/sna.htm', '<font face="MS Serif" size="1" color="#000000">SNA</font>', 'Spanish North Africa, does it exist?', '');
+ID113 = new createNodeObject('ID113', 'http://www.pwmo.org', '<font face="MS Serif" size="1" color="#000000">PWO</font>', 'Philatelic Webmasters Association', '');
+ID112 = new createNodeObject('ID112', 'http://www.marci-postale.ro', '<font face="MS Serif" size="1" color="#000000">Romania</font>', 'As seen by its stamps', '');
+ID111 = new createNodeObject('ID111', 'freeads.htm', '<font face="MS Serif" size="1" color="#000000">Your Ads</font>', 'Place an ad for free', '');
+ID110 = new createNodeObject('ID110', 'newissue.htm', '<font face="MS Serif" size="1" color="#000000">Worldwide</font>', 'From the whole world', '');
+ID19 = new createNodeObject('ID19', 'News-CH-FL-UNO/news-uno-en.htm', '<font face="MS Serif" size="1" color="#000000">United Nations</font>', 'From UN', '');
+ID18 = new createNodeObject('ID18', 'Countries/Liechtenstein/Chapel/ex-voto.htm', '<font face="MS Serif" size="1" color="#000000">Liechtenstein</font>', 'From Liechtenstein', '');
+ID17 = new createNodeObject('ID17', 'News-CH-FL-UNO/news-ch-en.htm', '<font face="MS Serif" size="1" color="#000000">Switzerland</font>', 'From Switzerland', '');
+ID16 = new createNodeObject('ID16', '', '<font face="MS Serif" size="1" color="#000000">New Issues</font>', 'New art issues from different countries', '', ID17, ID18, ID19, ID110);
+ID15 = new createNodeObject('ID15', 'db-en.htm', '<font face="MS Serif" size="1" color="#000000">FREE Huge Database</font>', 'Arts on stamps database', '');
+ID14 = new createNodeObject('ID14', 'PASIC/site-map.htm', '<font face="MS Serif" size="1" color="#000000">Site`s Map</font>', 'Who is who and where', '');
+ID03 = new createNodeObject('ID03', '', '<font face="MS Sans Serif" size="2" color="#000000">Resources</font>', 'Free resources on this site, general Web resources', '', ID14, ID15, ID16, ID111, ID112, ID113, ID114, ID115);
+ID02 = new createNodeObject('ID02', 'Countries/Liechtenstein/Christmas-2001/christmas-2001.htm', '<font face="MS Serif" size="1" color="#000000">Christmas Stamps</font>', 'From Liechtenstein', '');
+ID01 = new createNodeObject('ID01', 'christmas.htm', '<font face="MS Serif" size="1" color="#000000">Merry Christmas</font>', 'Merry Christmas to all visitors!', '');
+ID00 = new createNodeObject('ID00', '', '<font face="MS Sans Serif" size="2" color="#000000">News</font>', '', '', ID01, ID02);
+rootNode = new createNodeObject('root', '', '<font face="MS Sans Serif" size="3" color="#000000">My Site Name</font>', 'Start here to explore', '', ID00, ID03, ID016, ID028, ID0207, ID0232, ID0251);
+
+
+
+setIndent(rootNode,0);
+ExpandNode(rootNode,true);
+select(rootNode,'Root');
+
+</script>
+</HEAD> 
+<frameset cols="250,*">
+  <frame src="treex.htm" name="index" scrolling="no"" noresize marginwidth="0" marginheight="0" target="main">
+  <frame src="main.htm" name="main">
+  <noframes>
+  <body>
+  <p><font size="3" face="Arial">Your browser does not support frames. Please upgrade your
+  browser. </font></p>
+  <script type="text/javascript"><!--
+google_ad_client = "pub-6697287241332041";
+/* 728x90, created 3/20/09 */
+google_ad_slot = "0857213903";
+google_ad_width = 728;
+google_ad_height = 90;;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6507762-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+  </noframes>
+</frameset>
+</html>
+    

@@ -1,0 +1,13 @@
+/* Philatelic Research – shared historical-document presentation */
+.pwo-research-intro{color:#526175;line-height:1.65}.pwo-research-back a{font-weight:700}
+.pwo-research-document{font:16px/1.7 Georgia,serif;color:#243449;overflow-wrap:break-word}
+.pwo-research-document font{font-family:inherit!important;font-size:inherit!important;color:inherit!important}
+.pwo-research-document p{line-height:1.7;margin:1em 0}
+.pwo-research-document p[align="justify"]{text-align:left}
+.pwo-research-document h3{color:#153552;margin:1.7em 0 .7em}
+.pwo-research-document img{max-width:100%;height:auto;display:block;margin:1rem auto}
+.pwo-research-document table{max-width:100%;margin:1rem auto}
+.pwo-research-document a{overflow-wrap:anywhere}
+.pwo-research-related{margin-top:2rem;border-top:1px solid #d5dce4;padding-top:1rem}
+.pwo-research-related h2{font-size:1.35rem}
+@media(max-width:740px){.pwo-research-document table{display:block;overflow-x:auto}.pwo-research-document td{min-width:0}}

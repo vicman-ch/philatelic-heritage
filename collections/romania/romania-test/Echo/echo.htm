@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="en-us" http-equiv="Content-Language"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="Romania as seen through its stamps - Reactions" http-equiv="Description"/>
+<meta content="Romania, Rumania, stamps, reactions, echo, feedback, philatelie, timbre, marci, filatelie" http-equiv="keywords"/>
+<meta content="Romania as seen through its stamps, reactions and awards" name="description"/>
+<title>Reactions on the Romania seen through its stamps site</title>
+<script language="JAVASCRIPT">
+<!--
+
+function FindIndexOfCheckedRadioButton(radioGroup){
+	for (var i = 0; i < radioGroup.length; i++)
+		if (radioGroup[i].checked)
+			return i
+	return 0
+}
+
+function ValidateInput(theForm)
+{
+
+	// validate user name
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. -";
+	var checkStr = theForm.UserName.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Full Name field is empty. Please fill it in!");
+		theForm.UserName.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Full Name. Please re-enter a valid one!");
+		theForm.UserName.focus();
+		return (false);
+	}
+
+	// validate e-mail address
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_";
+	var checkStr = theForm.UserEmail.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	var IndexOfAt; var IndexOfPeriod;
+	if (checkStr == ""){
+		alert("The E-mail field is empty. Please fill it in with a valid one!");
+		theForm.UserEmail.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		if (ch == "@"){
+			At_found = true	// @ found
+			IndexOfAt = checkStr.indexOf("@")
+		}
+		if (ch == "."){
+			Period_found = true	// . found
+			IndexOfPeriod = checkStr.lastIndexOf(".")
+		}
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK || !At_found || !Period_found){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.UserEmail.focus();
+		return (false);
+	}
+	if (((IndexOfPeriod - IndexOfAt) < 2) || ((checkStr.length - IndexOfPeriod) < 3)){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.UserEmail.focus();
+		return (false);
+	}
+
+     // validate PASIC membership (Language and Country fields should be filled-in)
+     i = FindIndexOfCheckedRadioButton(theForm.MessageType);
+     if (theForm.MessageType[i].value == "Membership"){
+
+	// validate Languages
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ,;/+";
+	var checkStr = theForm.UserLang.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Languages field is empty. Please fill it in!");
+		theForm.UserLang.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not valid Languages. Please re-enter valid ones!");
+		theForm.UserLang.focus();
+		return (false);
+	}
+
+	// validate Country
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+	var checkStr = theForm.Country.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Country field is empty. Please fill it in!");
+		theForm.Country.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Country. Please re-enter a valid one!");
+		theForm.Country.focus();
+		return (false);
+	}	
+     }		// if (theForm...)
+}
+
+//--> </script>
+<style>.article-section-return{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap;background:#f0e9dc!important;color:#12385d!important;padding:12px 18px!important;font:600 15px Arial,sans-serif!important;position:relative;z-index:5}.article-section-return a{color:#12385d!important;text-decoration:underline!important}</style><link rel="stylesheet" href="../interior-modern.css?v=lot68">
+</head>
+<body alink="#008000" bgcolor="#FFFFFF" bgproperties="fixed" class="rs-refined-article" leftmargin="4" link="#FF0000" text="#0000FF" topmargin="9"><a class="rs-skip-link" href="#article-content">Skip to article</a><main class="rs-reading-layout" id="article-content"><div class="article-section-return"><a href="../sections/miscellaneous.html">← Back to Miscellaneous</a><a href="../index.html">Home</a></div>
+<h1 align="center"><img alt="Illustration from Reactions on the Romania seen through its stamps site" border="0" decoding="async" height="75" src="ttl-echo.gif" width="380"/></h1>
+<p align="left" class="rs-body-paragraph"><font color="#000000" face="Arial" size="2">On this page one 
+    can find reactions to this site, appeared in the written press, on newsgroups 
+    or received by e-mail.</font></p>
+<hr/>
+<p align="justify"><font color="#000000" face="Arial, Helvetica, sans-serif" size="2">Hello 
+    Sir,</font></p>
+<p align="justify" class="rs-body-paragraph"><font color="#000000" face="Arial, Helvetica, sans-serif" size="2">I 
+    am Miranda Donaire and I am the English community responsible of the website 
+    Delcampe (www.delcampe.net) Your website has been awarded DELCAMPE'S SITE 
+    OF THE MONTH August 2010. </font></p>
+<table border="0" cellpadding="0" cellspacing="3" class="rs-stamp-table" width="95%">
+<tr>
+<td align="center"> <div align="center"><img alt="Illustration 2 from Reactions on the Romania seen through its stamps site" height="138" src="logo-delcampe.jpg" width="261"/></div></td>
+<td align="center"><div align="center"><img alt="Illustration 3 from Reactions on the Romania seen through its stamps site" decoding="async" height="174" loading="lazy" src="site-of-the-months-delcampe-08-2010.jpg" width="190"/></div></td>
+</tr>
+</table>
+<blockquote>
+<p align="justify" class="rs-body-paragraph"><font color="#000000" face="Arial, Helvetica, sans-serif" size="2">Each 
+    month Delcampe selects a "Site of the Month". We look for websites 
+    that are interesting for collectors friends, ones we consider a "must 
+    visit" or "worth the trip" for them. We choose our Sites of 
+    the Month based on the following criteria: - Content and Design - Speed - 
+    Navigation and Ergonomics - Google Rank. </font></p>
+<hr/>
+</blockquote>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="3" class="rs-stamp-table" width="95%">
+<tr>
+<td align="center" rowspan="2" width="33%"> <img alt="Illustration 4 from Reactions on the Romania seen through its stamps site" border="0" height="105" loading="lazy" src="texas.jpg" width="85" decoding="async"/></td>
+<td align="center" rowspan="2" width="33%"> <img alt="Illustration 5 from Reactions on the Romania seen through its stamps site" border="0" height="105" loading="lazy" src="ttl-hot-stamps.jpg" width="459" decoding="async"/></td>
+<td align="center" width="34%"><img alt="Illustration 6 from Reactions on the Romania seen through its stamps site" border="0" height="46" loading="lazy" src="aps-chap.jpg" width="179" decoding="async"/></td>
+</tr>
+<tr>
+<td align="center" width="34%"><img alt="Illustration 7 from Reactions on the Romania seen through its stamps site" border="0" height="49" loading="lazy" src="tx-assoc-chap.jpg" width="164" decoding="async"/></td>
+</tr>
+</table>
+</center>
+</div>
+<p class="rs-stamp-row"><img alt="Illustration 8 from Reactions on the Romania seen through its stamps site" border="0" height="71" loading="lazy" src="surfing.jpg" width="292" decoding="async"/></p>
+<p align="center" class="rs-body-paragraph"><font color="#000000" face="Arial" size="2">"Romania 
+    - Tara mea de glorii, tara mea de dor, tara mea de timbre<br/>
+    (My country of glory, my country of longing, my country of stamps)"</font></p>
+<p align="left" class="rs-body-paragraph"><font color="#000000" face="Arial" size="2">The above words 
+    open Victor Manta's new web site "Romania Through Its Stamps", and 
+    what a web site it is! Mr. Manta dedicates the site to "...you, a person 
+    who wishes to know more about Romania." By the time you finish the tour 
+    you will know a great deal about Romanian culture, language, history, and, 
+    of course, Romanian stamps. I warn you ahead of time - do not expect to consume 
+    this site in one sitting. This is one of those rare sites where you will return 
+    again and again -- a work of love and joy put together by a master in the 
+    art of using the web to express the love of philately.</font></p>
+<p align="left" class="rs-body-paragraph"><font color="#000000" face="Arial, Helvetica, sans-serif" size="2"><b>From 
+    the philatelic newsgroup</b> news:rec.collecting.stamps.discuss</font></p>
+<ul>
+<li><font color="#000000" face="Arial, Helvetica, sans-serif" size="2">Nice 
+      pages, Victor. Congratulations! Sier<br/>
+</font></li>
+<li><font color="#000000" face="Arial, Helvetica, sans-serif" size="2">Victor, 
+      My family (on my father's side) is from Romania. I've always been intrigued 
+      by the country and its stamps. Your site really brings the stamps to life 
+      for me. Thank you! Greg.<br/>
+</font></li>
+<li><font color="#000000" face="Arial, Helvetica, sans-serif" size="2">Victor, 
+      Your new site about Romania is excellent, and your site about art on stamps 
+      is also remarkable. David.</font><font color="#000000"><br/>
+</font></li>
+<li><font color="#000000" face="Arial" size="2">It's a very promising site, 
+      congratulations. Ann.</font></li>
+</ul>
+<p class="rs-article-subheading"><font face="Arial" size="2"><font color="#800000"><b>E-mail messages (a selection):</b></font></font></p>
+<ul>
+<li><font color="#000080" face="Arial" size="2">I cannot tell you how much 
+      I have enjoyed your new web site "Romania Through Its Stamps". 
+      Thank you for this gift. I know you are a master in the art of using the 
+      web to express your love of philately. Hubert. </font></li>
+<li><font color="#800000" face="Arial" size="2">Molti complimenti per il sito, 
+      ben strutturato con una bellissima destrizione della Romania tramite la 
+      filatelia. Complimenti spero di incontrare altri siti così ben fatti. Puoi 
+      capire che sono molto appassionato della filatelia romena dalla mia e-mail. 
+      Andrea.</font></li>
+<li><font color="#000080" face="Arial" size="2">Ce placere sa descopar un 
+      sit dedicat filateliei romanesti! Lucian V. (What a pleasure to discover 
+      a site dedicated to Romanian philately).</font></li>
+<li><font color="#800000" face="Arial" size="2">Aveti un site minunat, care 
+      merita toate aprecierile. Am doar 16 ani si am descoperit aici cu bucurie 
+      o parte din timbrele pe care si eu le colectionez. Pe langa acestea, insa 
+      am descoperit numeroase surprize in legatura cu frumusetea timbrelor filatelice 
+      romanesti. Felicitari inca o data! Marina.</font><font color="#000080" face="Arial" size="2"><br/>
+</font></li>
+</ul>
+<p class="rs-body-paragraph"><font color="#000000" face="Arial" size="2">Thanks a lot to all of you for 
+    your interest and for commenting. Echoes like these encourage me to continue. 
+    Please continue to send your comments by e-mail, by clicking <a href="mailto:manvic_99spaam@yahoo.com?subject=From%20The%20Romania%20on%20Stamps%20site">here</a>. 
+    After having clicked, please cut out the "spaam" from my email address.</font></p>
+<div align="center"><center>
+<table border="0" cellpadding="0" cellspacing="0" class="rs-stamp-table" width="100%">
+<tr>
+<td valign="middle"><strong><font color="#000000" face="Arial" size="2"><small><small>Created 
+      09/05/01. Revised: 08/19/2010. <br/>
+      Copyright © 2001 - 2010 by Victor Manta, Switzerland. <br/>
+      All rights reserved worldwide.</small></small></font></strong></td>
+<td align="right" valign="middle"> <p align="right"><a href="https://www.marci-postale.com" target="_blank" rel="noopener noreferrer">
+<img align="center" alt="Site's Banner" height="40" loading="lazy" src="../vmbanner1.gif" vspace="3" width="400" decoding="async"/></a><a href="../index.html" target="_blank" rel="noopener noreferrer"><br/>
+</a><strong><font color="#000000" face="Arial"><small><small>Click the 
+        banner to visit the site</small></small></font></strong></p></td>
+</tr>
+</table>
+</center></div>
+</main></body></html>

@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="fr" http-equiv="Content-Language"/>
+<meta content="The Association of Philatelic Web Publishers. Tips for Webmasters" http-equiv="Description"/>
+<meta content="Association, Web, Publishers, stamps, collecting, philately, philatelic, tips, Java, code" http-equiv="keywords"/>
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR"/>
+<meta content="FrontPage.Editor.Document" name="ProgId"/>
+<title>Conseils aux Webmasters</title>
+<base target="Examples"/>
+<style>.pwo-language-picker{margin-left:auto;display:flex;gap:8px;align-items:center;color:inherit;font:14px Arial,sans-serif}
+.pwo-language-picker select{padding:8px;border-radius:5px;max-width:145px}
+@media(max-width:680px){.pwo-language-picker{margin:8px 0 0;flex-wrap:wrap}}
+#google_translate_element_pwo_test{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}</style></head>
+<body bgcolor="#FFF5D7" leftmargin="4" style="font-family: Arial; font-size: 12pt" text="#FF0000" topmargin="11">
+<font face="Arial">
+<p align="center"><img border="0" height="46" src="../ttl-pwo.gif" width="489"/></p>
+<p align="center"><b><font color="#ff0000" face="Arial" size="4">Conseils aux
+Webmasters Philatéliques</font></b></p>
+<font color="#000080" face="Arial">
+<p>Voici quelques (premiers) conseils, de la part de L'Organisation des
+Webmasters Philatéliques (PWO), destinés aux Webmasters intéressés, et
+relatifs à leur activité de publication sur le Web. Ce sont en général de
+courtes notes ou de petits morceaux de code. Tous les utilisateurs qui
+souhaitent faire partager leurs connaissances sont invités à nous transmettre
+leurs propositions par </p></font><i><a href="mailto:president@pwmo.org"><font color="#00ff00" face="Arial">e-mail</font></a></i><font color="#000080" face="Arial">.
+Les meilleures seront publiées sur ce site, avec mention du le nom de
+l'expéditeur. N'oubliez pas de joindre à votre proposition un lien vers une
+page Web l'illustrant. Merci d'avance !
+</font><b>
+<p>1. Protégez vos images du pillage à l'aide d'un simple code</p>
+</b><font color="#000080" face="Arial">
+<p>Ce code empêche le visiteur d'enregistrer vos images sur son disque dur par
+un "clic droit". Il s'agit d'ajouter un Script Java dans la page que
+vous souhaitez protéger. Cependant cela n'est pas efficace lorsque le
+navigateur est Navigator en version inférieure ou égale à 3, ou Internet
+Explorer inférieur ou égal à 2. De plus, la protection offerte par ce code
+est relativement limitée.</p>
+</font><font color="#0000ff" face="Arial">
+<p>&lt;SCRIPT LANGUAGE</p></font><font face="Arial">="JavaScript"</font><font color="#0000ff" face="Arial">&gt;
+</font><font color="#800000" face="Arial">
+<p>&lt;!-- Ce code est offert par la PWO : http://www.pwmo.org --&gt;<br/>
+&lt;!-- Il protège vos images du pillage --&gt;<br/>
+&lt;!-- par des visiteurs utilisant une version de NN supérieure à 3 ou de IE
+supérieure à 2. --&gt;<br/>
+&lt;!-- Vous pouvez changer le texte : "Désolé ! C'est à moi ..."
+par ce que vous voulez. --&gt;</p>
+</font>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- Begin</font></p>
+<p><font color="#800000" face="Arial" size="2">function test(x) {</font><font color="#800000" face="Arial" size="2"><br/>
+  var msg = "</font><font color="#800000" face="Arial">Désolé !
+C'est à moi</font><font color="#800000" face="Arial" size="2">.";<br/>
+  if (navigator.appName == 'Netscape' &amp;&amp; x.which == 3) {<br/>
+     alert(msg);<br/>
+     return false;<br/>
+   }<br/>
+</font>
+</p></font>
+
+ <font color="#800000"> <font face="Arial" size="2">if (navigator.appName ==
+'Microsoft Internet Explorer'
+&amp;&amp; event.button==2) {<br/>
+    alert(msg);<br/>
+    return false;<br/>
+  }<br/>
+  else return true;<br/>
+}</font></font>
+<p><font color="#800000" face="Arial" size="2">function getit() {<br/>
+  if(document.images)<br/>
+</font>
+
+   
+
+<font face="Arial">
+<font color="#800000" face="Arial" size="2">for(i=0;i&lt;document.images.length;i++)<br/>
+  document.images[i].onmousedown = test;<br/>
+}<br/>
+// End --&gt;    </font></font></p>
+<p><font color="#0000c0" face="Arial" size="2">&lt;/SCRIPT&gt;</font></p>
+<p><font size="2"><font color="#0000c0">&lt;body onLoad=</font><font color="#000000">"getit()"</font><font color="#0000c0">
+&gt;</font></font></p>
+<p><font color="#000080" face="Arial" size="2">Fourni par Victor Manta,
+Président de la PWO.</font><font color="#000080">  <a href="../Members-pages/victor-manta.htm"><i>Example</i></a> </font></p>
+<hr color="#0000FF" size="3"/>
+<b><font face="Arial" size="4">
+<p>2. Ne laissez pas d'autres sites enfermer vos pages dans leurs cadres</p>
+</font></b><font color="#000080" face="Arial" size="2">
+<p>Ce très court code affranchira votre pages de leurs cadres. C'est
+particulièrement utile pour les pages de garde. Pour le tester, essayez
+d'insérer la page de l'exemple dans un cadre de votre site ...</p>
+</font><font color="#0000ff" face="Arial" size="2">
+<p>&lt;SCRIPT LANGUAGE=JAVASCRIPT&gt;</p>
+</font><font color="#800000" face="Arial" size="2">
+<p>&lt;!-- Ce script est offert par la PWO : http://www.values.ch/PWO.htm --&gt;<br/>
+&lt;!-- Il interdira l'affichage de votre page dans les cadres d'un autre site
+qui tenterait de le faire. --&gt;</p>
+</font>
+<p><font color="#0000c0" face="Arial" size="2">&lt;SCRIPT LANGUAGE=JAVASCRIPT&gt;</font></p>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- This script is offered by
+PWO: http://www.values.ch/PWO.htm --&gt;<br/>
+&lt;!-- It will free your page from the frames of another site that try to
+display it --&gt;</font></p>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- Begin<br/>
+if (top.frames.length!=0)<br/>
+</font>
+
+
+ 
+
+<font face="Arial">
+<font color="#800000" face="Arial" size="2">top.location=self.document.location;</font></font></p>
+<p><font color="#800000" face="Arial" size="2">// End --&gt;</font></p>
+<p><font color="#0000c0" face="Arial" size="2">&lt;/SCRIPT&gt;</font></p>
+<p><font color="#000080" face="Arial" size="2">Fourni par Victor Manta,
+Président de la PWO.</font><font color="#000080"> <a href="http://www.values.ch"><i>Example</i></a> </font></p>
+<hr color="#0000FF" size="3"/>
+
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td width="50%">
+<b><font color="#000080" face="Arial" size="1">Créé le 03-08-01.<br/>
+Modifié le </font></b>
+<font color="#000080"><strong><small><small>
+<!--webbot bot="TimeStamp" s-format="%d-%m-%y" s-type="EDITED" startspan -->16-09-01<!--webbot bot="TimeStamp" endspan i-checksum="12417" --></small></small></strong></font><b><font color="#000080" face="Arial" size="1">.<br/>
+Copyright © 2001 PWO et<br/>
+</font></b><font face="Arial"><b><font color="#000080" face="Arial" size="1"><a href="http://www.values.ch" target="_blank"> Victor
+Manta</a></font></b></font><b><font color="#000080" face="Arial" size="1">,
+Suisse.<br/>
+Tous droits réservés dans le monde entier.</font></b>
+</td>
+</tr></table></center>
+<td width="50%">
+<p align="right"><a href="http://www.pwmo.org"><img border="0" height="80" src="../images/pwo-logo.gif" width="103"/></a></p></td>
+
+
+</div>
+<font face="Arial">
+<hr color="#0000FF" size="3"/>
+</font>
+<div class="pwo-language-picker" translate="no"><label for="pwo-test-language">Language</label>
+<select aria-label="Language" class="notranslate" id="pwo-test-language" translate="no">
+<option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="ro">Română</option><option value="ru">Русский</option><option value="zh-CN">中文</option>
+</select></div><div aria-hidden="true" id="google_translate_element_pwo_test"></div><script src="../pwo-translation-pilot-test.js"></script></body>
+</html>

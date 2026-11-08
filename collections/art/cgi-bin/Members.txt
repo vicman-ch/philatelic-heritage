@@ -1,0 +1,50 @@
+1;"Victor Manta, Founder";"Switzerland";"Paintings on Stamps Worldwide";"English, Deutsch, Francais, Romanian, Russian";"manta@values.ch";"http://www.values.ch"
+2;"Gerhard Batz";"Germany";"Czechoslovakian Arts Stamps";"English";"batz.hausen@t-online.de";"http://home.t-online.de/home/batz.hausen/stampart"
+3;"Satu Hourula";"Finland";"Arts Stamps";"English, French, Swedish";"satu.hourula@cop.fi";"http://www.beam.cop.fi/satu"
+4;"Han-Chuan Hsu";"Taiwan";"Arts Stamps";"English";"hsuhc@ms2.hinet.net";
+5;"Vasile Botez";"Romania";"Arts Stamps";"English, Francais, Deutsch";"vbotez@online.ro";
+6;"Marcelo Lencastre";"Brazil";"Arts Stamps";"English, Francais";"kuad@uninet.com.br";
+7;"Efrain Pacheco Rosado";"Mexico";"Arts Stamps";"English";"epacheco@mpsnet.com.mx";
+8;"Gerardo Lopez Isunza";"Mexico";"Arts Stamps";"English";"fmaist@intercable.net.mx";
+9;"Jeanne Brunkow";"USA";"Arts Stamps";"English";"dave@lab.chill.colostate.edu";
+10;"Heriberto Bodeant";"Uruguay";"Arts Stamps";"English, Francais, Castellano";"sgdocor@hotmail.com";
+11;"Denis Pedneault";"Canada(Quebec)";"Arts Stamps";"Francais, English";"lorpedno@netcom.ca";
+12;"David Majus";"Israel";"Van Gogh Paintings on Stamps";"English, Polish";"majus@inter.net.il";
+13;"Melih Sisa";"Turkey";"Arts Stamps";"English, Italian, French, Spanish";"melihsisa@superonline.com";
+14;"Imre Kovacs";"Hungary";"Arts Stamps";"English";"kovacs.imre@populus.net";
+15;"Boomer Crotty";"USA";"Arts Stamps";"English";"bcrotty@kiwi.dep.anl.gov";
+16;"Ytzhak Laskin";"Israel";"Arts Stamps";"English";"il48lask@netvision.net.il";
+17;"Fernando Avila Ramirez";"Mexico";"Arts Stamps";"English";"favila@uagunix.gdl.uag.mx";
+18;"Don Sage";"USA";"Arts Stamps";"English";"donts@aol.com";
+19;"Itzik Jacubovitz";"Israel";"Arts Stamps";"English";"peace17@ibm.net";
+20;"Andrea Gostynski";"Germany";"Arts Stamps";"English";"andrea@lbw.bwue.de";
+21;"Mike Robitaille";"Canada";"Arts Stamps";"English, Francais";"marobita@nbnet.nb.ca";
+22;"Dick Roodhorst";"Netherlands";"Arts Stamps";"English, Deutsch";"roodhors@gironet.nl";
+23;"Arie Kahana";"Israel";"Arts Stamps";"English, Romana";"yaniv@isracom.net.il";
+24;"Eduard Polder";"Netherlands";"Impressionist Painters";"English, Deutsch";"epo@haans.com";
+25;"Malte Aronsson";"Sweden";"Arts Stamps";"English";"maronsson@geocities.com";
+26;"Roberto M.R.Pereira";"Brazil";"Arts Stamps";"English";"cdsparty@iis.com.br";
+27;"Helen Fowler";"USA";"Raphael, Rubens, Michelangelo.";"English";"hffowler@qtm.net";
+28;"Hu Hengjie";"China";"Arts Stamps";"English";"huhj@public.bta.net.cn";"http://www.nease.net/~stamps"
+29;"Roberto Racana";"Italy";"Arts Stamps";"English, Francais";"r.racana@powernet.it";
+30;"Roberto Santana";"Cuba";"Arts Stamps";"English, Francais";"rsantana_cu@yahoo.com";
+31;"Roy Berliner";"USA";"Arts Stamps";"English";"berliner@home.com";
+32;"Boris Kerzhenevich";"USA";"Arts Stamps";"English, Russian";"borisk@ameritech.net";
+33;"Sergey Stepanov";"Russia";"Arts Stamps";"English";"ssm@dialup.ptt.ru";
+34;"Carlos Montoya";"USA";"Arts Stamps";"English, Spanish";"carmontoya@hotmail.com";
+35;"Ann Mette Heindorff";"Denmark";"Arts Stamps";"English, German, French, Lithuanian, Russian";"atee@adr.dk";
+36;"Garry Nicol";"New Zealand";"Arts Stamps";"English";"jody.s@xtra.co.nz";
+37;"Dr. Coca Radomir";"Israel";"Arts Stamps";"English, French, Romanian";"coca@isdn.net.il";
+38;"T.K. Shinn";"New Zealand";"Oriental Asian Art on Stamps";"English, Korean, Japanese";"fuzzydrinks@hotmail.com";
+39;"J.T. Kennedy";"USA";"Arts Stamps";"English";"Truett@msn.com";
+40;"Bijoy K.Sinha";"India";"Arts Stamps";"English";"bksinha@yahoo.com";
+41;"Roman Djuzev";"Estonia";"West European Art";"English";"karmela@online.eex";
+42;"Kathryn Anshutz";"USA";"Arts Stamps";"English";"kanshutz@msn.com";
+43;"Antonio Villa";"Italy";"Arts Stamps";"English";"teivill@rd.tei.ericsson.se";
+44;"Alexander Dmitriev";"Ukraine";"Arts Stamps";"English";"dmitriev@kyivstar.net";
+45;"Lucianno Prinzivalli";"Italy";"Arts Stamps";"English, Francais";"loni.lp@flashnet.it";
+46;"Rizza Faye Librando";"Philippines";"Arts Stamps";"English, Filipino";"rfaye@hotmail.com";
+47;"John Torres";"Philippines";"Arts Stamps";"English, Filipino";"john_torres@hotmail.com";
+48;"Bruno Bouveret";"France";"Maximum Cards (da Vinci)";"English, Chinese";"bb.guo@wanadoo.fr";
+49;"Natalie Epifanova";"Russia";"Arts Stamps";"English";"acul@philos.nsu.ru";
+50;"Elvan Gunay";"Turkey";"Arts Stamps";"English";"elvang@superonline.com";

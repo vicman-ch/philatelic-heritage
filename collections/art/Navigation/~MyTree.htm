@@ -1,0 +1,380 @@
+<HTML> 
+<HEAD>
+
+<! DO NOT CHANGE this file as it will cause the Auscomp eNavigator Suite 2000 to malfunction> 
+<!============================================================================================>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Auscomp eNavigator Suite 2000">
+<title>Auscomp eNavigator Suite 2000 - Enhanced Site</title>
+
+<script language="JavaScript">
+var imgSpace = '<TD><IMG SRC="Space.gif" WIDTH=16 HEIGHT=16 BORDER=0></TD>';
+var imgLeaf = '<IMG SRC="./Leaf.gif" WIDTH=16 HEIGHT=16 BORDER=0 ALT="';
+var imgFolderC = '<IMG SRC="./EnvelopC.gif" WIDTH=16 HEIGHT=16 BORDER=0 ALT="';
+var imgFolderO = '<IMG SRC="./EnvelopO.gif" WIDTH=16 HEIGHT=16 BORDER=0 ALT="';
+var HTMLBaseTarget = '<BASE TARGET="main">';
+var HTMLBody = '<BODY bgcolor="#FFF5D7" text="#004080" link="#000000" vlink="#000000" alink="#000000">';
+var Title = 'Auscomp eNavigator Suite';
+
+var fSelected=1; 
+var fOpend=2; 
+var targetFrame='main';
+var rootNode = null;
+var activeNode=null;
+var selectedNode=null;
+var showNode=true;
+var cSelText='#FFFFFF';
+var cSelBG='#FF0000';
+
+var FolderMOClose = 'Click to close';
+var FolderMOOpen = 'Click to open';
+var HMTLHeader = '<TABLE WIDTH="100%"><TR><TD NOWRAP ALIGN="LEFT"><FONT FACE="ARIAL" SIZE="2"><STRONG>'+Title+'</STRONG><br></FONT></TD></TR></TABLE>';
+
+//============================================================================
+function isNetscape() 
+{ return (navigator.appName.indexOf('Netscape') != -1); }
+
+//============================================================================
+function isFolder(node) 
+{ return node.child.length>0; }
+
+//============================================================================
+function isOpen(node) 
+{ return node.flags&fOpend; }
+
+
+//============================================================================
+function isSelected(node) 
+{ return node.flags&fSelected; }
+
+//============================================================================
+function Select(node, flg) 
+{ 
+	if (flg) 
+		node.flags |= fSelected; 
+	else 
+		node.flags &= ~fSelected; 
+}
+
+//============================================================================
+function ExpandNode(node, flg) 
+{ 
+	if (flg) 
+		node.flags |= fOpend; 
+	else 
+		node.flags &= ~fOpend; 
+}
+
+
+//============================================================================
+function toggleNode() 
+{ showNode=!showNode; }
+
+//============================================================================
+function toggleNodeRefresh() 
+{ toggleNode(); redrawTree(); }
+
+//============================================================================
+function createNode(node)
+{
+        var line='<TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR VALIGN="MIDDLE">';
+        for(var j=node.indent;j>0;j--) line += imgSpace;
+        line += '<TD>';
+
+        if (isFolder(node))
+        {
+                line+='<a href="javascript:parent.clicked(\''+node.name+'\','+!isOpen(node)+')" ';
+
+                if (isOpen(node))
+                        line+='onMouseOver="window.status=\'Click to close.\'; return true;"';
+                else
+                        line+='onMouseOver="window.status=\'Click to open.\'; return true;"'; 
+
+                line+='>';
+
+                if (isOpen(node))
+                        line+=imgFolderO+node.statusbar+'">';
+                else
+                        line+=imgFolderC+node.statusbar+'">';
+                line+='</A>';
+        }
+	  //add Leaf
+        else
+                line+=imgLeaf+node.statusbar+'">';
+
+        line+='</td>';
+
+        if (isSelected(node))
+                line+='<TD NOWRAP BGCOLOR="'+cSelBG+'"><FONT COLOR="'+cSelText+'">'+node.title+'</FONT>';
+        else
+        {
+                if (node.href.indexOf('javascript:') == 0)
+                {
+                        line+='<TD NOWRAP><A HREF="'+node.href+'" onMouseOver="window.status=\''+node.statusbar+'\'; return true"';
+                        line+='">'+node.title+'</A>';
+                }
+                else
+                {
+                        if (node.href.indexOf('://') != -1)
+                                targetFrame = '_top';
+                        
+                        if (node.href=='')
+                                line+='<TD NOWRAP>'+node.title;
+                        else
+                                line+='<TD NOWRAP><A HREF="'+node.href+'" onMouseOver="window.status=\''+node.statusbar+'\'; return true" target='+targetFrame+'>'+node.title+'</A>';
+                }
+        }
+        line+='</TD></TR></TABLE>';
+        return line;
+}
+
+//============================================================================
+function createTree(fHTML, node)
+{
+        if (!node.html[node.flags]) node.html[node.flags] = createNode(node);
+        fHTML.writeln(node.html[node.flags]);
+        if (isOpen(node))
+        {
+                for(var i=0; i<node.child.length; i++) createTree(fHTML, node.child[i]);
+        }
+}
+
+//============================================================================
+function createNodeText(fHTML, node)
+{
+	fHTML.writeln('<TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR VALIGN="MIDDLE"><TD NOWRAP>'+node.text+'</TD>'+imgSpace+'</TR></TABLE>');
+        if (isOpen(node))
+        {
+                for(var i=0; i<node.child.length; i++) createNodeText(fHTML, node.child[i]);
+        }
+}
+
+//============================================================================
+function makeTree(fHTML, node1)
+{
+        fHTML.writeln(HMTLHeader);
+        fHTML.writeln('<TABLE CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR><TD NOWRAP>');
+        createTree(fHTML, node1);
+        fHTML.writeln('</TABLE>');
+
+}
+
+//============================================================================
+function redrawTreeNow()
+{
+        if (!self.index) return;
+                
+        var fHTML = index.document;
+        if (fHTML)
+        {
+                fHTML.open();
+                fHTML.writeln(HTMLBaseTarget);
+                fHTML.writeln(HTMLBody);
+                makeTree(fHTML, rootNode);
+                fHTML.close();
+        }
+}
+
+//============================================================================
+function redrawTree()
+{
+        setTimeout('redrawTreeNow()',50);
+}
+
+//============================================================================
+function www_auscomp_com(iValue)
+{
+        this.length=iValue;
+        return this;
+}
+
+//============================================================================
+function setIndent(node,iValue)
+{
+        node.indent=iValue;
+        for(var k=0; k<node.child.length; k++)
+                setIndent(node.child[k], iValue+1);
+}
+
+//============================================================================
+function createNodeObject(sName, sHREF, sTitle, sStatusbar, sText)
+{
+        this.name=sName;
+        this.href=sHREF;
+        this.title=sTitle;
+        if (sStatusbar == '') sStatusbar=sText;
+        this.statusbar=sStatusbar;
+        this.text=sText;
+        this.flags=0;
+        this.indent=0;
+        this.child = new www_auscomp_com(createNodeObject.arguments.length-5);
+        for(var i=5; i<createNodeObject.arguments.length; i++)
+                this.child[i-5] = createNodeObject.arguments[i];
+                
+        if (isFolder(this))
+                this.html = new www_auscomp_com(4)
+        else
+                this.html = new www_auscomp_com(2)
+}
+
+//============================================================================
+function select(rootNode, name) 
+{
+        var result=false;
+        for(var i=0; !result && i<rootNode.child.length; i++)
+                result = select(rootNode.child[i], name);
+        
+        if (!result)
+        {
+                result = (rootNode.name==name);
+                if (result)
+                {
+                        Select(rootNode,true);
+                        selectedNode = rootNode;
+                }
+        }else
+                ExpandNode(rootNode,true);
+
+        return result;
+}
+
+
+//============================================================================
+function Open(name, flg, node)
+{
+        var result=false;
+        if (!node) node = rootNode;
+
+        for(var i=0; i<node.child.length; i++)
+        {
+                result = Open(name, flg, node.child[i]);
+                if (result==true) break;
+        }
+        
+        if (result==true || node.name==name)
+        {
+                if (node.name==name || flg) ExpandNode(node, flg);
+                return true;
+        }
+        return false;
+}
+
+//============================================================================
+function clicked(name, flg, node)
+{
+        Open(name, flg, node);
+        redrawTree();
+}
+
+
+//============================================================================
+//Nodes
+ID663 = new createNodeObject('ID663', '', 'New Node', '', '');
+ID062 = new createNodeObject('ID062', '', 'Column', 'Webmaster`s column', '', ID663);
+ID561 = new createNodeObject('ID561', '', 'New Node', '', '');
+ID060 = new createNodeObject('ID060', '', 'Topical', 'Topical Stamp Collecting', '', ID561);
+ID459 = new createNodeObject('ID459', '', 'New Node', '', '');
+ID058 = new createNodeObject('ID058', '', 'Misc', 'Diverses', '', ID459);
+ID357 = new createNodeObject('ID357', '', 'Countries', 'Art and customs of different countries', '');
+ID356 = new createNodeObject('ID356', '', 'Museums', 'Museums of the world', '');
+ID355 = new createNodeObject('ID355', 'love.htm', 'Love', 'Love in arts', '');
+ID354 = new createNodeObject('ID354', 'history1.htm', 'History', 'Paintings on Art stamps', '');
+ID353 = new createNodeObject('ID353', 'ships.htm', 'Sailing', 'Sailing in arts', '');
+ID352 = new createNodeObject('ID352', 'Art-Gallery/Coach/coaches.htm', 'Coaches', 'Mail coaches in arts', '');
+ID351 = new createNodeObject('ID351', 'animals.htm', 'Animals', 'Animals in arts', '');
+ID350 = new createNodeObject('ID350', 'music.htm', 'Music', 'Music in visual arts', '');
+ID349 = new createNodeObject('ID349', 'goya.htm', 'The Majas', 'By Goya', '');
+ID348 = new createNodeObject('ID348', 'Art-Gallery/Renown/Liberty/liberty.htm', 'Liberty', 'By Eugene Delacroix', '');
+ID347 = new createNodeObject('ID347', 'michelan.htm', 'Sixtine Chapel', 'By Michelangelo', '');
+ID346 = new createNodeObject('ID346', 'Art-Gallery/Leonardo/Mona-Lisa/monalisa.htm', 'Famous Works', 'Mona Lisa', '', ID347, ID348, ID349);
+ID345 = new createNodeObject('ID345', 'self.htm', 'Self-portraits', 'By renown artists', '');
+ID344 = new createNodeObject('ID344', 'Art-Gallery/Embroidery/embroid-fl.htm', 'From Liechtenstein', 'On FL stamps', '');
+ID343 = new createNodeObject('ID343', 'Art-Gallery/Embroidery/embroidery.htm', 'Embroidery', 'From St. Gall', '', ID344);
+ID342 = new createNodeObject('ID342', 'Countries/Romania/Children/rom-children.htm', 'Romanian', 'Romanian childen on paintings', '');
+ID341 = new createNodeObject('ID341', 'Art-Gallery/Children/children1.htm', 'Paintings', 'Children on paintings', '');
+ID340 = new createNodeObject('ID340', 'children.htm', 'Children', 'Painted by themselves', '', ID341, ID342);
+ID339 = new createNodeObject('ID339', 'Art-Gallery/Letter/letter.htm', 'Letters', 'Letters in arts', '');
+ID338 = new createNodeObject('ID338', 'Art-Gallery/Women/Balkan/balkan-women.htm', 'Balkan Women', 'Balkan women in art', '');
+ID337 = new createNodeObject('ID337', 'nudes.htm', 'Nudes', 'Nudes in art, with some surprises', '');
+ID336 = new createNodeObject('ID336', 'beautifu.htm', 'Women', 'Beautiful women in art', '', ID337, ID338);
+ID335 = new createNodeObject('ID335', 'flowers.htm', 'Flowers', 'Flowers in arts', '');
+ID334 = new createNodeObject('ID334', 'Landscapes/landscapes.htm', 'Landscapes', 'Landscapes in art', '');
+ID333 = new createNodeObject('ID333', 'Countries/Italy/Titian/titian-3.htm', 'Titian', 'Religious Art by Titian', '');
+ID332 = new createNodeObject('ID332', 'Art-Gallery/Easter/easter.htm', 'Easter', 'Easter in arts', '');
+ID331 = new createNodeObject('ID331', 'christmas.htm', 'Christmas', 'Christmas stamps tree', '');
+ID330 = new createNodeObject('ID330', 'stained-glass.htm', 'Religious Art', 'Stained Glass', '', ID331, ID332, ID333);
+ID329 = new createNodeObject('ID329', 'pottery.htm', 'Pottery', 'Ceramics and pottery', '');
+ID328 = new createNodeObject('ID328', 'Art-Gallery/Rock-Paintings/rock-paintings5.htm', 'Swedish', 'Tanium World Heritage', '');
+ID327 = new createNodeObject('ID327', 'Art-Gallery/Rock-Paintings/rock-paintings3.htm', 'Saharan', 'Rock paintings from Sahara', '');
+ID326 = new createNodeObject('ID326', 'Art-Gallery/Rock-Paintings/rock-paintings2.htm', 'European', 'African and European Rock art', '');
+ID325 = new createNodeObject('ID325', 'Art-Gallery/Rock-Paintings/rock-paintings.htm', 'Australian', 'Rock paintings from Australia', '');
+ID324 = new createNodeObject('ID324', 'Art-Gallery/Rock-Paintings/rock-paintings4.htm', 'Rock Arts', 'Rock paintings of the world', '', ID325, ID326, ID327, ID328);
+ID323 = new createNodeObject('ID323', 'toc-gale.htm', 'Art Gallery', 'A great art gallery on postal stamps', '', ID324, ID329, ID330, ID334, ID335, ID336, ID339, ID340, ID343, ID345, ID346, ID350, ID351, ID352, ID353, ID354, ID355);
+ID022 = new createNodeObject('ID022', '', 'Art', '', '', ID323, ID356, ID357);
+ID221 = new createNodeObject('ID221', 'http://www.values.ch/activeforum', 'Forum', 'PASIC Forum', '');
+ID220 = new createNodeObject('ID220', 'PASIC/Members/Ann+Avram/Georgia/georgia.htm', 'Georgia', 'Georgia O`Keeffe', '');
+ID219 = new createNodeObject('ID219', 'PASIC/Members/Ann+Avram/tintoretto.htm', 'Avram & Ann - DK', 'The page of Avram+ and Ann', '', ID220);
+ID218 = new createNodeObject('ID218', 'PASIC/Members/Claude/claude.htm', 'Mlle d`Anvers', 'By Renoir', '');
+ID217 = new createNodeObject('ID217', 'PASIC/Members/Claude/claude1.htm', 'Claude - France', 'Claude`s pages', '', ID218);
+ID216 = new createNodeObject('ID216', 'PASIC/Members/Francis/francis.htm', 'Francis - USA', 'Francis` page', '');
+ID215 = new createNodeObject('ID215', 'shot.htm', 'Members Pages', 'The PASIC members pages', '', ID216, ID217, ID219);
+ID214 = new createNodeObject('ID214', 'cgi-bin/db-update.asp', 'JOIN for free', 'Join PASIC', '');
+ID213 = new createNodeObject('ID213', 'PASIC/Officers/officers-en.htm', 'Officers', 'PASIC Officers', '');
+ID212 = new createNodeObject('ID212', 'cgi-bin/members.asp', 'Members', 'PASIC Members', '');
+ID211 = new createNodeObject('ID211', 'PASIC/journal.htm', 'Journal', 'PASIC Journal', '');
+ID010 = new createNodeObject('ID010', '../PASIC/statutes-en.htm', 'Club', 'Paintings and Arts on Stamps Internet Club', '', ID211, ID212, ID213, ID214, ID215, ID221);
+ID19 = new createNodeObject('ID19', 'freeads.htm', 'Your Ads', 'Place an ad for free', '');
+ID18 = new createNodeObject('ID18', 'newissue.htm', 'Worldwide', 'From the whole world', '');
+ID17 = new createNodeObject('ID17', 'News-CH-FL-UNO/news-uno-en.htm', 'United Nations', 'From UN', '');
+ID16 = new createNodeObject('ID16', 'Countries/Liechtenstein/Chapel/ex-voto.htm', 'Liechtenstein', 'From Liechtenstein', '');
+ID15 = new createNodeObject('ID15', 'News-CH-FL-UNO/news-ch-en.htm', 'Switzerland', 'From Switzerland', '');
+ID14 = new createNodeObject('ID14', '', 'New Issues', 'New art issues from different countries', '', ID15, ID16, ID17, ID18);
+ID13 = new createNodeObject('ID13', 'db-en.htm', 'FREE Huge Database', 'Arts on stamps database', '');
+ID02 = new createNodeObject('ID02', '', 'Resources', 'Free resources on this site, general Web resources', '', ID13, ID14, ID19);
+ID01 = new createNodeObject('ID01', 'christmas.htm', 'Merry Christmas', 'Merry Christmas to all visitors!', '');
+ID00 = new createNodeObject('ID00', '../Countries/Liechtenstein/Christmas-2001/christmas-2001.htm', 'News', 'Christmas Medallions in wooded frames', '', ID01);
+rootNode = new createNodeObject('root', '', 'My Site Name', 'Start here to explore', '', ID00, ID02, ID010, ID022, ID058, ID060, ID062);
+
+
+
+setIndent(rootNode,0);
+ExpandNode(rootNode,true);
+select(rootNode,'Root');
+
+</script>
+</HEAD> 
+<frameset cols="250,*">
+  <frame src="treex.htm" name="index" scrolling="no"" noresize marginwidth="0" marginheight="0" target="main">
+  <frame src="main.htm" name="main">
+  <noframes>
+  <body>
+  <p><font size="3" face="Arial">Your browser does not support frames. Please upgrade your
+  browser. </font></p>
+  <script type="text/javascript"><!--
+google_ad_client = "pub-6697287241332041";
+/* 234x60, created 11/29/08 */
+google_ad_slot = "0857213903";
+google_ad_width = 728;
+google_ad_height = 90;;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6507762-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+  </noframes>
+</frameset>
+</html>
+   

@@ -1,0 +1,1 @@
+Corectie cumulativa a navigarii: My Column, Resources, About si pagini Overview. Extrageti in directorul principal artonstamps.org, suprascriind fisierele. Meniurile precedente raman. Paginile istorice recuperate contin textul; imaginile si descarcarile originale necesita verificare separata.

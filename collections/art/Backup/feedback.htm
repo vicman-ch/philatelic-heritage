@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Feedback Form, to contact the author of the page Paintings and Arts on Stamps">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>Feedback Form - Paintings on Stamps</title>
+<script LANGUAGE="JAVASCRIPT">
+<!--
+
+function FindIndexOfCheckedRadioButton(radioGroup){
+	for (var i = 0; i < radioGroup.length; i++)
+		if (radioGroup[i].checked)
+			return i
+	return 0
+}
+
+function ValidateInput(theForm)
+{
+
+	// validate user name
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. ";
+	var checkStr = theForm.UserName.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Full Name field is empty. Please fill it in!");
+		theForm.UserName.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Full Name. Please re-enter a valid one!");
+		theForm.UserName.focus();
+		return (false);
+	}
+
+	// validate e-mail address
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_";
+	var checkStr = theForm.UserEmail.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	var IndexOfAt; var IndexOfPeriod;
+	if (checkStr == ""){
+		alert("The E-mail field is empty. Please fill it in with a valid one!");
+		theForm.UserEmail.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		if (ch == "@"){
+			At_found = true	// @ found
+			IndexOfAt = checkStr.indexOf("@")
+		}
+		if (ch == "."){
+			Period_found = true	// . found
+			IndexOfPeriod = checkStr.lastIndexOf(".")
+		}
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK || !At_found || !Period_found){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.UserEmail.focus();
+		return (false);
+	}
+	if (((IndexOfPeriod - IndexOfAt) < 2) || ((checkStr.length - IndexOfPeriod) < 3)){
+		alert("Not a valid e-mail address. Please re-enter a valid one!");
+		theForm.UserEmail.focus();
+		return (false);
+	}
+
+     // validate PASIC membership (Language and Country fields should be filled-in)
+     i = FindIndexOfCheckedRadioButton(theForm.MessageType);
+     if (theForm.MessageType[i].value == "Membership"){
+
+	// validate Languages
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ,;/+";
+	var checkStr = theForm.UserLang.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Languages field is empty. Please fill it in!");
+		theForm.UserLang.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not valid Languages. Please re-enter valid ones!");
+		theForm.UserLang.focus();
+		return (false);
+	}
+
+	// validate Country
+	var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+	var checkStr = theForm.Country.value;
+	var validOK = true;
+	var At_found = false;
+	var Period_found = false;
+	if (checkStr == ""){
+		alert("The Country field is empty. Please fill it in!");
+		theForm.Country.focus();
+		return (false);
+	}
+	for (i = 0; i < checkStr.length; i++){
+		var ch = checkStr.charAt(i);
+		for (j = 0; j < checkOK.length; j++)
+			if (ch == checkOK.charAt(j))
+			break;
+		if (j == checkOK.length){
+			validOK = false;
+			break;
+		}
+	}	//for
+	if (!validOK){
+		alert("Not a valid Country. Please re-enter a valid one!");
+		theForm.Country.focus();
+		return (false);
+	}	
+     }		// if (theForm...)
+}
+
+//--> </script>
+</head>
+
+<body background="bg-michel.jpg" bgcolor="#00FFFF" text="#0000FF" link="#FF0000" alink="#008000" bgproperties="fixed">
+
+<h1 align="center"><img src="ttl-feed.gif" alt="ttl-feed.gif (4011 bytes)" WIDTH="256" HEIGHT="49"></h1>
+
+<p><!--webbot bot="HTMLMarkup" startspan -->
+<form action="http://www.regpop.ch/usr/local/bin/perl/FormMail.pl" method="POST" onSubmit="return ValidateInput(this);">
+  <p>--&gt; </p>
+<INPUT TYPE="HIDDEN" NAME="recipient" VALUE="manvic_99@yahoo.com">
+<INPUT TYPE="HIDDEN" NAME="SUBJECT" VALUE="Feedback">
+<INPUT TYPE="HIDDEN"name="VTI-GROUP" value="0"><!--webbot bot="HTMLMarkup" endspan --><strong><small><font face="Arial"><a name="Tell">Tell</a> me what you think about my Web site. I welcome all of
+your comments and suggestions. Use this form also to apply for the &quot;Paintings and
+Arts Stamps Internet Club - PASIC&quot; membership.</font></small></strong></p>
+
+<p><strong><small><font face="Arial">What kind of comment would you like to send? </font></small></strong>
+
+<dl>
+  <dd><p align="left"><strong><small><font face="Arial"><input type="radio" name="MessageType" value="Complaint" tabindex="1">Complaint <input type="radio" name="MessageType" value="Problem" tabindex="2">Problem <input type="radio" name="MessageType" value="Suggestion" tabindex="3">Suggestion <input type="radio" name="MessageType" value="Praise" tabindex="4" checked>Praise <input type="radio" name="MessageType" value="Membership" tabindex="5">Club Membership</font></small></strong></p>
+  </dd>
+</dl>
+
+<p><strong><small><font face="Arial">Enter your comments in the space provided below: </font></small></strong></p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p align="left"><em><strong><textarea name="Comments" rows="6" cols="71" tabindex="6"></textarea></strong></em></p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p><small><font face="Arial"><strong>Philatelic experience</strong></font></small></p>
+
+<p><small><font face="Arial"><input type="radio" name="Experience" value="Newcomer" tabindex="7"><em><strong> Newcomer <input type="radio" checked name="Experience" value="Experienced" tabindex="8"> Experienced <input type="radio" name="Experience" value="Advanced" tabindex="9"> Advanced</strong></em></font></small></p>
+
+<p><strong><small><font face="Arial">Tell me how to get in touch with you. Please fill-in
+at least the&nbsp; fields: Full Name and E-mail.<br>
+<font color="#0000FF">Please fill-in all&nbsp; fields marked with</font><font color="#FF0000"> * </font><font color="#0000FF">if you apply for the PASIC membership.</font></font></small></strong></p>
+
+<pre><em><strong>Full name    	<font color="#FF0000">*</font><!--webbot bot="Validation" s-display-name="Full Name" i-minimum-length="6" i-maximum-length="30" --><input type="text" size="35" name="UserName" tabindex="10" maxlength="30"> Nom et prénom
+E-mail      	<font color="#FF0000">*</font><input type="text" size="35" maxlength="256" name="UserEmail" tabindex="11"></strong></em> <em><strong>E-mail</strong></em>
+<em><strong>URL	 	 <input type="text" size="35" maxlength="256" name="UserURL" tabindex="12"></strong></em> <em><strong>URL</strong></em>
+<em><strong>Languages   	<font color="#FF0000">*</font><input type="text" size="35" maxlength="256" name="UserLang" tabindex="13"> Langues</strong></em></pre>
+<div align="left">
+
+<pre><em><strong>Country     	<font color="#FF0000">*</font><input type="text" size="35" maxlength="256" name="Country" tabindex="14"> Pays</strong></em></pre>
+</div>
+
+<pre><em><strong>Where have you 	 <input type="text" size="35" maxlength="256" name="Found_me" tabindex="15"> Ou avez Vous trouvé ce site?
+found my site? </strong></em></pre>
+
+<dl>
+  <dd><p align="center"><em><strong><input type="checkbox" name="ContactRequested" value="ContactRequested" tabindex="16"> <font face="Arial"><small>Please contact me as
+    soon as possible regarding this matter</small><br>
+    <small>Contactez-moi aussi vite que possible, s.v.p.</small></font></strong></em></p>
+  </dd>
+</dl>
+
+<p><!--webbot bot="HTMLMarkup" startspan --><p><input type="submit" value="Submit Feedback"> <input
+type="reset" value="Reset Form"> </p><!--webbot bot="HTMLMarkup" endspan --></p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+  <tr>
+    <td width="704" valign="middle"><font face="Arial" color="#0000FF"><strong><small><small>Revised:
+    <!--webbot bot="TimeStamp" s-format="%m/%d/%y" s-type="EDITED" startspan -->11/27/05<!--webbot bot="TimeStamp" i-checksum="12975" endspan -->.<br>
+    Copyright © 1997 - 1998 by Victor Manta. All rights reserved.</small></small></strong></font></td>
+    <td valign="middle" align="right" width="10"></td>
+    <td valign="middle" align="right"><a href="index.html" target="_blank"><img src="vmbanner1.gif" alt="Site's Banner" align="center" vspace="3" WIDTH="400" HEIGHT="40"></a></td>
+  </tr>
+</table>
+</center></div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-6697287241332041";
+/* 234x60, created 11/29/08 */
+google_ad_slot = "0857213903";
+google_ad_width = 728;
+google_ad_height = 90;;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6507762-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>   

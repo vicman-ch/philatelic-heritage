@@ -1,0 +1,33 @@
+This upload report may be found at: 
+  H:\NewWebs\PaintStamps\apwp\Navigation\apwp-navig_UPLOADREPORT.TXT
+To print it, simply open it in Wordpad or Notepad and select "Print".
+  
+All the files listed below may be found at:
+  H:\NewWebs\PaintStamps\apwp\Navigation
+  or in the sub directories as specified below.
+  
+===============================================================================
+The following files need to be uploaded to the website:
+ 
+[Main file(s)]
+apwp-navig.htm, start-en.htm, main-en.htm
+ 
+[Java class and archive files]: These should go into the same directory as the HTML file
+  JAVATabTreeR.jar (Archive file for newer Browsers [MS IE 4+ and Netscape 4+], JAVATabTreeR.class
+  Beans.class, Timer.class, TreeView.class, TreeNode.class, TabPanel.class, InvalidTreeNodeException.class,
+  BaseTabbedPanel.class, ButtonBase.class, DirectionButton.class, eNaviNews.class, eNaviNewsTL.class
+  
+  
+[News File]: These should go into the same directory as the class files
+  apwp-navig_news.txt
+  
+[Sound file(s)]: These should go into the same directory as the class files
+  
+  
+  
+[Image file(s)]: These should go into the same directory as the HTML file
+  bgd-image.jpg
+  bgd-image.jpg
+  BookC.gif
+  BookO.gif
+  Leaf.gif

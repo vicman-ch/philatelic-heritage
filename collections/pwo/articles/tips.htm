@@ -1,0 +1,167 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="The Association of Philatelic Web Publishers. Tips for Webmasters" http-equiv="Description"/>
+<meta content="Association, Web, Publishers, stamps, collecting, philately, philatelic, tips, Java, code" http-equiv="keywords"/>
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR"/>
+<meta content="FrontPage.Editor.Document" name="ProgId"/>
+<title>Tips for Webmasters</title>
+<base target="Examples"/>
+<style>.pwo-language-picker{margin-left:auto;display:flex;gap:8px;align-items:center;color:inherit;font:14px Arial,sans-serif}
+.pwo-language-picker select{padding:8px;border-radius:5px;max-width:145px}
+@media(max-width:680px){.pwo-language-picker{margin:8px 0 0;flex-wrap:wrap}}
+#google_translate_element_pwo_test{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}</style></head>
+<body bgcolor="#FFF5D7" leftmargin="4" style="font-family: Arial; font-size: 12pt" text="#FF0000" topmargin="11">
+<font face="Arial">
+<p align="center"><img border="0" height="46" src="../ttl-pwo.gif" width="489"/></p>
+<p align="center"><b><font color="#FF0000" size="4">Tips for the Philatelic Webmasters</font></b></p>
+<p><font color="#000080">The Philatelic Webmasters Organization (PWO)
+starts bringing to interested Webmasters useful tips for their publishing
+activity. Usually these are short advice or small pieces of code. All readers
+who wish to share their knowledge are invited to make proposals by <a href="mailto:manvic_99spaam@yahoo.com"><i>e-mail</i></a>.
+The best of them will be published on this site, mentioning the name of the
+person who supplied the proposal. Please include with your proposal also the URL
+of a Web page where the proposal was implemented. Thanks a lot in advance!</font></p>
+<p><b><font size="4">1. Protect your images against grabbing with this simple
+code</font></b></p>
+<p><font color="#000080" face="Arial" size="2">This code will stop people from
+right-clicking on your image and then saving it to their hard drive. The
+solution is to put in this JavaScript in the page that you would like to
+protect. Not useful when the browsers are Navigator with the version number
+smaller or equal to 3 and IE version number smaller or equal to 2. Please note
+that the protection that this code offers is rather limited.</font></p>
+<p><font size="2"><font color="#0000c0">&lt;SCRIPT LANGUAGE</font><font color="#000000">="JavaScript"</font><font color="#0000c0">&gt;</font></font></p>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- This script is offered by
+PWO: http://www.pwmo.org --&gt;<br/>
+&lt;!-- It protects your images from being grabbed. --&gt;<br/>
+&lt;!-- Only against visitors using NN versions greater then 3 and IE using vers.
+GT 2 --&gt;<br/>
+&lt;!-- You can change the text: "Sorry, this is my scan." by anything
+you wish --&gt;</font></p>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- Begin</font></p>
+<p><font color="#800000" face="Arial" size="2">function test(x) {</font><font color="#800000" face="Arial" size="2"><br/>
+  var msg = "Sorry, this is my scan.";<br/>
+  if (navigator.appName == 'Netscape' &amp;&amp; x.which == 3) {<br/>
+     alert(msg);<br/>
+     return false;<br/>
+   }<br/>
+</font>
+</p></font>
+
+ <font color="#800000"> <font face="Arial" size="2">if (navigator.appName ==
+'Microsoft Internet Explorer'
+&amp;&amp; event.button==2) {<br/>
+    alert(msg);<br/>
+    return false;<br/>
+  }<br/>
+  else return true;<br/>
+}</font></font>
+<p><font color="#800000" face="Arial" size="2">function getit() {<br/>
+  if(document.images)<br/>
+</font>
+
+   
+
+<font face="Arial">
+<font color="#800000" face="Arial" size="2">for(i=0;i&lt;document.images.length;i++)<br/>
+  document.images[i].onmousedown = test;<br/>
+}<br/>
+// End --&gt;    </font></font></p>
+<p><font color="#0000c0" face="Arial" size="2">&lt;/SCRIPT&gt;</font></p>
+<p><font size="2"><font color="#0000c0">&lt;body onLoad=</font><font color="#000000">"getit()"</font><font color="#0000c0">
+&gt;</font></font></p>
+<p><font color="#000080">Supplied by Victor Manta, PWO President. <a href="../Members-pages/victor-manta.htm"><i>Example</i></a> </font></p>
+<hr color="#0000FF" size="3"/>
+<p><font size="4"><b>2</b></font><b><font size="4">. Don't let other sites jail
+your pages in their frames</font></b></p>
+<p><font color="#000080" face="Arial" size="2">This very short code will </font><font color="#000080" size="2">free
+your page from their frames. Especially useful for the front page of a site. To
+test it, try to insert the page from the example in a frame of your site.</font></p>
+<p><font color="#0000c0" face="Arial" size="2">&lt;SCRIPT LANGUAGE=JAVASCRIPT&gt;</font></p>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- This script is offered by
+PWO: http://www.values.ch/PWO.htm --&gt;<br/>
+&lt;!-- It will free your page from the frames of another site that try to
+display it --&gt;</font></p>
+<p><font color="#800000" face="Arial" size="2">&lt;!-- Begin<br/>
+if (top.frames.length!=0)<br/>
+</font>
+
+
+ 
+
+<font face="Arial">
+<font color="#800000" face="Arial" size="2">top.location=self.document.location;</font></font></p>
+<p><font color="#800000" face="Arial" size="2">// End --&gt;</font></p>
+<p><font color="#0000c0" face="Arial" size="2">&lt;/SCRIPT&gt;</font></p>
+<p><font color="#000080">Supplied by Victor Manta, PWO President. <a href="http://www.values.ch"><i>Example</i></a> </font></p>
+<hr color="#0000FF" size="3"/>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+<tr>
+<td>
+<p align="center"><img border="0" height="132" src="../images/monalisa-brd.jpg" width="113"/></p></td>
+<td>
+<font face="Arial">
+<ul>
+<li>
+<p align="center"> <font color="#000080">PWO</font> <font color="#000080"> <a href="../statutes.htm"><i>Statutes</i></a></font></p></li>
+<li>
+<p align="center"><font color="#000080">PWO</font><font color="#000080"> <i><a href="../Members-Table/PWO-Members-Page.htm">Members</a></i>
+    List</font></p></li>
+<li>
+<p align="center"><font color="#000080">PWO</font><font color="#000080"> Members <a href="http://www.values.ch/activeforum/login.asp" target="_blank"><i>Forum</i></a></font></p></li>
+<li>
+<p align="center"><font color="#000080">Click <a href="mailto:manvic_99spaam@yahoo.com"><i>here</i></a>
+    to send us an e-mail</font></p></li>
+<li>
+<p align="center"><font color="#FF0000">Click <a href="../join-pwo-original-form.html"><i>here</i></a>
+    to <b> join</b> the PWO. It's <b>free</b>.</font></p></li>
+</ul>
+</font>
+</td>
+<td>
+<p align="center">
+<img border="0" height="129" src="../images/PennyBlack.jpg" width="114"/>
+</p></td>
+</tr>
+</table>
+</center>
+</div>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td width="100%"> </td>
+</tr>
+</table>
+</center>
+</div>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="3" width="100%">
+<tr>
+<td width="50%">
+<font face="Arial">
+<font color="#000080"><strong><small><small>Created: 05/14/01. Revised:
+<!--webbot bot="TimeStamp" s-format="%m/%d/%y" s-type="EDITED" startspan -->11/27/05<!--webbot bot="TimeStamp" endspan i-checksum="12975" -->
+.</small></small></strong></font><b><font color="#000080" face="Arial" size="1"><br/>
+Copyright � 2001 by PWO and<br/>
+by <a href="http://www.values.ch" target="_blank"> Victor Manta,</a> Switzerland<br/>
+All rights reserved worldwide.</font></b>
+</font>
+</td>
+</tr></table></center>
+<td width="50%">
+<p align="right"><a href="http://www.pwmo.org"><img border="0" height="80" src="../images/pwo-logo.gif" width="103"/></a></p></td>
+</div>
+<p>
+
+ 
+
+</p>
+<div class="pwo-language-picker" translate="no"><label for="pwo-test-language">Language</label>
+<select aria-label="Language" class="notranslate" id="pwo-test-language" translate="no">
+<option value="en">English</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="it">Italiano</option><option value="pt">Português</option><option value="ro">Română</option><option value="ru">Русский</option><option value="zh-CN">中文</option>
+</select></div><div aria-hidden="true" id="google_translate_element_pwo_test"></div><script src="../pwo-translation-pilot-test.js"></script></body>
+</html>

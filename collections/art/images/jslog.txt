@@ -1,0 +1,13 @@
+**************
+File: 	h:\NewWebs\PaintStamps\images\teniers5.jpg
+File Successfully processed
+Original File Size: 	35219
+Size After Stripping: 	35201
+Savings: 	18
+--------------------------------------
+--------------------------------------
+Files processed: 1
+Total bytes saved: 18
+0 Total Errors
+0 No changes needed
+1 Files successfully stripped

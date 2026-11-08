@@ -1,0 +1,264 @@
+<html>
+
+<head>
+<meta http-equiv="description" content="Christmas Philatelic Beauties">
+<meta http-equiv="keywords" content="stamps, philately, Christmas, art, cancels, Christkindl, Bern Betlehem">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Christmas Philatelic Beauties</title>
+</head>
+
+<body background="bgd-xmas.jpg" bgproperties="fixed" topmargin="4" leftmargin="4">
+<p><!--webbot
+      bot="HTMLMarkup" startspan --><script language="JavaScript1.2">  
+
+  
+  var snowsrc="snow.gif"
+  
+  var no = 10;
+
+  var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+  var ie4up = (document.all) ? 1 : 0;
+
+  var dx, xp, yp;    // coordinate and position variables
+  var am, stx, sty;  // amplitude and step variables
+  var i, doc_width = 800, doc_height = 600;
+  
+  if (ns4up) {
+    doc_width = self.innerWidth;
+    doc_height = self.innerHeight;
+  } else if (ie4up) {
+    doc_width = document.body.clientWidth;
+    doc_height = document.body.clientHeight;
+  }
+
+  dx = new Array();
+  xp = new Array();
+  yp = new Array();
+  am = new Array();
+  stx = new Array();
+  sty = new Array();
+  
+  for (i = 0; i < no; ++ i) {  
+    dx[i] = 0;                        // set coordinate variables
+    xp[i] = Math.random()*(doc_width-50);  // set position variables
+    yp[i] = Math.random()*doc_height;
+    am[i] = Math.random()*20;         // set amplitude variables
+    stx[i] = 0.02 + Math.random()/10; // set step variables
+    sty[i] = 0.7 + Math.random();     // set step variables
+    if (ns4up) {                      // set layers
+      if (i == 0) {
+        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><a href=\"http://dynamicdrive.com/\"><img src='"+snowsrc+"' border=\"0\"></a></layer>");
+      } else {
+        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src='"+snowsrc+"' border=\"0\"></layer>");
+      }
+    } else if (ie4up) {
+      if (i == 0) {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"></a></div>");
+      } else {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"></div>");
+      }
+    }
+  }
+  
+  function snowNS() {  // Netscape main animation function
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+      }
+      dx[i] += stx[i];
+      document.layers["dot"+i].top = yp[i];
+      document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+    }
+    setTimeout("snowNS()", 10);
+  }
+
+  function snowIE() {  // IE main animation function
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+        doc_width = document.body.clientWidth;
+        doc_height = document.body.clientHeight;
+      }
+      dx[i] += stx[i];
+      document.all["dot"+i].style.pixelTop = yp[i];
+      document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+    }
+    setTimeout("snowIE()", 10);
+  }
+
+  if (ns4up) {
+    snowNS();
+  } else if (ie4up) {
+    snowIE();
+  }
+
+</script><!--webbot bot="HTMLMarkup" endspan --></p>
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td  valign="top"><p align="center">&nbsp;
+    <img border="0" src="ttl-christmas.gif" width="468" height="93"></p>
+</center>
+    <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Encouraged 
+    by the warm reception of my earlier page on  Christmas philatelic beauties, 
+    I present below my second one dedicated to the same theme. This time I have compressed a bit more the 
+    images, so that I hope that they load faster. I have also changed the 
+    background of both pages, the new background featuring the Eglise réformée 
+    au Faubourg du Lac, in Biel- Bienne, Switzerland, photographed by me during 
+    the winter 2003, at exactly 11:15.</font></p>
+    <p align="center">
+    <img border="0" src="au-xmas69.jpg" width="600" height="333"></p>
+    <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Austria 28 
+    Nov. 1969, Christmas, FDC. Madonna, after a painting by Albin Egger-Lienz. 
+    Cancelled at Christkindl. Scott 857.</font></p>
+    <p align="center">
+    <img border="0" src="ch-xmas03.jpg" width="600" height="418"></p>
+    <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Switzerland, 
+    Nov. 2003. Christmas Toys. Cancelled at P.O. Bern Bethlehem, between 18-23 
+    Dec.</font></p>
+    <p align="center">
+    <img border="0" src="au-xmas74.jpg" width="600" height="345"></p>
+    <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp;&nbsp; 
+    Austria, Nov. 29, 1974. Christmas FDC. Virgin and Child, wood, c. 1600. 
+    Cancelled at Christkindl. Scott 1009.</font></p>
+    <div align="center">
+      <center>
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+        <tr>
+          <td width="50%" align="center">
+          <img border="0" src="d-xmas86.jpg" width="340" height="600"></td>
+          <td width="50%" align="center">
+          <img border="0" src="grenada-xmas72.jpg" width="332" height="600"></td>
+        </tr>
+      </table>
+      </center>
+    </div>
+    <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Germany, 
+    Dec. 13, 1986. Christmas. A New Year's present from the German Federal 
+    Ministry of Post and Telecommunications.<br>
+&nbsp;&nbsp; Grenada, Dec. 1971. Christmas. 15 c., Adoration of the Kings, by 
+    Memling; 25c., Madonna and Child, sculpture by Michelangelo; 35 c., Madonna 
+    and Child by Murillo; 50 c., Madonna with the Apple, by Memling. (<b><a href="#Footnote"><font size="2">Footnote</font></a></b>).</font></p>
+    <p align="center">
+    <img border="0" src="au-xmas75.jpg" width="600" height="357"></p>
+    <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Austria, Nov. 
+    28, 
+    1975. FDC. Virgin and Child from 15th Century Altar. Cancelled at 
+    Christkindl. Scott 1028.</font></p>
+    <p align="center">
+    <img border="0" src="fl-xmas99.jpg" width="600" height="418"></p>
+    <p align="left"><font face="Arial" color="#000080">&nbsp; Liechtenstein, 
+    Dec. 7, 1998. Christmas. Engraved. A New Year's present from the Official 
+    Philatelic Service of Liechtenstein.</font></p>
+    <center>
+
+    <div align="center"><center>
+      <p><img border="0" src="au-xmas76.jpg" width="600" height="349"></p>
+    </center></div>
+
+    <div align="center">
+      <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Austria, Nov. 
+      26, 
+    1976. FDC. Nativity, by Konrad von Friesach, c. 1450. Cancelled at 
+      Christkindl. Scott 1047.</font></div>
+
+    <div align="center">
+      <p align="left"><font face="Arial" color="#000080">&nbsp;&nbsp; Links:</font></div>
+
+    <div align="center">
+      <ul>
+        <li>
+      <p align="left"><font face="Arial"><a href="christmas-beauties.htm">
+      Christmas Beauties 1</a></font></li>
+        <li>
+      <p align="left"><font face="Arial"><a href="christmas-ch.htm">Christmas 
+      Stamps, Switzerland</a></font></li>
+        <li>
+      <p align="left"><font face="Arial" color="#000080">
+      <a href="../../christmas.htm">Stamps Christmas Tree</a>, with greetings 
+      from 38 stamps collectors, in 16 different languages</font></li>
+        <li>
+      <p align="left"><font face="Arial" color="#000080">Liechtenstein,
+      <a href="../../Countries/Liechtenstein/Christmas-2001/christmas-2001.htm">Christmas 2001</a>. Medallions in Wooden Frames</font></li>
+        <li>
+      <p align="left"><font face="Arial" color="#000080">Liechtenstein, 
+      Christmas 1979. <a href="../Embroidery/embroid-fl.htm">Embroideries</a>.</font></li>
+      </ul>
+    </div>
+
+    <div align="left">
+
+
+      <p align="left"><b><font face="Arial" size="2" color="#000080">
+      &nbsp;&nbsp;
+      <a name="Footnote">Footnote</a></font><font size="2" face="Arial"><font color="#000080">. 
+      The addressee, Sir Harry Annamunthodo was of Indo-Guyanese origin and 
+      became an extremely&nbsp; distinguished West Indian surgeon.&nbsp; He was Chairman 
+      of the West Indian Medical Journal from 1972 to 1981 and a Professor of 
+      Medicine at the University of the West Indies.&nbsp; The Sir Harry Annamunthado 
+      lectures and Prize in Surgery are named for him. Biography by P. R. 
+      Fletcher, published in West Indian Medical Journal (Mar 1999). Photo:&nbsp;
+      </font><a target="_blank" href="http://www.uwimaa.on.ca/images/anna.jpg">
+      <font color="#000080">http://www.uwimaa.on.ca/images/anna.jpg</font></a><font color="#000080">. 
+      Credits: Blair Stannard, Canada.</font></font></b></div>
+
+      <p>&nbsp;
+
+    <hr>
+      </tr>
+    </table>
+    </div><div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td><strong>
+        <font face="Arial" color="#0000FF"><small><small>Created 12/18/04. Revised: 
+        <!--webbot bot="TimeStamp" s-format="%m/%d/%y" s-type="EDITED" startspan -->12/04/08<!--webbot bot="TimeStamp" i-checksum="13297" endspan -->.&nbsp;<br>
+        Copyright ©  2004 - 2005 by Victor Manta, Switzerland.&nbsp;<br>
+ All rights reserved in all
+        countries.</small></small></font></strong></td>
+        <td><p align="center"><font color="#0000FF">
+        <a href="../../index.html" target="_blank">
+        <img src="../../vmbanner1.gif" alt="Site's Banner" align="center" vspace="3" width="400" height="40" ></a></font><br>
+        <font color="#0000FF" face="Arial"><small><small><strong>Please click the banner to visit
+        the site</strong></small></small></font></td>
+      </tr>
+    </table>
+    </center></div>
+<hr>
+<script type="text/javascript"><!--
+google_ad_client = "pub-6697287241332041";
+/* 234x60, created 11/29/08 */
+google_ad_slot = "0857213903";
+google_ad_width = 728;
+google_ad_height = 90;;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6507762-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html> 

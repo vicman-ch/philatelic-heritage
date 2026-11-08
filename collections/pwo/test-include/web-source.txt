@@ -1,0 +1,11 @@
+http://www.w3schools.com/asp/asp_incfiles.asp
+
+citeste si:
+
+http://www.hitmill.com/programming/asp/aspSSI.html
+
+Hostdone:
+
+YOu do have SSI option under WEB OPTIONS .
+
+Please go to your web option for your domain name to add your SSI setup.

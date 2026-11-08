@@ -1,0 +1,19 @@
+Place the HTML code below into your site's search page:
+
+
+--------------------------------------------------------------------------------
+
+   <FORM METHOD=get ACTION=http://index.thunderstone.com/texis/sitesearch/search/>
+   <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>  
+   <TR>
+   <TH ALIGN=RIGHT><FONT FACE=HELVETICA SIZE=-1>Find:</TH>
+   <TD>
+   <INPUT SIZE=30 name=query value="">
+   <INPUT TYPE=submit VALUE="Submit">
+   <INPUT TYPE=submit NAME=cmd value="Options">
+   </TD>
+   </TR>
+   </TABLE>
+   <INPUT TYPE=hidden name=db VALUE="sites/www.values.ch">
+   </FORM>
+   

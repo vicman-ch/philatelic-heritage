@@ -1,0 +1,9 @@
+ART ON STAMPS — TRADUCERE AUTOMATA
+
+1. In Plesk, selectati domeniul artonstamps.org si directorul principal al site-ului.
+2. Incarcati aceasta arhiva si extrageti-o acolo, cu suprascriere.
+3. In Firefox, Ctrl+F5. Selectati Romana sau Franceza din dreapta sus.
+4. Se deschide Google Translate intr-o fila noua; originalul ramane deschis.
+
+Limbi: engleza originala, franceza, germana, spaniola, italiana, portugheza, romana, rusa, chineza simplificata.
+Google Translate este un serviciu extern; disponibilitatea traducerilor nu poate fi garantata.

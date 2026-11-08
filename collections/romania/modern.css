@@ -1,0 +1,91 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Georgia,serif;color:#142b4b;background:#faf7f1}a{color:inherit}.top{background:#103963;color:#fff;padding:18px max(5%,calc((100% - 1250px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-size:clamp(22px,3vw,37px);text-decoration:none}.brand b{color:#efbd5a}.language{font:15px Arial,sans-serif;padding:8px;border-radius:5px}.nav{background:white;display:flex;justify-content:center;flex-wrap:wrap;gap:0 12px;box-shadow:0 3px 12px #0001;position:sticky;top:0;z-index:10}.nav a,.nav summary{display:block;padding:17px 14px;text-decoration:none;font-weight:bold;cursor:pointer}.nav details{position:relative}.nav details div{position:absolute;background:white;min-width:240px;max-height:65vh;overflow:auto;box-shadow:0 8px 20px #0003;z-index:11}.nav details div a{padding:10px 15px;font:14px Arial,sans-serif;border-bottom:1px solid #eee}.nav a:hover,.nav summary:hover{color:#aa7419}.hero{max-width:1200px;margin:auto;text-align:center;padding:45px 22px 18px}.hero h1{font-size:clamp(36px,5vw,70px);margin:0}.hero h2{font-size:clamp(22px,3vw,36px);font-weight:normal;margin:0}.hero p{font-size:clamp(17px,2vw,25px);font-style:italic;line-height:1.5}.hero img{display:block;max-width:100%;width:760px;height:auto;margin:15px auto;mix-blend-mode:multiply}.cards{max-width:1200px;margin:30px auto 70px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:0 20px}.cards a{background:white;box-shadow:0 2px 10px #0002;text-decoration:none;overflow:hidden}.cards img{width:100%;height:135px;object-fit:cover}.cards strong{display:block;padding:15px;font-size:17px}.foot{background:#103963;color:white;text-align:center;padding:25px}.up{position:fixed;right:24px;bottom:22px;background:#c9942a;color:white;border:0;border-radius:50%;padding:14px;font-size:23px;cursor:pointer;z-index:15}@media(max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}.nav details div{position:fixed;left:5%;right:5%;min-width:0}.cards img{height:120px}}
+/* Image corrections: show full stamps instead of cropping */
+.cards img{object-fit:contain;background:#f6f2e9;padding:7px}
+.hero img{max-width:100%;object-fit:contain}
+
+/* More restrained layout for large displays */
+.top{padding-top:12px;padding-bottom:12px}.brand{font-size:clamp(20px,2vw,29px)}
+.nav a,.nav summary{padding:12px 12px;font-size:14px}
+.hero{max-width:950px;padding:22px 18px 8px}.hero h1{font-size:clamp(32px,3.5vw,49px)}.hero h2{font-size:clamp(20px,2.1vw,28px)}.hero p{font-size:clamp(16px,1.5vw,20px);margin:10px auto}
+.hero img{width:620px;max-width:100%;margin:10px auto}.cards{max-width:980px;margin:18px auto 45px;gap:12px}.cards img{height:112px;object-fit:contain}.cards strong{padding:10px;font-size:15px}.foot{padding:17px;font-size:13px}
+@media(max-width:800px){.cards img{height:105px}.hero{padding-top:18px}}
+
+/* Final layout: complete map, compact hero, perfectly aligned card captions */
+.hero{max-width:850px;padding:18px 16px 4px}
+.hero img{width:480px;max-width:100%;height:auto;object-fit:contain;mix-blend-mode:normal;margin:8px auto}
+.hero h1{font-size:clamp(30px,3vw,44px)}
+.hero h2{font-size:clamp(19px,2vw,26px)}
+.hero p{font-size:clamp(15px,1.3vw,18px);margin:8px auto}
+.cards{max-width:980px;align-items:stretch;margin:15px auto 35px}
+.cards a{display:flex;flex-direction:column;min-width:0;min-height:174px}
+.cards img{display:block;width:100%;height:125px;object-fit:contain;object-position:center center;padding:8px;background:#f6f2e9;flex:none}
+.cards strong{display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;margin-top:auto;padding:8px 4px;font-size:14px}
+@media(max-width:800px){.hero img{width:100%;max-width:480px}.cards a{min-height:164px}.cards img{height:116px}}
+
+/* Lot 2B navigation */
+.nav-dropdown{min-width:260px;max-width:390px;max-height:65vh;overflow:auto;overscroll-behavior:contain;}
+.nav details div a{white-space:normal;line-height:1.35;}
+.nav details.sub{position:relative;}
+.nav details.sub>summary{padding:10px 15px;font:600 14px Arial,sans-serif;background:#f6f3ed;}
+.nav details.sub>div{position:static;box-shadow:none;min-width:0;max-height:none;overflow:visible;padding-left:12px;}
+.nav .section-link{background:#e9eff5;color:#123c64;}
+.cards a{display:flex;flex-direction:column;align-items:stretch;}
+.cards img{display:block;object-fit:contain!important;}
+.cards strong{margin-top:auto;}
+@media(min-width:900px){.hero img{width:min(480px,100%);}}
+
+.section-page{max-width:1000px;margin:35px auto;padding:0 24px;min-height:60vh}.section-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}.section-list>a,.section-list>details{background:white;padding:12px;border:1px solid #ddd}.section-list details a{display:block;padding:9px}.section-page h1{font-size:36px}
+
+/* Lot 6: visual section directories */
+.section-page{max-width:1180px;margin:0 auto;padding:24px 18px}.visual-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:16px;margin:24px auto 35px}.visual-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:10px;text-align:center;text-decoration:none;background:#fff;border:1px solid #e5ddd1;border-radius:8px;padding:12px;box-shadow:0 2px 9px #0001;color:#17375a;min-width:0}.visual-card:hover{box-shadow:0 4px 16px #0002}.visual-card img{width:100%;height:135px;object-fit:contain}.visual-placeholder{display:flex;align-items:center;justify-content:center;height:135px;width:100%;background:#f1ece3;color:#617082;font:14px Arial,sans-serif}.visual-title{font:600 14px/1.35 Arial,sans-serif}.directory-heading{margin:28px 0 12px}.section-return{text-align:center;margin:30px auto}.section-return a{color:#17375a}.section-page .section-list{max-width:1050px;margin:auto}@media(max-width:550px){.visual-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.visual-card img,.visual-placeholder{height:110px}}
+
+/* LOT 16: philatelic images are whole objects, never cropped. */
+.visual-gallery .visual-card{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:10px;padding:14px 12px;background:#fffdf9;border:1px solid #e4dfd4;border-radius:10px;box-sizing:border-box;transition:border-color .18s,box-shadow .18s;}
+.visual-gallery .visual-card:hover,.visual-gallery .visual-card:focus-visible{border-color:#9a7841;box-shadow:0 4px 15px rgba(28,39,52,.11);}
+.visual-gallery .visual-card img{display:block;width:100%;height:168px;object-fit:contain;object-position:center;background:transparent;border-radius:3px;}
+.visual-gallery .visual-card .visual-title{display:block;text-align:center;font-size:1rem;line-height:1.3;font-weight:600;}
+@media(max-width:650px){.visual-gallery .visual-card img{height:132px}.visual-gallery .visual-card{padding:10px 8px}}
+
+/* Lot 23: approved homepage composition; scoped only to the homepage. */
+body.rs-home{background:#f7f3ec;color:#172b40}
+.rs-home .top{background:#15334a;max-width:none;padding:15px max(20px,calc((100% - 1160px)/2));border-bottom:1px solid #466071}
+.rs-home .brand{font-family:Georgia,serif;font-weight:normal;font-size:clamp(27px,3vw,41px);letter-spacing:-.02em;color:#fff}
+.rs-home .brand span{color:#efbd5a}
+.rs-home .top label{font:14px Arial,sans-serif;color:#f5eee2}
+.rs-home .language{background:#23465f;color:white;border:1px solid #668095;min-width:125px}
+.rs-home .nav{background:#15334a;color:#f5eee2;box-shadow:none;border-bottom:1px solid #597186}
+.rs-home .nav>a,.rs-home .nav>details>summary{color:#f5eee2}
+.rs-home .nav>a:hover,.rs-home .nav>details>summary:hover{color:#efbd5a}
+.rs-home .nav details div{background:#fff;color:#17334b}
+.rs-home .hero{max-width:1180px;padding:0;margin:22px auto 0;overflow:hidden;border-radius:4px}
+.rs-home .hero img{display:block;width:100%;height:auto;max-width:100%;margin:0;object-fit:cover;mix-blend-mode:normal;padding:0}
+.rs-home .home-intro{max-width:1000px;margin:22px auto 25px;padding:0 20px;text-align:center;font:clamp(17px,1.65vw,22px)/1.48 Georgia,serif;color:#172333}
+.rs-home .cards{max-width:1180px;margin:0 auto 55px;gap:13px;padding:0}
+.rs-home .cards a{background:#ede7db;border:1px solid #d8cbb6;border-radius:5px;box-shadow:none;min-height:210px;transition:transform .15s ease,box-shadow .15s ease}
+.rs-home .cards a:hover{transform:translateY(-3px);box-shadow:0 6px 16px #0002}
+.rs-home .cards img{width:100%;height:165px;object-fit:contain!important;background:#ede7db;padding:12px 12px 3px}
+.rs-home .cards strong{background:#ede7db;color:#16344b;font:600 17px Georgia,serif;padding:12px 5px;min-height:49px}
+.rs-home .foot{background:#15334a}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:1220px){.rs-home .hero,.rs-home .cards{margin-left:18px;margin-right:18px}}
+@media(max-width:800px){.rs-home .hero{margin-top:12px}.rs-home .cards{grid-template-columns:repeat(2,minmax(0,1fr))}.rs-home .cards img{height:130px}.rs-home .cards a{min-height:175px}.rs-home .home-intro{font-size:17px}}
+@media(max-width:480px){.rs-home .cards{gap:9px;margin-left:10px;margin-right:10px}.rs-home .cards img{height:105px}.rs-home .cards strong{font-size:15px}.rs-home .top{justify-content:center}}
+
+/* Lot 24: approved illustrated homepage tiles, no white caption panels. */
+.rs-home .cards a{position:relative;overflow:hidden;padding:0!important;min-height:355px!important;background:#263126!important;border:1px solid #d7c8aa!important;display:flex!important;align-items:stretch!important;justify-content:flex-end!important;flex-direction:column!important;text-decoration:none!important}
+.rs-home .cards img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;padding:0!important;background:transparent!important;filter:none!important}
+.rs-home .cards a:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.84));pointer-events:none}
+.rs-home .cards strong{position:relative!important;z-index:1!important;display:block!important;width:100%!important;box-sizing:border-box!important;padding:18px 6px 20px!important;background:transparent!important;color:white!important;text-align:center!important;font:normal clamp(19px,2vw,28px)/1.15 Georgia,serif!important;min-height:0!important;text-shadow:0 2px 5px #000}
+.rs-home .cards a:hover img{transform:scale(1.025);transition:transform .2s}
+@media(max-width:800px){.rs-home .cards a{min-height:275px!important}}
+@media(max-width:480px){.rs-home .cards a{min-height:215px!important}.rs-home .cards strong{font-size:18px!important}}
+
+/* LOT 26: single stable homepage layout, regardless of Home navigation or viewport. */
+body.rs-home .rs-home-shell{display:block!important;width:100%!important;max-width:none!important;min-width:0!important;margin:0!important;padding:0!important;}
+body.rs-home .rs-home-shell>main{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;}
+body.rs-home .hero,body.rs-home .cards,body.rs-home .home-intro{box-sizing:border-box!important;width:calc(100% - 36px)!important;max-width:1180px!important;margin-left:auto!important;margin-right:auto!important;}
+body.rs-home .hero{padding:0!important;margin-top:22px!important;margin-bottom:0!important;}
+body.rs-home .hero img{display:block!important;width:100%!important;height:auto!important;max-width:none!important;margin:0!important;padding:0!important;object-fit:contain!important;}
+body.rs-home .cards{margin-top:18px!important;margin-bottom:0!important;padding:0!important;}
+body.rs-home .home-intro{margin-top:26px!important;margin-bottom:48px!important;padding:0 12px!important;text-align:center!important;font:clamp(17px,1.65vw,22px)/1.48 Georgia,serif!important;}
+@media(max-width:800px){body.rs-home .hero,body.rs-home .cards,body.rs-home .home-intro{width:calc(100% - 24px)!important}body.rs-home .hero{margin-top:12px!important}}

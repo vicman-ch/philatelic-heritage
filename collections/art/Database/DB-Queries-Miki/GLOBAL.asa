@@ -1,0 +1,11 @@
+
+Sub Session_OnStart()
+   Set oConn=Server.CreateObject("ADODB.Connection")
+   oConn.Open("ITEM")             
+   Session("ITEM") = oConn
+End Sub
+
+Sub Session_OnEnd()
+    oConn.Close
+    Set oConn=Nothing
+End Sub

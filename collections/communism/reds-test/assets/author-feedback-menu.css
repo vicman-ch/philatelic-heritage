@@ -1,0 +1,8 @@
+/* Author submenu: About and Send Feedback */
+.nav .author-menu{position:relative;display:inline-flex;align-items:stretch}
+.nav .author-menu>button{font:inherit;color:inherit;background:transparent;border:0;cursor:pointer;padding:inherit}
+.nav .author-menu .author-links{display:none;position:absolute;z-index:100;top:100%;right:0;min-width:170px;background:#123d33;box-shadow:0 7px 18px #0005}
+.nav .author-menu:hover .author-links,.nav .author-menu:focus-within .author-links{display:flex;flex-direction:column}
+.nav .author-menu .author-links a{display:block;padding:10px 16px;color:#fff;text-decoration:none;white-space:nowrap}
+.nav .author-menu .author-links a:hover,.nav .author-menu .author-links a:focus{background:#8c2222}
+@media(max-width:680px){.nav .author-menu .author-links{right:auto;left:0}}

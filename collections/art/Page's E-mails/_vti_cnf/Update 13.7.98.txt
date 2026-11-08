@@ -1,0 +1,4 @@
+vti_encoding:SR|utf8-nl
+vti_syncwith_mbr-hobby.neotown.com\:80/staray:TR|13 Jul 1998 21:28:28 +0200
+vti_extenderversion:SR|3.0.2.926
+vti_timelastmodified:TR|13 Jul 1998 21:28:28 +0200
