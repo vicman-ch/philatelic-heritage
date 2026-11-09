@@ -4,7 +4,7 @@ Welcome to the preservation repository of my lifetime of philatelic digital work
 
 ## 🌐 The Five Collections
 
-### 🎨 1. [Art on Stamps](https://github.io](https://vicman-ch.github.io/philatelic-heritage/collections/art/index.html))
+### 🎨 1. [Art on Stamps](https://github.io](https://vicman-ch.github.io/philatelic-heritage/collections/art/index.html)
 Fine art, masters, and world-renowned masterpieces as reflected on postage stamps from around the globe.
 
 ### 🇷🇴 2. [Romania as Shown by Its Stamps](https://vicman-ch.github.io/philatelic-heritage/collections/romania/index.html)
