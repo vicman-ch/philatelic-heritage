@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vicman-ch.github.io/philatelic-heritage/sitemap.xml
