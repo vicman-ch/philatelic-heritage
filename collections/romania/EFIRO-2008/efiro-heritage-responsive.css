@@ -1,0 +1,13 @@
+/* Philatelic Heritage — EFIRO 2008: reversible presentation layer. */
+html { -webkit-text-size-adjust: 100%; }
+body { box-sizing: border-box; max-width: 100%; overflow-wrap: break-word; }
+img { max-width: 100%; height: auto; }
+iframe, video, object, embed { max-width: 100%; }
+.efiro-return { position: relative; }
+@media (max-width: 760px) {
+  body { margin: 8px; }
+  table { max-width: 100%; }
+  table[width="100%"] { width: 100% !important; }
+  table img { max-width: 100%; height: auto !important; }
+  .efiro-return { font-size: 15px !important; }
+}
