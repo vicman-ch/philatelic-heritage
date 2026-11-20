@@ -51,6 +51,13 @@
  border-radius:8px;font:700 clamp(9px,1.42vw,21px)/1.1 Georgia,serif;
  text-shadow:0 1px 1px #092518;pointer-events:none;
 }
+/* Cover the longer printed titles on plaques 1, 4 and 5. */
+.rs-integrated-home .rs-tile-link:nth-of-type(1) .rs-live-plaque,
+.rs-integrated-home .rs-tile-link:nth-of-type(4) .rs-live-plaque,
+.rs-integrated-home .rs-tile-link:nth-of-type(5) .rs-live-plaque{
+ left:-8%;width:116%;top:70%;height:24%;
+ background:#123e2c;border:2px solid #d4ae54;
+}
 @media(max-width:640px){.rs-integrated-home .rs-tile-link .rs-live-plaque{
  font-size:clamp(6px,1.35vw,11px);border-width:1px;border-radius:4px;padding:1px 2px;
 }}
