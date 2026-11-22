@@ -1,251 +1,104 @@
-<html>
+<!DOCTYPE html>
 
-<head>
-<meta http-equiv="description" content="Christmas Philatelic Beauties">
-<meta http-equiv="keywords" content="stamps, philately, Christmas, art, cancels, Christkindl, Bern Betlehem">
-<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<title>Christmas Philatelic Beauties</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../heritage-article.css">
-</head>
-
-<body background="bgd-xmas.jpg" bgproperties="fixed" topmargin="4" leftmargin="4">
-<!-- Philatelic Heritage presentation: historical article content preserved -->
-<div class="heritage-bar"><span class="heritage-name">ART ON STAMPS</span><nav class="heritage-links" aria-label="Archive navigation"><a href="../../index.html">Home</a><a href="../../archive-index.html">Archive Index</a><a href="../../browse-a-z.html">Browse A&#8211;Z</a><a href="../../browse-countries.html">Countries</a><a href="../../../../index.html">Philatelic Heritage</a></nav></div>
-<main class="heritage-page" aria-label="Historical article">
-
-<p><!--webbot
-      bot="HTMLMarkup" startspan --><script language="JavaScript1.2">  
-
-  
-  var snowsrc="snow.gif"
-  
-  var no = 10;
-
-  var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
-  var ie4up = (document.all) ? 1 : 0;
-
-  var dx, xp, yp;    // coordinate and position variables
-  var am, stx, sty;  // amplitude and step variables
-  var i, doc_width = 800, doc_height = 600;
-  
-  if (ns4up) {
-    doc_width = self.innerWidth;
-    doc_height = self.innerHeight;
-  } else if (ie4up) {
-    doc_width = document.body.clientWidth;
-    doc_height = document.body.clientHeight;
-  }
-
-  dx = new Array();
-  xp = new Array();
-  yp = new Array();
-  am = new Array();
-  stx = new Array();
-  sty = new Array();
-  
-  for (i = 0; i < no; ++ i) {  
-    dx[i] = 0;                        // set coordinate variables
-    xp[i] = Math.random()*(doc_width-50);  // set position variables
-    yp[i] = Math.random()*doc_height;
-    am[i] = Math.random()*20;         // set amplitude variables
-    stx[i] = 0.02 + Math.random()/10; // set step variables
-    sty[i] = 0.7 + Math.random();     // set step variables
-    if (ns4up) {                      // set layers
-      if (i == 0) {
-        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><a href=\"http://dynamicdrive.com/\"><img src='"+snowsrc+"' border=\"0\"></a></layer>");
-      } else {
-        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src='"+snowsrc+"' border=\"0\"></layer>");
-      }
-    } else if (ie4up) {
-      if (i == 0) {
-        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"></a></div>");
-      } else {
-        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"></div>");
-      }
-    }
-  }
-  
-  function snowNS() {  // Netscape main animation function
-    for (i = 0; i < no; ++ i) {  // iterate for every dot
-      yp[i] += sty[i];
-      if (yp[i] > doc_height-50) {
-        xp[i] = Math.random()*(doc_width-am[i]-30);
-        yp[i] = 0;
-        stx[i] = 0.02 + Math.random()/10;
-        sty[i] = 0.7 + Math.random();
-        doc_width = self.innerWidth;
-        doc_height = self.innerHeight;
-      }
-      dx[i] += stx[i];
-      document.layers["dot"+i].top = yp[i];
-      document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
-    }
-    setTimeout("snowNS()", 10);
-  }
-
-  function snowIE() {  // IE main animation function
-    for (i = 0; i < no; ++ i) {  // iterate for every dot
-      yp[i] += sty[i];
-      if (yp[i] > doc_height-50) {
-        xp[i] = Math.random()*(doc_width-am[i]-30);
-        yp[i] = 0;
-        stx[i] = 0.02 + Math.random()/10;
-        sty[i] = 0.7 + Math.random();
-        doc_width = document.body.clientWidth;
-        doc_height = document.body.clientHeight;
-      }
-      dx[i] += stx[i];
-      document.all["dot"+i].style.pixelTop = yp[i];
-      document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
-    }
-    setTimeout("snowIE()", 10);
-  }
-
-  if (ns4up) {
-    snowNS();
-  } else if (ie4up) {
-    snowIE();
-  }
-
-</script><!--webbot bot="HTMLMarkup" endspan --></p>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Christmas Philatelic Beauties | Art on Stamps</title><meta content="Christmas Philatelic Beauties — original philatelic research and illustrated stamps, presented in a modern accessible layout." name="description"/><link href="https://www.artonstamps.org/Art-Gallery/Christmas/christmas-07.htm" rel="canonical"/><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f4ed;color:#252d38;font:16px/1.6 Arial,Helvetica,sans-serif}header{background:#152b48;color:white;padding:15px max(18px,calc((100% - 1050px)/2))}header nav{display:flex;flex-wrap:wrap;gap:12px 22px}header a{color:#fff;text-decoration:none;font-weight:bold;font-size:14px}main{max-width:1050px;margin:25px auto;background:#fff;padding:24px 26px 34px;border:1px solid #e3ded3;border-radius:10px;box-shadow:0 3px 14px #26344312}h1{font:normal clamp(26px,4vw,37px)/1.25 Georgia,serif;color:#193b60;margin:8px 0 18px}h2,h3{color:#21446b}a{color:#15527f}img{max-width:100%;height:auto}table{max-width:100%!important;margin-left:auto!important;margin-right:auto!important}td{vertical-align:bottom}p{margin:10px 0}figure{text-align:center;margin:12px auto}figcaption{font-size:13px;color:#515d6b}.legacy-content{overflow-wrap:anywhere}.legacy-content table{width:auto!important;max-width:100%!important;border-collapse:separate;border-spacing:8px 6px}.legacy-content td{max-width:100%;padding:3px}.legacy-content img{object-fit:contain;vertical-align:bottom}.legacy-content font{font-family:inherit!important}.legacy-content p,.legacy-content div{max-width:100%}.backlinks{font-size:14px;padding:10px 0;color:#526171}.backlinks a{font-weight:bold}.page-footer{border-top:1px solid #ded9ce;margin-top:25px;padding-top:14px;font-size:13px;color:#606b78}@media(max-width:680px){main{margin:0;padding:16px 12px;border-radius:0}.legacy-content table{display:block;overflow-x:auto;max-width:100%!important}.legacy-content td{min-width:0!important}header{padding:13px}.legacy-content img{max-width:100%!important}}
+@media(max-width:700px){.legacy-content table{display:block;overflow-x:auto;max-width:100%!important}.legacy-content td{min-width:0}.legacy-content img{max-width:100%;height:auto}}
+/* Unified readable typography for historic pages */
+.legacy-content{font-size:17px;line-height:1.65;color:#283342}
+.legacy-content font,.legacy-content small,.legacy-content span,.legacy-content p,.legacy-content td,.legacy-content strong,.legacy-content i{font-size:inherit!important;line-height:inherit!important}
+.legacy-content font[color]{color:inherit!important}
+.legacy-content p{margin:12px 0}
+.legacy-content a{color:#15527f!important;text-decoration:underline}
+.legacy-content img{max-width:100%;height:auto}
+.legacy-content td{vertical-align:bottom}
+@media(max-width:680px){.legacy-content{font-size:16px}.legacy-content table{max-width:100%!important}}
+</style></head><body><header><nav aria-label="Site navigation"><a href="/index.html">Art on Stamps</a><a href="/recently-modernized.html">Recently Modernized Pages</a><a href="/Art-Gallery/">Art Gallery</a><a href="/Countries/">Countries</a></nav></header><main><div class="backlinks"><a href="/recently-modernized.html">← Recently Modernized Pages</a> · <a href="/Art-Gallery/">Art Gallery</a> · <a href="/index.html">Home</a></div><h1>Christmas Philatelic Beauties</h1><div class="legacy-content">
 <div align="center"><center>
-
-<table border="0" cellpadding="0" cellspacing="0" width="100%" >
-  <tr>
-    <td  valign="top" ><p align="center">&nbsp;
-    <img border="0" src="ttl-christmas.gif" width="468" height="93"></p>
-</center>
-    <p align="justify"><font face="Arial" color="#000080">&nbsp;For many people, a 
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top"><p align="center"> 
+    <img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="ttl-christmas.gif"/></p>
+</td></tr></table></center>
+<p align="justify"><font color="#000080" face="Arial"> For many people, a 
     tree decked with colorful ornaments and candles is central to giving their 
-    homes that genuine Christmas feel. However, the Christmas tree&nbsp; 
+    homes that genuine Christmas feel. However, the Christmas tree  
     tradition is not as old as often believed and has only been the centerpiece 
     of family celebration since the 19th century, simultaneously with the 
     beginning of the industrial revolution.</font></p>
-    <table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%">
-      <tr>
-        <td width="50%" align="center">
-        <img border="0" src="christmas-07/xmas-1.jpg" width="255" height="512"></td>
-        <td width="50%" align="center">
-        <img border="0" src="christmas-07/xmas-2.jpg" width="282" height="512"></td>
-      </tr>
-    </table>
-    <p align="justify"><font face="Arial" color="#000080">In German-speaking 
+<table border="0" bordercolor="#111111" cellspacing="1">
+<tr>
+<td align="center">
+<img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="christmas-07/xmas-1.jpg"/></td>
+<td align="center">
+<img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="christmas-07/xmas-2.jpg"/></td>
+</tr>
+</table>
+<p align="justify"><font color="#000080" face="Arial">In German-speaking 
     Switzerland, the Christmas tree's popularity did not begin until around the 
     turn of the 2oth century, originally in schools and Protestant churches, as 
     well in the middle-class homes. And it was only in the 1950s that such trees 
     became prevalent in Catholic areas and in Canton Ticino where cribs had 
     traditionally been the focus of Christmas festivities.</font></p>
-    <p align="center">
-    <img border="0" src="christmas-07/xmas-3.jpg" width="640" height="450"></p>
-    <p align="justify"><font face="Arial" color="#000080">The history of the 
+<p align="center">
+<img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="christmas-07/xmas-3.jpg"/></p>
+<p align="justify"><font color="#000080" face="Arial">The history of the 
     Christmas tree has its roots in Alsace, and today's glass decorations with 
     their different shapes and sizes are a link back to the apples, nuts, 
     confectionery and little gifts that originally decorated these trees in the 
-    past.<br>
+    past.<br/>
     (After: Dominik Wunderlin, Museum der Kulturen, Basel, Focus on Stamps, 
     4/2007).</font></p>
-    <p align="center">
-    <img border="0" src="christmas-07/xmas-4.jpg" width="634" height="436"></p>
-    <p align="left">
-    <font face="Arial">Swiss Post is continuing its popular range of Bethlehem 
+<p align="center">
+<img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="christmas-07/xmas-4.jpg"/></p>
+<p align="left">
+<font face="Arial">Swiss Post is continuing its popular range of Bethlehem 
     philatelic material with a card, completed by a special cover and matching 
     cancellation from Bern-Bethlehem. Again the card depicts a scene from the 
     Bible - this year, the birth of Jesus. The Christmas card and special 
-    cancellation designs are the work of Christian Kitzm�ller, a Z�rich-based 
+    cancellation designs are the work of Christian Kitzmüller, a Zürich-based 
     artist who began in 2006 a new series which will run until 2009. A 
     stained-glass window provided the inspiration for the 2007 Christmas Card 
-    and the FDC.<br>
+    and the FDC.<br/>
     The stamps of the Christmas Customs 2007 series were 
-    designed, as in 2006, by the Swiss artist Mich�le Haas.</font></p>
-    <p align="left">
-    <font face="Arial">A nice cover that I received from the USA. Unfortunately, 
+    designed, as in 2006, by the Swiss artist Michèle Haas.</font></p>
+<p align="left">
+<font face="Arial">A nice cover that I received from the USA. Unfortunately, 
     one of stamps is not cancelled. </font></p>
-    <p align="center">
-    <img border="0" src="christmas-07/xmas-5.jpg" width="550" height="394"></p>
-    <p align="left">
-    <font face="Arial">Finally, a non-philatelic item, the rather unorthodox 
+<p align="center">
+<img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="christmas-07/xmas-5.jpg"/></p>
+<p align="left">
+<font face="Arial">Finally, a non-philatelic item, the rather unorthodox 
     tree of my family:</font></p>
-    <p align="center">
-    <img border="0" src="christmas-07/my-tree.jpg" width="326" height="512"></p>
-    <center>
-
-    <div align="center">
-      <p align="left"><font face="Arial" color="#000080">Links:</font></div>
-
-  
-      <ul>
-        <li>
-      <p align="left"><font face="Arial"><a href="christmas-beauties.htm">
-      Christmas Beauties</a></font></li>
-        <li>
-      <p align="left"><font face="Arial"><a href="christmas-beauties1.htm">
-      Christmas Beauties-1</a></font></li>
-        <li>
-      <p align="left"><i><font face="Arial">
-      <a href="../../Magazine/christmas05/xmas-post-adm.htm">Congratulation 
-      Cards</a></font></i></li>
-        <li>
-      <p align="left"><font face="Arial"><a href="christmas-ch.htm">Christmas 
-      Stamps, Switzerland</a></font></li>
-        <li>
-      <p align="left"><font face="Arial" color="#000080">
-      <a href="../../christmas.htm">Stamps Christmas Tree</a>, with greetings 
-      from 38 stamps collectors, in 16 different languages</font></li>
-        <li>
-      <p align="left"><font face="Arial" color="#000080">Liechtenstein,
-      <a href="../../Countries/Liechtenstein/Christmas-2001/christmas-2001.htm">Christmas 2001</a>. Medallions in Wooden Frames</font></li>
-        <li>
-      <p align="left"><font face="Arial" color="#000080">Liechtenstein, 
-      Christmas 1979. <a href="../Embroidery/embroid-fl.htm">Embroideries</a>.</font></li>
-      </ul>
-      <hr>
-
-      </tr>
-    </table>
-    </div><div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr>
-        <td><strong>
-        <font face="Arial"><small><small>Created 12/23/07. Revised: 
-        <!--webbot bot="TimeStamp" s-format="%m/%d/%y" s-type="EDITED" startspan -->12/04/08<!--webbot bot="TimeStamp" i-checksum="13297" endspan -->.&nbsp;<br>
-        Copyright �  2007-2008 by Victor Manta, Switzerland.&nbsp;<br>
- All rights reserved in all
-        countries.</small></small></font></strong></td>
-        <td><p align="center"><font color="#0000FF">
-        <a href="../../index.html" target="_blank">
-        <img src="../../vmbanner1.gif" alt="Site's Banner" align="center" vspace="3" width="400" height="40" ></a></font><br>
-        <font color="#0000FF" face="Arial"><small><small><strong>Please click the banner to visit
-        the site</strong></small></small></font></td>
-      </tr>
-    </table>
-    </center></div>
-<hr>
-<script type="text/javascript"><!--
-google_ad_client = "pub-6697287241332041";
-/* 234x60, created 11/29/08 */
-google_ad_slot = "0857213903";
-google_ad_width = 728;
-google_ad_height = 90;;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-6507762-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-
-
-</main><footer class="heritage-foot">Historical article preserved in Philatelic Heritage &middot; <a href="../../archive-index.html">Back to Archive Index</a></footer>
-</body>
-</html> 
+<p align="center">
+<img alt="Philatelic illustration from Christmas Philatelic Beauties" border="0" decoding="async" loading="lazy" src="christmas-07/my-tree.jpg"/></p>
+<center>
+<div align="center">
+<p align="left"><font color="#000080" face="Arial">Links:</font></p></div>
+<ul>
+<li>
+<p align="left"><font face="Arial"><a href="christmas-beauties.htm">
+      Christmas Beauties</a></font></p></li>
+<li>
+<p align="left"><font face="Arial"><a href="christmas-beauties1.htm">
+      Christmas Beauties-1</a></font></p></li>
+<li>
+<p align="left"><i><font face="Arial">
+<a href="../../Magazine/christmas05/xmas-post-adm.htm">Congratulation 
+      Cards</a></font></i></p></li>
+<li>
+<p align="left"><font face="Arial"><a href="christmas-ch.htm">Christmas 
+      Stamps, Switzerland</a></font></p></li>
+<li>
+<p align="left"><font color="#000080" face="Arial">
+<a href="../../christmas.htm">Stamps Christmas Tree</a>, with greetings 
+      from 38 stamps collectors, in 16 different languages</font></p></li>
+<li>
+<p align="left"><font color="#000080" face="Arial">Liechtenstein,
+      <a href="../../Countries/Liechtenstein/Christmas-2001/christmas-2001.htm">Christmas 2001</a>. Medallions in Wooden Frames</font></p></li>
+<li>
+<p align="left"><font color="#000080" face="Arial">Liechtenstein, 
+      Christmas 1979. <a href="../Embroidery/embroid-fl.htm">Embroideries</a>.</font></p></li>
+</ul>
+<hr/>
+</center></div>
+<hr/>
+</div><div class="page-footer"><a href="/recently-modernized.html">← Recently Modernized Pages</a> · <a href="/Art-Gallery/">Art Gallery</a> · <a href="/index.html">Home</a><p>Original article and philatelic research © Victor Manta. Layout modernized 2026.</p></div></main></body></html>

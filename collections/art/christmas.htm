@@ -1,513 +1,343 @@
-<html>
-
-<head>
-<meta http-equiv="Content-Language" content="en-us">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
-<meta name="ProgId" content="FrontPage.Editor.Document">
-<title>Christmas and New Year - The Joyful Days</title>
-<bgsound src="jingle_bells.mid" loop="-1">
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="heritage-article.css"></head>
-
-<body background="bgd-christmas.jpg" bgproperties="fixed">
-<!-- Philatelic Heritage modern presentation: historical content retained -->
-<div class="heritage-bar"><span class="heritage-name">ART ON STAMPS</span><nav class="heritage-links" aria-label="Archive navigation"><a href="index.html">Home</a><a href="archive-index.html">Archive Index</a><a href="browse-a-z.html">Browse A&#8211;Z</a><a href="browse-countries.html">Countries</a><a href="browse-art-gallery.html">Art Gallery</a><a href="../../index.html">Philatelic Heritage</a></nav></div>
-<main class="heritage-page">
-<p><!--webbot
-      bot="HTMLMarkup" startspan --><script language="JavaScript1.2">  
-
-  
-  var snowsrc="Magazine/Christmas/snow.gif"
-  
-  var no = 10;
-
-  var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
-  var ie4up = (document.all) ? 1 : 0;
-
-  var dx, xp, yp;    // coordinate and position variables
-  var am, stx, sty;  // amplitude and step variables
-  var i, doc_width = 800, doc_height = 600;
-  
-  if (ns4up) {
-    doc_width = self.innerWidth;
-    doc_height = self.innerHeight;
-  } else if (ie4up) {
-    doc_width = document.body.clientWidth;
-    doc_height = document.body.clientHeight;
-  }
-
-  dx = new Array();
-  xp = new Array();
-  yp = new Array();
-  am = new Array();
-  stx = new Array();
-  sty = new Array();
-  
-  for (i = 0; i < no; ++ i) {  
-    dx[i] = 0;                        // set coordinate variables
-    xp[i] = Math.random()*(doc_width-50);  // set position variables
-    yp[i] = Math.random()*doc_height;
-    am[i] = Math.random()*20;         // set amplitude variables
-    stx[i] = 0.02 + Math.random()/10; // set step variables
-    sty[i] = 0.7 + Math.random();     // set step variables
-    if (ns4up) {                      // set layers
-      if (i == 0) {
-        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><a href=\"http://dynamicdrive.com/\"><img src='"+snowsrc+"' border=\"0\"></a></layer>");
-      } else {
-        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src='"+snowsrc+"' border=\"0\"></layer>");
-      }
-    } else if (ie4up) {
-      if (i == 0) {
-        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"></a></div>");
-      } else {
-        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"></div>");
-      }
-    }
-  }
-  
-  function snowNS() {  // Netscape main animation function
-    for (i = 0; i < no; ++ i) {  // iterate for every dot
-      yp[i] += sty[i];
-      if (yp[i] > doc_height-50) {
-        xp[i] = Math.random()*(doc_width-am[i]-30);
-        yp[i] = 0;
-        stx[i] = 0.02 + Math.random()/10;
-        sty[i] = 0.7 + Math.random();
-        doc_width = self.innerWidth;
-        doc_height = self.innerHeight;
-      }
-      dx[i] += stx[i];
-      document.layers["dot"+i].top = yp[i];
-      document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
-    }
-    setTimeout("snowNS()", 10);
-  }
-
-  function snowIE() {  // IE main animation function
-    for (i = 0; i < no; ++ i) {  // iterate for every dot
-      yp[i] += sty[i];
-      if (yp[i] > doc_height-50) {
-        xp[i] = Math.random()*(doc_width-am[i]-30);
-        yp[i] = 0;
-        stx[i] = 0.02 + Math.random()/10;
-        sty[i] = 0.7 + Math.random();
-        doc_width = document.body.clientWidth;
-        doc_height = document.body.clientHeight;
-      }
-      dx[i] += stx[i];
-      document.all["dot"+i].style.pixelTop = yp[i];
-      document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
-    }
-    setTimeout("snowIE()", 10);
-  }
-
-  if (ns4up) {
-    snowNS();
-  } else if (ie4up) {
-    snowIE();
-  }
-
-</script><!--webbot bot="HTMLMarkup" endspan --></p>
-<div align="center"><center>
-
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-  <tr>
-    <td  valign="top"><p align="center">&nbsp;<img 
-    src="Magazine/Christmas/ttl-christmas.gif" alt="Stamps Christmas Tree" 
-    vspace="6" width="652" height="87" >
-      </p>
-    <p align="center"><img src="Magazine/Christmas/garland-lights-2.gif" width="565" height="33" ></p>
-</center>
-    <p align="right"><font color="#000080"><em><font face="Arial" size="2">This page
-        presents thirty four greetings,&nbsp;<br>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Christmas and New Year - The Joyful Days | Art on Stamps</title><link href="https://www.artonstamps.org/christmas.htm" rel="canonical"/><style>*{box-sizing:border-box}body{margin:0;background:#f7f3e9;color:#243245;font:18px/1.65 Arial,Helvetica,sans-serif}header{background:#142d4b;color:white;padding:18px max(20px,calc((100% - 1060px)/2))}header a{color:white;text-decoration:none}nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}main{max-width:1060px;margin:28px auto 48px;padding:0 20px}h1{font:700 clamp(28px,4vw,40px) Georgia,serif;color:#183858;text-align:center;margin:12px 0 24px}.content{background:#fff;border:1px solid #e2daca;border-radius:10px;padding:clamp(15px,3vw,34px);overflow-wrap:anywhere}.content p,.content li,.content td{font-size:18px!important;line-height:1.6!important;color:#263449!important}.content font{font-size:inherit!important;color:inherit!important}.content img{max-width:100%;height:auto}.content table{max-width:100%!important;margin:14px auto;border-collapse:separate;border-spacing:8px}.content td{vertical-align:bottom}.content a{color:#145482}.content center{max-width:100%}.content [align=center]{text-align:center}.content blockquote{margin:18px 0;padding-left:16px;border-left:3px solid #c5a56e}footer{text-align:center;padding:24px;color:#66717b;font-size:14px;border-top:1px solid #d9d2c3}.back{margin:15px 0;font-size:15px}@media(max-width:650px){.content{overflow-x:auto}.content table{display:block;overflow-x:auto}.content td{min-width:100px}.content p,.content li,.content td{font-size:17px!important}}</style><style>.content{overflow-x:auto}.content table{max-width:100%;margin:12px auto}.content td{vertical-align:bottom}.content img{max-width:100%;height:auto}.content h1,.content h2{line-height:1.25}.content p{margin:12px 0}.content [nowrap]{white-space:normal}@media(max-width:700px){.content table{display:block;overflow-x:auto}}</style></head><body><header><nav><a href="/index.html">Art on Stamps</a><a href="/recently-modernized.html">Recently Modernized Pages</a><a href="/arts_gallery_toc.htm">Art Gallery</a><a href="/countries_toc.htm">Countries</a></nav></header><main><h1>Christmas and New Year - The Joyful Days</h1><p class="back"><a href="/recently-modernized.html">â† Recently Modernized Pages</a> Â· <a href="/index.html">Home</a></p><article class="content">
+<div><center>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><p>Â <img alt="Stamps Christmas Tree" height="87" src="Magazine/Christmas/ttl-christmas.gif" vspace="6" width="652"/>
+</p>
+<p><img height="33" src="Magazine/Christmas/garland-lights-2.gif" width="565"/></p>
+</td></tr></table></center>
+<p><font><em><font>This page
+        presents thirty four greetings,Â <br/>
     in 16 different languages, received by the AOS site</font></em></font></p>
-    <center>
-
-    <div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>Merry Christmas and
+<center>
+<div><center><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><font><strong>Merry Christmas and
         a Happy New Year! Alan. London. England.</strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>Joyeuses Fêtes et
-        Bonne Année! Danielle. Toulouse. France. </strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas3.jpg" alt="Merry Christmas" width="100" height="140" ></strong></font></td>
-        <td align="center"><strong><font face="Arial" size="1" color="#FF0000">Prettige
+<td><font><strong>Joyeuses FÃªtes et
+        Bonne AnnÃ©e! Danielle. Toulouse. France. </strong></font></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="140" src="Magazine/Christmas/christmas3.jpg" width="100"/></strong></font></td>
+<td><strong><font>Prettige
           Kerstdagen en een Gelukkig Nieuwjaar. Rob. The Netherlands.</font></strong></td>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>S Novym
+<td><font><strong>S Novym
           Godom, s
         Novym Schastiem. Liudmila. Zagorsk. Russia.</strong></font></td>
-      </tr>
-      <tr>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>Merry Christmas and
+</tr>
+<tr>
+<td><font><strong>Merry Christmas and
         A Happy New Year! Happy hunting! Dorothy. England.</strong></font></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas6.jpg" 
-        alt="Merry Christmas!" width="150" height="111" ></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas5.jpg" alt="Merry Christmas" width="112" height="141" ></strong></font></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas4.jpg" 
-        alt="A happy New Year!" width="150" height="112" ></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>God Jul och Gott
+<td>
+<img alt="Merry Christmas!" height="111" src="Magazine/Christmas/christmas6.jpg" width="150"/></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="141" src="Magazine/Christmas/christmas5.jpg" width="112"/></strong></font></td>
+<td>
+<img alt="A happy New Year!" height="112" src="Magazine/Christmas/christmas4.jpg" width="150"/></td>
+<td><font><strong>God Jul och Gott
         Nytt Aar. God Jakt. Magnus. Sweden.</strong></font></td>
-      </tr>
-      <tr>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas10.jpg" alt="A Happy New Year!" width="165" height="121" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/50doll.gif" width="50" height="71" ></strong></font></td>
-        <td align="center"><strong><font face="Arial" size="1" color="#FF0000">
-        <img src="Magazine/Christmas/christmas1.jpg" alt="Merry Christmas" 
-        </font width="104" height="149"></strong></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/50snow.gif" width="50" height="50" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas12.jpg" alt="Merry Christmas" width="167" height="121" ></strong></font></td>
-      </tr>
-      <tr>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>Je vous souhaite
-        tous un très Joyeux Noël, Bonne nouvelle Année - et bonne chasse! Jeanette. Canada.</strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas8.jpg" alt="Merry Christmas" width="89" height="105" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>
-        <img src="Magazine/Christmas/christmas21.jpg" alt="Merry Christmas" width="122" height="144" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas9.jpg" alt="A Happy New Year!" width="89" height="105" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>Buon Natale e Buon
-          Anno. Félipé. Portugal.<br>
-          </strong></font><strong><font face="Arial" size="1" color="#0000FF">Prettige Kerstdagen
+</tr>
+<tr>
+<td><font><strong>
+<img alt="A Happy New Year!" height="121" src="Magazine/Christmas/christmas10.jpg" width="165"/></strong></font></td>
+<td><font><strong>
+<img height="71" src="Magazine/Christmas/50doll.gif" width="50"/></strong></font></td>
+<td><strong><font>
+<img <="" alt="Merry Christmas" font="" height="149" src="Magazine/Christmas/christmas1.jpg" width="104"/></font></strong></td>
+<td><font><strong>
+<img height="50" src="Magazine/Christmas/50snow.gif" width="50"/></strong></font></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="121" src="Magazine/Christmas/christmas12.jpg" width="167"/></strong></font></td>
+</tr>
+<tr>
+<td><font><strong>Je vous souhaite
+        tous un trÃ¨s Joyeux NoÃ«l, Bonne nouvelle AnnÃ©e - et bonne chasse! Jeanette. Canada.</strong></font></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="105" src="Magazine/Christmas/christmas8.jpg" width="89"/></strong></font></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="144" src="Magazine/Christmas/christmas21.jpg" width="122"/></strong></font></td>
+<td><font><strong>
+<img alt="A Happy New Year!" height="105" src="Magazine/Christmas/christmas9.jpg" width="89"/></strong></font></td>
+<td><font><strong>Buon Natale e Buon
+          Anno. FÃ©lipÃ©. Portugal.<br/>
+</strong></font><strong><font>Prettige Kerstdagen
         en Gelukkig Nieuwjaar. Wiebke, Nederland.</font></strong></td>
-      </tr>
-      <tr>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas11.jpg" alt="Merry Christmas" width="166" height="122" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/50grey.gif" width="50" height="71" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas24.jpg" alt="Merry Christmas" width="122" height="145" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="02snow.gif" width="50" height="71" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas15.jpg" alt="A Happy New Year!" width="166" height="121" ></strong></font></td>
-      </tr>
-      <tr>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>Fröhliche
+</tr>
+<tr>
+<td><font><strong>
+<img alt="Merry Christmas" height="122" src="Magazine/Christmas/christmas11.jpg" width="166"/></strong></font></td>
+<td><font><strong>
+<img height="71" src="Magazine/Christmas/50grey.gif" width="50"/></strong></font></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="145" src="Magazine/Christmas/christmas24.jpg" width="122"/></strong></font></td>
+<td><font><strong>
+<img height="71" src="02snow.gif" width="50"/></strong></font></td>
+<td><font><strong>
+<img alt="A Happy New Year!" height="121" src="Magazine/Christmas/christmas15.jpg" width="166"/></strong></font></td>
+</tr>
+<tr>
+<td><font><strong>FrÃ¶hliche
         Weihnachten und ein gutes neues Jahr. Karin. Trier. Germany.</strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas25.jpg" alt="Merry Christmas" width="147" height="122" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas22.jpg" alt="Merry Christmas" width="123" height="144" ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/christmas2.jpg" alt="A Happy New Year!" width="141" height="99" 
-        ></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>Frohe Weihnachten
-        und ein Gutes Neues Jahr wünscht Ihnen Arnold, Deutschland.</strong></font></td>
-      </tr>
-      <tr>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas13.jpg" 
-        alt="A Happy New Year!" width="166" height="122" ></td>
-        <td align="center"><img src="Magazine/Christmas/4001drum.gif" width="40" height="145" ></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas7.jpg" 
-        alt="Merry Christmas!" width="117" height="181" ></td>
-        <td align="center"><img src="Magazine/Christmas/01mabear.gif" width="166" height="227" ></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas16.jpg" 
-        alt="Merry Christmas" width="166" height="120" ></td>
-      </tr>
-      <tr>
-        <td align="center" valign="middle"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/xmastree.gif" width="72" height="139"></strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>Radosné Vànoce A
+<td><font><strong>
+<img alt="Merry Christmas" height="122" src="Magazine/Christmas/christmas25.jpg" width="147"/></strong></font></td>
+<td><font><strong>
+<img alt="Merry Christmas" height="144" src="Magazine/Christmas/christmas22.jpg" width="123"/></strong></font></td>
+<td><font><strong>
+<img alt="A Happy New Year!" height="99" src="Magazine/Christmas/christmas2.jpg" width="141"/></strong></font></td>
+<td><font><strong>Frohe Weihnachten
+        und ein Gutes Neues Jahr wÃ¼nscht Ihnen Arnold, Deutschland.</strong></font></td>
+</tr>
+<tr>
+<td>
+<img alt="A Happy New Year!" height="122" src="Magazine/Christmas/christmas13.jpg" width="166"/></td>
+<td><img height="145" src="Magazine/Christmas/4001drum.gif" width="40"/></td>
+<td>
+<img alt="Merry Christmas!" height="181" src="Magazine/Christmas/christmas7.jpg" width="117"/></td>
+<td><img height="227" src="Magazine/Christmas/01mabear.gif" width="166"/></td>
+<td>
+<img alt="Merry Christmas" height="120" src="Magazine/Christmas/christmas16.jpg" width="166"/></td>
+</tr>
+<tr>
+<td><font><strong>
+<img height="139" src="Magazine/Christmas/xmastree.gif" width="72"/></strong></font></td>
+<td><font><strong>RadosnÃ© VÃ noce A
         Stastny Novy Rok! Zuzana. Czechia.</strong></font></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas23.jpg" 
-        alt="Merry Christmas" width="120" height="145" ></td>
-        <td align="center"><font face="Arial" size="1" color="#0000FF"><strong>Godt Nyttaar paa
+<td>
+<img alt="Merry Christmas" height="145" src="Magazine/Christmas/christmas23.jpg" width="120"/></td>
+<td><font><strong>Godt Nyttaar paa
         gjensyn. Eva. Oslo. Norway.</strong></font></td>
-        <td align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-        <img src="Magazine/Christmas/05orn.gif" width="130" height="110" ></strong></font></td>
-      </tr>
-      <tr>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas19.jpg" 
-        alt="Merry Christmas" width="164" height="120" ></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas20.jpg" 
-        alt="Merry Christmas" width="164" height="119" ></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas14.jpg" 
-        alt="Merry Christmas" width="166" height="120" ></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas17.jpg" 
-        alt="A Happy New Year!" width="165" height="120" ></td>
-        <td align="center">
-        <img src="Magazine/Christmas/christmas18.jpg" 
-        alt="A Happy New Year!" width="165" height="120" ></td>
-      </tr>
-      <tr>
-        <td align="center" colspan="5"></td>
-      </tr>
-    </table>
-    </center></div><p align="center"><big><strong><font face="Arial" color="#FF0000">
-    <img border="0" src="Magazine/Christmas/ttl-greetings.gif" width="451" height="55">&nbsp;</font></strong></big></p>
-    <p align="center">
-    <img src="Magazine/Christmas/leaves.gif" 
-    alt="leaves.gif (1833 bytes)" width="576" height="30" ></p>
-    <div align="center"><center><table border="0" cellpadding="0" width="100%">
-      <tr>
-        <td width="49%" align="center"><small><font face="Arial" color="#0000FF"><em><strong><br>
-        </strong></em></font></small>
-        <img border="0" 
-        src="Magazine/Christmas/christmas26.jpg" width="114" height="144" ></td>
-        <td align="center">
-        <img border="0" 
-        src="Magazine/Christmas/christmas28.jpg" width="154" height="195" ></td>
-        <td width="49%" align="center">
-        <img border="0" 
-        src="Magazine/Christmas/Vanoce.jpg" </p width="150" height="186"><small><font face="Arial" color="#FF0000"><em><strong><br>
-        </strong></em></font></small></td>
-      </tr>
-      <tr>
-        <td width="49%" align="center">&nbsp;</td>
-        <td width="2" align="center">
-          <p align="center">&nbsp;</td>
-        <td width="49%" align="center">&nbsp;</td>
-      </tr>
-    </table>
-    </center></div>
-<div align="center">
-  <table border="0" cellpadding="0" cellspacing="1" width="100%">
-    <tr>
-      <td width="33%">
-        <p align="center">&nbsp;</td>
-      <td width="33%">
-        <p align="center">&nbsp;</td>
-      <td width="34%">
-        <p align="center">&nbsp;</td>
-    </tr>&nbsp;
+<td><font><strong>
+<img height="110" src="Magazine/Christmas/05orn.gif" width="130"/></strong></font></td>
+</tr>
+<tr>
+<td>
+<img alt="Merry Christmas" height="120" src="Magazine/Christmas/christmas19.jpg" width="164"/></td>
+<td>
+<img alt="Merry Christmas" height="119" src="Magazine/Christmas/christmas20.jpg" width="164"/></td>
+<td>
+<img alt="Merry Christmas" height="120" src="Magazine/Christmas/christmas14.jpg" width="166"/></td>
+<td>
+<img alt="A Happy New Year!" height="120" src="Magazine/Christmas/christmas17.jpg" width="165"/></td>
+<td>
+<img alt="A Happy New Year!" height="120" src="Magazine/Christmas/christmas18.jpg" width="165"/></td>
+</tr>
+<tr>
+<td colspan="5"></td>
+</tr>
+</table>
+</center></div><p><big><strong><font>
+<img border="0" height="55" src="Magazine/Christmas/ttl-greetings.gif" width="451"/>Â </font></strong></big></p>
+<p>
+<img alt="leaves.gif (1833 bytes)" height="30" src="Magazine/Christmas/leaves.gif" width="576"/></p>
+<div><center><table border="0" cellpadding="0">
+<tr>
+<td><small><font><em><strong><br/>
+</strong></em></font></small>
+<img border="0" height="144" src="Magazine/Christmas/christmas26.jpg" width="114"/></td>
+<td>
+<img border="0" height="195" src="Magazine/Christmas/christmas28.jpg" width="154"/></td>
+<td>
+<img <="" border="0" height="186" p="" src="Magazine/Christmas/Vanoce.jpg" width="150"/><small><font><em><strong><br/>
+</strong></em></font></small></td>
+</tr>
+<tr>
+<td>Â </td>
+<td>
+</td>
+<td>Â </td>
+</tr>
+</table>
+</center></div>
+<div>
+<table border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>Â 
   </table>
 </div>
-<div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr>
-        
-         
-        <div align="center"><center><table border="0" cellpadding="0" width="100%">
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" size="2" color="#0000FF"><strong>&nbsp;Meilleurs
-            voeux à vous tous.<br>
-              &nbsp; Assia, from Maroc.</strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50snow.gif" width="50" height="50" ></strong></font></td>
-            <td valign="middle" align="center"><strong><font size="2" face="Arial" color="#0000FF">
-            Rentouttavaa joulua kaikille filatelisteilleja entistä parempaa
-            &quot;metsästysvuotta&quot; Satu. Finland.</font></strong></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" size="2" color="#FF0000"><strong>Linksmu
+<div><center><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<div><center><table border="0" cellpadding="0">
+<tr>
+<td><font><strong>Â Meilleurs
+            voeux Ã  vous tous.<br/>
+              Â  Assia, from Maroc.</strong></font></td>
+<td><font><strong>
+<img height="50" src="Magazine/Christmas/50snow.gif" width="50"/></strong></font></td>
+<td><strong><font>
+            Rentouttavaa joulua kaikille filatelisteilleja entistÃ¤ parempaa
+            "metsÃ¤stysvuotta" Satu. Finland.</font></strong></td>
+</tr>
+<tr>
+<td><font><strong>Linksmu
             Kaledu ir geru nauju metu visiems pasto zenklu kolekcioneriems visame pasaulia. Danguole.
             Lithuania. </strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="02snow.gif" width="50" height="71" ></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" color="#FF0000"><small><strong>Togh
+<td><font><strong>
+<img height="71" src="02snow.gif" width="50"/></strong></font></td>
+<td><font><small><strong>Togh
             nor tarin dzez beri noranor hacheli anakenkalner dzer havakatsuneri hamar u nor barekamner
             filatelistakan ashkharhum. Rouben. Armenia.</strong></small></font></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" size="2" color="#0000FF"><strong>Rigtig
+</tr>
+<tr>
+<td><font><strong>Rigtig
             glaedelig jul og godt nytaar til alle frimaerkesamlere i hele verden. Mette.
               Danmark.</strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50doll.gif" width="50" height="71" ></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="2" color="#0000FF"><strong>A
+<td><font><strong>
+<img height="71" src="Magazine/Christmas/50doll.gif" width="50"/></strong></font></td>
+<td><font><strong>A
               Happy
             New Year to you all. Boris. Irkutsk. Russia.</strong></font></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" size="2" color="#FF0000"><strong>Riktigt
-            Glad Jul och Gott Nytt År till alla frimärkssamlare i hela världen. Ulla-Britt. Sweden.</strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50grey.gif" width="50" height="71" ></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" color="#FF0000"><small><strong>Oikein
-            Iloista Joulua ja Hyvää Uutta Vuotta kaikille postimerkkien keräilijöille koko
+</tr>
+<tr>
+<td><font><strong>Riktigt
+            Glad Jul och Gott Nytt Ã…r till alla frimÃ¤rkssamlare i hela vÃ¤rlden. Ulla-Britt. Sweden.</strong></font></td>
+<td><font><strong>
+<img height="71" src="Magazine/Christmas/50grey.gif" width="50"/></strong></font></td>
+<td><font><small><strong>Oikein
+            Iloista Joulua ja HyvÃ¤Ã¤ Uutta Vuotta kaikille postimerkkien kerÃ¤ilijÃ¶ille koko
             maailmassa. Bengt, Finland</strong></small></font></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" color="#0000FF"><strong><small>Priecigus
+</tr>
+<tr>
+<td><font><strong><small>Priecigus
             Ziemassvetkus un laimigu Jauno Gadu! Gedimins, Latvia.</small></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50snow.gif" width="50" height="50" ></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" color="#0000FF"><strong><small>Roomurikkaid
-            Joulupühi ja onnerikast uut aastat! Vaido, Estonia.</small></strong></font></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" color="#FF0000"><strong><small>Shnorhavorum
+<td><font><strong>
+<img height="50" src="Magazine/Christmas/50snow.gif" width="50"/></strong></font></td>
+<td><font><strong><small>Roomurikkaid
+            JoulupÃ¼hi ja onnerikast uut aastat! Vaido, Estonia.</small></strong></font></td>
+</tr>
+<tr>
+<td><font><strong><small>Shnorhavorum
             em bolorid Surb Tsenundi ev Nor Tarva artiv. Yeghek aroghj, hajoghak dzer andznakan
             kjankum ev ashkhatankum. Gurgen, Armenia.</small></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50doll.gif" width="50" height="71" ></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" color="#FF0000"><strong><small>Prettige
+<td><font><strong>
+<img height="71" src="Magazine/Christmas/50doll.gif" width="50"/></strong></font></td>
+<td><font><strong><small>Prettige
             feestdagen en een gezond nieuwjaar! Adri, Holland.</small></strong></font></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><b><font size="2" color="#0000FF">Det
+</tr>
+<tr>
+<td><b><font>Det
               er dejligt at se din julehilsen igen i aar. Rigtig glaedelig jul
               og godt nytaar til jer alle. Poula, Denmark</font></b></td>
-            <td valign="middle" align="center">
-            <img src="Magazine/Christmas/nutc1.gif" width="49" height="109" ></td>
-            <td valign="middle" align="center"><strong><font face="Arial" color="#0000FF"><small>&nbsp; This is something extraordinary, that you should repeat every year
-            !&nbsp; A Very Happy Christmas to you and all stamp-collectors in the whole world from
+<td>
+<img height="109" src="Magazine/Christmas/nutc1.gif" width="49"/></td>
+<td><strong><font><small>Â  This is something extraordinary, that you should repeat every year
+            !Â  A Very Happy Christmas to you and all stamp-collectors in the whole world from
               Adriana. Roma, Italia</small></font></strong></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font face="Arial" color="#FF0000"><small><strong>Thank
+</tr>
+<tr>
+<td><font><small><strong>Thank
             you for the work you have both done to make such a wonderful Christmas site, that has
             brought a great deal of pleasure to a lot of people. Best wishes from Gordon, Opua, New
             Zealand</strong></small></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="02snow.gif" width="50" height="71" ></strong></font></td>
-            <td valign="middle" align="center"><font face="Arial" color="#FF0000"><strong><small>Now I
+<td><font><strong>
+<img height="71" src="02snow.gif" width="50"/></strong></font></td>
+<td><font><strong><small>Now I
             had a chance to look at your Christmas page - another wonderful collection and design! It
               truly needs a lots of passion and time to do all the great work. Jingyan Z. USA</small></strong></font></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><b><font size="2" color="#0000FF">Mine
+</tr>
+<tr>
+<td><b><font>Mine
               bedste oensker for jul, nytaar og det nye aarhundrede til alle
-              vore samlervenner i hele&nbsp; verden. George, Denmark</font></b></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50grey.gif" width="50" height="71" ></strong></font></td>
-            <td valign="middle" align="center">
-              
-            <strong><font face="Arial" color="#0000FF"><small>This is a fabulous site, I have never seen anything like it.
-            &nbsp; Merry Christmas and a Wonderful New Year from us
+              vore samlervenner i heleÂ  verden. George, Denmark</font></b></td>
+<td><font><strong>
+<img height="71" src="Magazine/Christmas/50grey.gif" width="50"/></strong></font></td>
+<td>
+<strong><font><small>This is a fabulous site, I have never seen anything like it.
+            Â  Merry Christmas and a Wonderful New Year from us
             in Denver. Kirsten, Colorado, USA</small></font></strong>
-              
-            </td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><font color="#ff0000" size="2" face="Arial">N<b>uosirdziausi
-              sveikinimai ir linkéjimai sventu Kalédu Naujuju Metu proga.
+</td>
+</tr>
+<tr>
+<td><font>N<b>uosirdziausi
+              sveikinimai ir linkÃ©jimai sventu KalÃ©du Naujuju Metu proga.
               Jurate, Lithuania.</b></font></td>
-            <td valign="middle" align="center"><font face="Arial" size="1" color="#FF0000"><strong>
-            <img src="Magazine/Christmas/50snow.gif" width="50" height="50" ></strong></font></td>
-            <td valign="middle" align="center"><b><font face="Arial" size="2" color="#FF0000">Prejeme
+<td><font><strong>
+<img height="50" src="Magazine/Christmas/50snow.gif" width="50"/></strong></font></td>
+<td><b><font>Prejeme
               Vam Vesele Vanoce a stastny Novy Rok 2000. Vaclav. Czech Rep.</font></b></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center"><strong><font color="#0000FF"><small><font face="Arial">&nbsp;I
-              have </font> </small><font face="Arial"><small>also enjoyed the festive Christmas decorations and stamps you added for the holiday
+</tr>
+<tr>
+<td><strong><font><small><font>Â I
+              have </font> </small><font><small>also enjoyed the festive Christmas decorations and stamps you added for the holiday
             season. It looks great! Alex G. USA.</small></font>
-              </font>
-            </strong></td>
-            <td valign="middle" align="center"><font color="#0000FF">
-            <img src="Magazine/Christmas/nutc4.gif" width="49" height="109" ></font></td>
-            <td valign="middle" align="center"><strong><font size="2" face="Arial" color="#0000FF">Urez
+</font>
+</strong></td>
+<td><font>
+<img height="109" src="Magazine/Christmas/nutc4.gif" width="49"/></font></td>
+<td><strong><font>Urez
             sarbatori fericite si La Multi Ani tuturor prietenilor si intregii lumi
               filatelice!
             Victor. Elvetia - Romania.</font></strong></td>
-          </tr>
-          <tr>
-            <td valign="middle" align="center" colspan="3"><p>&nbsp;&nbsp; </td>
-          </tr>
-        </table>
-      </div>
-  <p align="center"><b><font color="#FF0000" size="5">CHRISTMAS 2004</font></b></p>
-  <p align="left"><strong><font face="Arial" color="#0000FF"><small>&nbsp;&nbsp;&nbsp; 
+</tr>
+<tr>
+<td colspan="3"></td>
+</tr>
+</table>
+</center></div>
+<p><b><font>CHRISTMAS 2004</font></b></p>
+<p><strong><font><small>Â Â Â  
   Five stamps, designed by the Swiss painter Bernadette Baltis, appeared during 
   five consecutive years in the month of December. In the year 2004 they were 
   put together in a nice miniature sheet by the Swiss Post.</small></font></strong></p>
-    <center>
-
-          <div align="center">
-            <table border="0" cellpadding="0" cellspacing="1" width="100%">
-              <tr>
-                <td align="center"></td>
-                <td align="center">
-                <img src="love/blinkers.gif" alt="Blinkers" 
-                vspace="4" width="528" height="29" ></td>
-                <td align="center"></td>
-              </tr>
-              <tr>
-                <td align="center">
-                <img border="0" 
-                src="Magazine/Christmas/christmas27.jpg" width="114" height="142" ></td>
-                <td align="center" rowspan="2">
-                <img border="0" src="Art-Gallery/Christmas/CH-04.jpg" width="512" height="179"></td>
-                <td align="center"><img border="0" src="stained8.jpg" width="107" height="170" ></td>
-              </tr>
-              <tr>
-                <td align="center"><img border="0" src="stained7.jpg" width="107" height="169" ></td>
-                <td align="center"><img border="0" src="stained9.jpg" width="105" height="169" ></td>
-              </tr>
-              <tr>
-                <td align="center"></td>
-                <td align="center"><img src="love/blinkers.gif" alt="Blinkers" width="528" height="29" ></td>
-                <td align="center"></td>
-              </tr>
-            </table>
-          </div>
-    <div align="center">
-      <table border="0" cellpadding="0" cellspacing="1" width="100%">
-        <tr>
-          <td width="100%">&nbsp;</td>
-        </tr>
-      </table>
-    </div>
-          <table width="100%">
-            <tr>
-              <td align="left" vAlign="center">
-                <p><font size="2" color="#FF0000" face="Arial">We will soon enter a new year, so
+<center>
+<div>
+<table border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td></td>
+<td>
+<img alt="Blinkers" height="29" src="love/blinkers.gif" vspace="4" width="528"/></td>
+<td></td>
+</tr>
+<tr>
+<td>
+<img border="0" height="142" src="Magazine/Christmas/christmas27.jpg" width="114"/></td>
+<td rowspan="2">
+<img border="0" height="179" src="Art-Gallery/Christmas/CH-04.jpg" width="512"/></td>
+<td><img border="0" height="170" src="stained8.jpg" width="107"/></td>
+</tr>
+<tr>
+<td><img border="0" height="169" src="stained7.jpg" width="107"/></td>
+<td><img border="0" height="169" src="stained9.jpg" width="105"/></td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="Blinkers" height="29" src="love/blinkers.gif" width="528"/></td>
+<td></td>
+</tr>
+</table>
+</div>
+<div>
+<table border="0" cellpadding="0" cellspacing="1">
+<tr>
+<td>Â </td>
+</tr>
+</table>
+</div>
+<table>
+<tr>
+<td>
+<p><font>We will soon enter a new year, so
                 allow me to wish you all Merry Christmas and A Happy New Year 
                 2004. And thanks again for your fidelity and friendship. </font></p>
-                <p><font face="Arial" size="2" color="#FF0000">Link:
+<p><font>Link:
                 <a href="Art-Gallery/Christmas/christmas-beauties.htm">Beautiful 
                 Christmas Philately</a></font></p>
-                <hr>
-              </td>
-            </tr>
-          </table>
-          </center>
-      </tr>
-    </table>
-    </div><div align="center"><center><table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr>
-        <td><strong>
-        <font face="Arial" color="#0000FF"><small><small>Created 1999. Revised: 
-        <!--webbot bot="TimeStamp" s-format="%m/%d/%y" s-type="EDITED" startspan -->12/04/08<!--webbot bot="TimeStamp" i-checksum="13297" endspan -->.&nbsp;<br>
-        Copyright © 1999 - 2004 by </small></small><small><small>Victor Manta, Switzerland.&nbsp;<br>
- All rights reserved in all
-        countries.</small></small></font></strong></td>
-        <td><p align="center"><font color="#0000FF"><a href="index.html" target="_blank">
-        <img src="vmbanner1.gif" alt="Site's Banner" align="center" vspace="3" width="400" height="40" ></a></font><br>
-        <font color="#0000FF" face="Arial"><small><small><strong>Please click the banner to visit
-        the site</strong></small></small></font></td>
-      </tr>
-    </table>
-    </center></div>
-<script type="text/javascript"><!--
-google_ad_client = "pub-6697287241332041";
-/* 728x90, created 3/20/09 */
-google_ad_slot = "0857213903";
-google_ad_width = 728;
-google_ad_height = 90;;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-6507762-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-
-</main>
-<footer class="heritage-foot"><a href="archive-index.html">Back to Archive Index</a> &nbsp; | &nbsp; <a href="../../index.html">Philatelic Heritage</a></footer>
-</body>
-</html>  
+<hr/>
+</td>
+</tr>
+</table>
+</center>
+</tr>
+</table>
+</center></div><div><center><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td></td>
+</tr>
+</table>
+</center></div>
+</center></div></article><p class="back"><a href="/recently-modernized.html">â† Recently Modernized Pages</a> Â· <a href="/index.html">Home</a></p></main><footer>Art on Stamps â€” established in 1997 Â· Modernized in 2026.<br/>Â© Victor Manta, Switzerland.</footer></body></html>
