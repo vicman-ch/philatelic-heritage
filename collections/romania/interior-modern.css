@@ -428,27 +428,19 @@ body.rs-refined-article main.rs-reading-layout .article-section-return{margin-bo
 @media(max-width:700px){body.rs-refined-article main.rs-reading-layout :is(p,li,blockquote){line-height:1.4!important}body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph{margin-bottom:7px!important}}
 
 
-/* 2026: use the available article width, without narrowing prose to 78ch. */
+/* 2026: wider reading area for original marci-postale.com articles.
+   Keep editorial titles, stamp rows and publication notes styled separately. */
 @media (min-width: 701px) {
-  body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph,
-  body.rs-refined-article main.rs-reading-layout :is(p, li, blockquote):not(.rs-publication-note) {
-    max-width: 100% !important;
+  body.rs-refined-article main.rs-reading-layout {
+    width: calc(100% - 36px);
+    max-width: 1320px;
   }
-  body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph {
-    width: 100%;
+  body.rs-refined-article main.rs-reading-layout :is(p.rs-body-paragraph, p:not(.rs-stamp-row):not(.rs-editorial-title):not(.rs-editorial-byline):not(.rs-editorial-metadata):not(.rs-publication-note):not(.rs-article-subheading), li, blockquote) {
+    max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-}
-/* Keep illustration groups centered and prevent images from spilling sideways. */
-body.rs-refined-article main.rs-reading-layout p.rs-stamp-row {
-  width: 100%;
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-}
-body.rs-refined-article main.rs-reading-layout p.rs-stamp-row img {
-  max-width: 100% !important;
-  height: auto !important;
+  body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph {
+    width: 100%;
+  }
 }
