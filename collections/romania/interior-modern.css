@@ -426,3 +426,29 @@ body.rs-refined-article main.rs-reading-layout :is(ul,ol){margin-block:.45em .7e
 body.rs-refined-article main.rs-reading-layout li+li{margin-top:.22em}
 body.rs-refined-article main.rs-reading-layout .article-section-return{margin-bottom:15px!important}
 @media(max-width:700px){body.rs-refined-article main.rs-reading-layout :is(p,li,blockquote){line-height:1.4!important}body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph{margin-bottom:7px!important}}
+
+
+/* 2026: use the available article width, without narrowing prose to 78ch. */
+@media (min-width: 701px) {
+  body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph,
+  body.rs-refined-article main.rs-reading-layout :is(p, li, blockquote):not(.rs-publication-note) {
+    max-width: 100% !important;
+  }
+  body.rs-refined-article main.rs-reading-layout p.rs-body-paragraph {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+/* Keep illustration groups centered and prevent images from spilling sideways. */
+body.rs-refined-article main.rs-reading-layout p.rs-stamp-row {
+  width: 100%;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+body.rs-refined-article main.rs-reading-layout p.rs-stamp-row img {
+  max-width: 100% !important;
+  height: auto !important;
+}
